@@ -75,6 +75,19 @@ npm run test:e2e
 - `npm test`: JavaScript-Unit-Tests (Node Test Runner)
 - `npm run test:e2e`: End-to-End-Tests mit Playwright
 
+Falls E2E lokal mit einer Meldung wie `Executable doesn't exist` fehlschlaegt,
+fehlen die Playwright-Browser-Binaries. Einmalig ausfuehren:
+
+```bash
+npx playwright install
+```
+
+Optional nur Chromium installieren:
+
+```bash
+npx playwright install chromium
+```
+
 ## Lokales Starten
 
 Empfohlen (automatischer Port-Fallback ab 8000):
