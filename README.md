@@ -2,7 +2,21 @@
 
 Browserbasierter Rechner fuer Teilzeitausbildungen gemaess BBiG Paragraph 7a und 8.
 
-## Architektur
+## Ueberblick
+
+Die Anwendung laeuft vollstaendig im Browser und benoetigt kein Backend mehr.
+Alle Berechnungen werden lokal in JavaScript ausgefuehrt.
+
+## Features
+
+- Vollstaendige Berechnungslogik im Browser (ohne API-Call)
+- 9 Sprachen: de, en, uk, tr, ar, fr, ru, pl, ro
+- Eingabevalidierung mit unmittelbarer Rueckmeldung
+- Ergebnisuebersicht mit Sharing und PDF-Funktionen
+- Responsive UI fuer Desktop und Mobile
+- Accessibility-Funktionen (z. B. Vorlesen, Theme, Schriftgroesse)
+
+## Architekturueberblick
 
 Die Anwendung laeuft vollstaendig im Browser:
 
@@ -13,6 +27,26 @@ Die Anwendung laeuft vollstaendig im Browser:
 - Uebersetzungen: `static/Sprachdateien/messages.*.json`
 
 Es gibt kein Backend und keine API-Calls mehr.
+
+## Projektstruktur
+
+```text
+.
+|- index.html
+|- static/
+|  |- script_calculation.js
+|  |- script_Ergebnis_Uebersicht.js
+|  |- script_eingabe.js
+|  |- script_Sprache_Auswaehlen.js
+|  |- script_sharing.js
+|  |- script_accessibility.js
+|  |- styles.css
+|  `- Sprachdateien/messages.*.json
+|- tests-js/
+|- e2e/
+|- scripts/prepare-pages.mjs
+`- .github/workflows/ci-cd.yml
+```
 
 ## Entwicklung
 
@@ -34,6 +68,12 @@ npm test
 npm run test:e2e
 ```
 
+## Tests
+
+- `npm run lint`: ESLint, Stylelint, HTMLHint
+- `npm test`: JavaScript-Unit-Tests (Node Test Runner)
+- `npm run test:e2e`: End-to-End-Tests mit Playwright
+
 ## Lokales Starten
 
 Fuer lokale Ausfuehrung kann ein statischer Server genutzt werden:
@@ -48,12 +88,26 @@ Dann ist die Anwendung unter `http://localhost:8000` erreichbar.
 
 Die App ist fuer statisches Hosting ausgelegt (z. B. GitHub Pages).
 
+Fuer den Publish wird eine saubere Artefakt-Struktur erzeugt:
+
+```bash
+npm run build:pages
+```
+
+Dabei wird ein schlanker `deploy/`-Ordner erstellt, der nur benoetigte Dateien enthaelt:
+
+- `deploy/index.html`
+- `deploy/static/`
+- `deploy/.nojekyll`
+
+So werden unnoetige Repository-Dateien (Tests, Konfigurationsdateien, Tooling) nicht mit veroeffentlicht.
+
 Die GitHub-Workflow-Datei `.github/workflows/ci-cd.yml` fuehrt aus:
 
 - Frontend-Lint
 - JavaScript-Unit-Tests
 - Playwright-E2E-Tests
-- Deployment nach GitHub Pages auf `main`
+- Deployment nach GitHub Pages auf `main` (nur bei Push auf `main`)
 
 ## Hinweise
 
