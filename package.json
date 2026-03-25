@@ -12,7 +12,7 @@
     "lint:html": "htmlhint index.html",
     "lint:fix": "npm run lint:js -- --fix & npm run lint:css -- --fix",
     "build:pages": "node scripts/prepare-pages.mjs",
-    "test:unit": "node --test tests-js/**/*.test.js",
+    "test:unit": "node --test",
     "test": "npm run test:unit",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
