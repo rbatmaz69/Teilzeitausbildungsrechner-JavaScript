@@ -52,12 +52,14 @@ async function clickButton(page, selector) {
   await page.click(selector);
 }
 
-test.describe('Error Handling: API Fehler', () => {
+test.describe('Error Handling: Berechnungsfehler', () => {
   
-  test('Anzeige wenn Backend nicht erreichbar', async ({ page }) => {
-    // Mock: API-Request abfangen und Fehler zurückgeben
-    await page.route('**/api/calculate', route => {
-      route.abort('failed');
+  test('Anzeige wenn lokale Berechnung fehlschlägt', async ({ page }) => {
+    // Frontend-only: Ersetze lokale Berechnungsfunktion durch Fehlerwurf.
+    await page.addInitScript(() => {
+      window.berechneGesamtdauer = () => {
+        throw new Error('Simulierter Berechnungsfehler');
+      };
     });
     
     await gotoCalculator(page);
