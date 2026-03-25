@@ -179,3 +179,190 @@ test("Ungültiger Eingabetyp wirft Fehler", () => {
     /eingabetyp muss/
   );
 });
+
+test("Basisdauer unter 24 Monaten wirft Fehler", () => {
+  assert.throws(
+    () => berechneGesamtdauer({
+      basis_dauer_monate: 23,
+      vollzeit_stunden: 40,
+      teilzeit_eingabe: 80,
+      verkuerzungsgruende: defaultGruende(),
+      eingabetyp: "prozent"
+    }),
+    /zwischen 24 und 42/
+  );
+});
+
+test("Basisdauer über 42 Monaten wirft Fehler", () => {
+  assert.throws(
+    () => berechneGesamtdauer({
+      basis_dauer_monate: 43,
+      vollzeit_stunden: 40,
+      teilzeit_eingabe: 80,
+      verkuerzungsgruende: defaultGruende(),
+      eingabetyp: "prozent"
+    }),
+    /zwischen 24 und 42/
+  );
+});
+
+test("Basisdauer-Grenzwerte 24 und 42 sind erlaubt", () => {
+  const minResult = berechneGesamtdauer({
+    basis_dauer_monate: 24,
+    vollzeit_stunden: 40,
+    teilzeit_eingabe: 100,
+    verkuerzungsgruende: defaultGruende(),
+    eingabetyp: "prozent"
+  });
+
+  const maxResult = berechneGesamtdauer({
+    basis_dauer_monate: 42,
+    vollzeit_stunden: 40,
+    teilzeit_eingabe: 100,
+    verkuerzungsgruende: defaultGruende(),
+    eingabetyp: "prozent"
+  });
+
+  assert.equal(minResult.finale_dauer_monate, 24);
+  assert.equal(maxResult.finale_dauer_monate, 42);
+});
+
+test("Vollzeit-Stunden unter 10 wirft Fehler", () => {
+  assert.throws(
+    () => berechneGesamtdauer({
+      basis_dauer_monate: 36,
+      vollzeit_stunden: 9,
+      teilzeit_eingabe: 80,
+      verkuerzungsgruende: defaultGruende(),
+      eingabetyp: "prozent"
+    }),
+    /zwischen 10 und 48/
+  );
+});
+
+test("Vollzeit-Stunden über 48 wirft Fehler", () => {
+  assert.throws(
+    () => berechneGesamtdauer({
+      basis_dauer_monate: 36,
+      vollzeit_stunden: 49,
+      teilzeit_eingabe: 80,
+      verkuerzungsgruende: defaultGruende(),
+      eingabetyp: "prozent"
+    }),
+    /zwischen 10 und 48/
+  );
+});
+
+test("Prozent-Eingabe über 100 wirft Fehler", () => {
+  assert.throws(
+    () => berechneGesamtdauer({
+      basis_dauer_monate: 36,
+      vollzeit_stunden: 40,
+      teilzeit_eingabe: 101,
+      verkuerzungsgruende: defaultGruende(),
+      eingabetyp: "prozent"
+    }),
+    /zwischen 50% und 100%/
+  );
+});
+
+test("Stunden-Eingabe unter Mindestwert wirft Fehler", () => {
+  assert.throws(
+    () => berechneGesamtdauer({
+      basis_dauer_monate: 36,
+      vollzeit_stunden: 40,
+      teilzeit_eingabe: 19,
+      verkuerzungsgruende: defaultGruende(),
+      eingabetyp: "stunden"
+    }),
+    /mindestens 20/
+  );
+});
+
+test("Stunden-Eingabe über Vollzeit wirft Fehler", () => {
+  assert.throws(
+    () => berechneGesamtdauer({
+      basis_dauer_monate: 36,
+      vollzeit_stunden: 40,
+      teilzeit_eingabe: 41,
+      verkuerzungsgruende: defaultGruende(),
+      eingabetyp: "stunden"
+    }),
+    /nicht überschreiten/
+  );
+});
+
+test("beruf_q2 Dauer >= 12 ergibt 12 Monate", () => {
+  const result = berechneGesamtdauer({
+    basis_dauer_monate: 36,
+    vollzeit_stunden: 40,
+    teilzeit_eingabe: 75,
+    verkuerzungsgruende: defaultGruende({
+      beruf_q2: true,
+      beruf_q2_dauer_monate: 12
+    }),
+    eingabetyp: "prozent"
+  });
+
+  assert.equal(result.verkuerzung_gesamt_monate, 12);
+  assert.equal(result.finale_dauer_monate, 32);
+});
+
+test("Legacy-Vorkenntnisse greifen ohne neue Berufs-Felder", () => {
+  const result = berechneGesamtdauer({
+    basis_dauer_monate: 36,
+    vollzeit_stunden: 40,
+    teilzeit_eingabe: 75,
+    verkuerzungsgruende: {
+      abitur: false,
+      realschule: false,
+      alter_ueber_21: false,
+      familien_pflegeverantwortung: false,
+      familien_kinderbetreuung: false,
+      vorkenntnisse_monate: 3
+    },
+    eingabetyp: "prozent"
+  });
+
+  assert.equal(result.verkuerzung_gesamt_monate, 12);
+  assert.equal(result.verkuerzte_dauer_monate, 24);
+});
+
+test("Sonderregel §8 Abs. 3 greift nicht bei mehr als 6 Monaten", () => {
+  const result = berechneGesamtdauer({
+    basis_dauer_monate: 36,
+    vollzeit_stunden: 40,
+    teilzeit_eingabe: 83,
+    verkuerzungsgruende: defaultGruende(),
+    eingabetyp: "prozent"
+  });
+
+  assert.equal(result.finale_dauer_monate, 43);
+  assert.equal(result.regel_8_abs_3_angewendet, false);
+});
+
+test("NaN als Eingabewert wirft TypeError", () => {
+  assert.throws(
+    () => berechneGesamtdauer({
+      basis_dauer_monate: Number.NaN,
+      vollzeit_stunden: 40,
+      teilzeit_eingabe: 80,
+      verkuerzungsgruende: defaultGruende(),
+      eingabetyp: "prozent"
+    }),
+    /muss eine Zahl sein/
+  );
+});
+
+test("Infinity als Eingabewert wirft TypeError", () => {
+  assert.throws(
+    () => berechneGesamtdauer({
+      basis_dauer_monate: 36,
+      vollzeit_stunden: Number.POSITIVE_INFINITY,
+      teilzeit_eingabe: 80,
+      verkuerzungsgruende: defaultGruende(),
+      eingabetyp: "prozent"
+    }),
+    /müssen eine Zahl sein/
+  );
+});
