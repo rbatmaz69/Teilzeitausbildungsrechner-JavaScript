@@ -59,14 +59,9 @@ export default defineConfig({
 
   // Automatischer Server-Start
   webServer: {
-    command: process.env.CI ? 'python3 -m src.app 8000 > /dev/null 2>&1' : 'python -m src.app 8000 > nul 2>&1',
+    command: 'npx --yes http-server . -p 8000 -c-1 -s',
     url: 'http://localhost:8000',
     reuseExistingServer: !process.env.CI,
     timeout: 120 * 1000,
-    env: {
-      FLASK_APP: 'src/app.py',
-      FLASK_ENV: 'development',
-      PORT: '8000',
-    },
   },
 });

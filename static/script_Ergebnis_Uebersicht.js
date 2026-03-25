@@ -540,25 +540,20 @@ async function holeZusammenfassung() {
     verkuerzungsgruende
   };
 
-  const antwort = await fetch("/api/calculate", {
-    method: "POST",
-    headers: { "Content-Type": "application/json", Accept: "application/json" },
-    body: JSON.stringify(nutzdaten)
-  });
-
-  if (!antwort.ok) {
-    let nachricht = uebersetzung("errors.fetch", "Fehler beim Laden der Daten");
-    try {
-      const fehler = await antwort.json();
-      nachricht = fehler?.error?.message || nachricht;
-    } catch (error) {
-      console.warn("Fehler beim Verarbeiten der Antwort:", error);
-    }
-    throw new Error(nachricht);
+  if (typeof window.berechneGesamtdauer !== "function") {
+    throw new Error(uebersetzung("errors.fetch", "Fehler beim Laden der Daten"));
   }
 
-  const daten = await antwort.json();
-  const ergebnis = daten.result || {};  
+  let ergebnis;
+  try {
+    ergebnis = window.berechneGesamtdauer(nutzdaten);
+  } catch (error) {
+    const nachricht =
+      error && error.message
+        ? String(error.message)
+        : uebersetzung("errors.fetch", "Fehler beim Laden der Daten");
+    throw new Error(nachricht);
+  }
 
   const gesamtMonate = Number(ergebnis.finale_dauer_monate || 0);
   const verlaengerungMonate = Number(ergebnis.verlaengerung_durch_teilzeit_monate || 0);
