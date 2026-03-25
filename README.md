@@ -45,6 +45,7 @@ Es gibt kein Backend und keine API-Calls mehr.
 |- tests-js/
 |- e2e/
 |- scripts/prepare-pages.mjs
+|- scripts/start-local.mjs
 `- .github/workflows/ci-cd.yml
 ```
 
@@ -76,13 +77,22 @@ npm run test:e2e
 
 ## Lokales Starten
 
-Fuer lokale Ausfuehrung kann ein statischer Server genutzt werden:
+Empfohlen (automatischer Port-Fallback ab 8000):
 
 ```bash
-npx --yes http-server . -p 8000 -c-1 -s
+npm start
 ```
 
-Dann ist die Anwendung unter `http://localhost:8000` erreichbar.
+Der Startskript prueft Ports ab 8000 und verwendet automatisch den naechsten freien Port.
+
+Optional (fixer Port 8000):
+
+```bash
+npm run start:8000
+```
+
+Bei `start:8000` kann bei bereits belegtem Port der Fehler `EADDRINUSE` auftreten.
+In dem Fall entweder `npm start` nutzen oder einen anderen Port waehlen.
 
 ## Deployment
 

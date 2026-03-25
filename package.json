@@ -4,6 +4,8 @@
   "type": "module",
   "description": "Frontend linting tools for Teilzeitrechner",
   "scripts": {
+    "start": "node scripts/start-local.mjs",
+    "start:8000": "npx --yes http-server . -p 8000 -c-1 -s",
     "lint": "npm run lint:js && npm run lint:css && npm run lint:html",
     "lint:js": "eslint static/*.js",
     "lint:css": "stylelint static/*.css",
