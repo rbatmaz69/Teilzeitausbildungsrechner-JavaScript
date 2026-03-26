@@ -22,8 +22,8 @@ window.aktuelleSprache = () => {
   // Optional kann zusätzlich localStorage genutzt werden (überlebt Tab schließen).
   const PERSISTIERE_IN_LOCALSTORAGE = true;
 
-  // Sprachdateien liegen in /static/Sprachdateien/
-  const I18N_PFAD = "/static/Sprachdateien";
+  // Relative Aufloesung gegen aktuelle Seite vermeidet 404 auf GitHub Pages-Projektpfaden.
+  const I18N_PFAD = "./static/Sprachdateien";
 
   const zustand = {
     sprache: null,
