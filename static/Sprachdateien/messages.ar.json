@@ -226,8 +226,8 @@
     "helper_easy": "هذه هي نتيجتك.",
     "notesTitle": "معلومات مهمة",
     "notesTitle_easy": "مهم",
-    "notes": "<li>هذا الحساب هو فقط <strong>مساعدة</strong> و<strong>توجيه</strong>.</li><li>النتيجة <strong>غير ملزمة</strong>.</li><li>ناقش النتيجة مع <strong>جهة التدريب</strong>.</li><li>التدريب بدوام جزئي ممكن فقط إذا كنت تعمل <strong>على الأقل نصف</strong> ساعات التدريب المعتادة.</li>",
-    "notes_easy": "<li>هذا الحساب هو فقط <strong>مساعدة</strong>.</li><li>النتيجة <strong>غير ملزمة</strong>.</li><li>تحدث عن النتيجة مع <strong>جهة التدريب</strong>.</li><li>يجب أن تعمل <strong>على الأقل النصف</strong> من الساعات المعتادة.</li>",
+    "notes": "<li>هذا الحساب هو فقط <strong>مساعدة</strong> و<strong>توجيه</strong>.</li><li>النتيجة <strong>غير ملزمة</strong>.</li><li>يجب تنسيق <strong>جميع حالات التقصير</strong> مع <strong>جهة التدريب</strong> و<strong>الغرفة المختصة</strong>.</li><li>بغضّ النظر عن تقصير مدة التدريب، ومع <strong>الأداء الجيد</strong>، توجد إمكانية <strong>تقديم الامتحان النهائي مبكرًا</strong>.</li>",
+    "notes_easy": "<li>هذا الحساب هو فقط <strong>مساعدة</strong>.</li><li>النتيجة <strong>غير ملزمة</strong>.</li><li>يجب تنسيق <strong>جميع حالات التقصير</strong> مع <strong>جهة التدريب</strong> و<strong>الغرفة المختصة</strong>.</li><li>حتى بدون تقصير المدة، ومع <strong>الأداء الجيد</strong>، يمكنك <strong>تقديم الامتحان النهائي مبكرًا</strong>.</li>",
     "helpfulLinksTitle": "معلومات إضافية",
     "helpfulLinksTitle_easy": "مزيد من المعلومات",
     "helpfulLinks": {

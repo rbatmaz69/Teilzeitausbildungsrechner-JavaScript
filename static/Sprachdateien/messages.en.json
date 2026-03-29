@@ -226,8 +226,8 @@
     "helper_easy": "Here is your result.",
     "notesTitle": "Important information",
     "notesTitle_easy": "Important",
-    "notes": "<li>This calculation is only a <strong>help</strong> and an <strong>orientation</strong>.</li><li>The result is <strong>not binding</strong>.</li><li>Discuss the result with your <strong>training company</strong>.</li><li>Part-time training is only possible if you work <strong>at least half</strong> of the normal training hours.</li>",
-    "notes_easy": "<li>This calculation is only a <strong>help</strong>.</li><li>The result is <strong>not binding</strong>.</li><li>Talk about the result with your <strong>training company</strong>.</li><li>You must work <strong>at least half</strong> of normal hours.</li>",
+    "notes": "<li>This calculation is only a <strong>help</strong> and an <strong>orientation</strong>.</li><li>The result is <strong>not binding</strong>.</li><li><strong>All reductions</strong> must be coordinated with the <strong>training company</strong> and the <strong>competent chamber</strong>.</li><li>Regardless of any reduction in training duration, trainees with <strong>good performance</strong> may <strong>take the final examination early</strong>.</li>",
+    "notes_easy": "<li>This calculation is only a <strong>help</strong>.</li><li>The result is <strong>not binding</strong>.</li><li><strong>All reductions</strong> must be coordinated with the <strong>training company</strong> and the <strong>competent chamber</strong>.</li><li>Even without reducing the training duration, with <strong>good performance</strong> you can <strong>take the final examination early</strong>.</li>",
     "helpfulLinksTitle": "Further Information",
     "helpfulLinksTitle_easy": "More Info",
     "helpfulLinks": {

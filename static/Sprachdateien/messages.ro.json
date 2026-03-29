@@ -222,8 +222,8 @@
     "helper_easy": "Aici este rezultatul tău.",
     "notesTitle": "Informații importante",
     "notesTitle_easy": "Important",
-    "notes": "<li>Acest calcul este doar un <strong>ajutor</strong> și o <strong>orientare</strong>.</li><li>Rezultatul <strong>nu este obligatoriu</strong>.</li><li>Discută rezultatul cu <strong>firma de formare</strong>.</li><li>Formarea în timp parțial este posibilă doar dacă lucrezi <strong>cel puțin jumătate</strong> din orele normale de formare.</li>",
-    "notes_easy": "<li>Acest calcul este doar un <strong>ajutor</strong>.</li><li>Rezultatul <strong>nu este obligatoriu</strong>.</li><li>Vorbește despre rezultat cu <strong>firma</strong>.</li><li>Trebuie să lucrezi <strong>cel puțin jumătate</strong> din orele normale.</li>",
+    "notes": "<li>Acest calcul este doar un <strong>ajutor</strong> și o <strong>orientare</strong>.</li><li>Rezultatul <strong>nu este obligatoriu</strong>.</li><li><strong>Toate reducerile</strong> trebuie coordonate cu <strong>firma de formare</strong> și cu <strong>camera competentă</strong>.</li><li>Indiferent de o reducere a duratei formării, în cazul unor <strong>rezultate bune</strong> există posibilitatea de a <strong>susține mai devreme examenul final</strong>.</li>",
+    "notes_easy": "<li>Acest calcul este doar un <strong>ajutor</strong>.</li><li>Rezultatul <strong>nu este obligatoriu</strong>.</li><li><strong>Toate reducerile</strong> trebuie coordonate cu <strong>firma de formare</strong> și cu <strong>camera competentă</strong>.</li><li>Chiar și fără reducerea duratei, cu <strong>rezultate bune</strong>, poți <strong>susține mai devreme examenul final</strong>.</li>",
     "helpfulLinksTitle": "Informații suplimentare",
     "helpfulLinksTitle_easy": "Mai multe informații",
     "helpfulLinks": {

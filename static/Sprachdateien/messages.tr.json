@@ -222,8 +222,8 @@
     "helper_easy": "Burada sonucunuz var.",
     "notesTitle": "Önemli notlar",
     "notesTitle_easy": "Önemli",
-    "notes": "<li>Hesaplama sadece <strong>yardımcı</strong> ve bir <strong>kılavuz</strong> niteliğindedir.</li><li>Sonuç <strong>bağlayıcı değildir</strong>.</li><li>Sonucu <strong>eğitim yerinizle</strong> görüşün.</li><li>Yarı zamanlı eğitim, normal çalışma süresinin <strong>en az yarısını</strong> çalıştığınızda mümkündür.</li>",
-    "notes_easy": "<li>Hesaplama sadece <strong>yardımcıdır</strong>.</li><li>Sonuç <strong>bağlayıcı değildir</strong>.</li><li>Sonucu <strong>eğitim yerinizle</strong> konuşun.</li><li><strong>En az yarı</strong> normal saat çalışmalısınız.</li>",
+    "notes": "<li>Hesaplama sadece <strong>yardımcı</strong> ve bir <strong>kılavuz</strong> niteliğindedir.</li><li>Sonuç <strong>bağlayıcı değildir</strong>.</li><li><strong>Tüm kısaltmalar</strong> <strong>eğitim şirketi</strong> ve <strong>yetkili oda</strong> ile koordine edilmelidir.</li><li>Eğitim süresinin kısaltılmasından bağımsız olarak, <strong>iyi performans</strong> durumunda <strong>bitirme sınavına erken girme</strong> imkanı vardır.</li>",
+    "notes_easy": "<li>Hesaplama sadece <strong>yardımcıdır</strong>.</li><li>Sonuç <strong>bağlayıcı değildir</strong>.</li><li><strong>Tüm kısaltmalar</strong> <strong>eğitim şirketi</strong> ve <strong>yetkili oda</strong> ile koordine edilmelidir.</li><li>Süre kısaltılmasa bile, <strong>iyi performans</strong> ile <strong>bitirme sınavına erken girebilirsiniz</strong>.</li>",
     "helpfulLinksTitle": "Daha Fazla Bilgi",
     "helpfulLinksTitle_easy": "Daha Fazla Bilgi",
     "helpfulLinks": {

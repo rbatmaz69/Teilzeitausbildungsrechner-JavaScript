@@ -222,8 +222,8 @@
     "helper_easy": "Tutaj jest Twój wynik.",
     "notesTitle": "Ważne informacje",
     "notesTitle_easy": "Ważne",
-    "notes": "<li>To obliczenie jest tylko <strong>pomocą</strong> i <strong>orientacją</strong>.</li><li>Wynik <strong>nie jest wiążący</strong>.</li><li>Omów wynik ze swoją <strong>firmą szkolącą</strong>.</li><li>Kształcenie w niepełnym wymiarze jest możliwe tylko wtedy, gdy pracujesz <strong>co najmniej połowę</strong> normalnych godzin kształcenia.</li>",
-    "notes_easy": "<li>To obliczenie jest tylko <strong>pomocą</strong>.</li><li>Wynik <strong>nie jest wiążący</strong>.</li><li>Porozmawiaj o wyniku z <strong>firmą</strong>.</li><li>Musisz pracować <strong>co najmniej połowę</strong> normalnych godzin.</li>",
+    "notes": "<li>To obliczenie jest tylko <strong>pomocą</strong> i <strong>orientacją</strong>.</li><li>Wynik <strong>nie jest wiążący</strong>.</li><li><strong>Wszystkie skrócenia</strong> muszą zostać uzgodnione z <strong>zakładem szkolącym</strong> i <strong>właściwą izbą</strong>.</li><li>Niezależnie od skrócenia czasu kształcenia, przy <strong>dobrych wynikach</strong> możliwe jest <strong>wcześniejsze przystąpienie do egzaminu końcowego</strong>.</li>",
+    "notes_easy": "<li>To obliczenie jest tylko <strong>pomocą</strong>.</li><li>Wynik <strong>nie jest wiążący</strong>.</li><li><strong>Wszystkie skrócenia</strong> muszą zostać uzgodnione z <strong>zakładem szkolącym</strong> i <strong>właściwą izbą</strong>.</li><li>Nawet bez skrócenia czasu, przy <strong>dobrych wynikach</strong>, możesz <strong>wcześniej przystąpić do egzaminu końcowego</strong>.</li>",
     "helpfulLinksTitle": "Dalsze informacje",
     "helpfulLinksTitle_easy": "Więcej informacji",
     "helpfulLinks": {

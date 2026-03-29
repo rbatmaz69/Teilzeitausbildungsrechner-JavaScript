@@ -222,8 +222,8 @@
     "helper_easy": "Voici votre résultat.",
     "notesTitle": "Informations importantes",
     "notesTitle_easy": "Important",
-    "notes": "<li>Ce calcul est seulement une <strong>aide</strong> et une <strong>orientation</strong>.</li><li>Le résultat n’est <strong>pas contraignant</strong>.</li><li>Discutez du résultat avec votre <strong>entreprise formatrice</strong>.</li><li>La formation à temps partiel n’est possible que si vous travaillez <strong>au moins la moitié</strong> des heures habituelles de formation.</li>",
-    "notes_easy": "<li>Ce calcul est seulement une <strong>aide</strong>.</li><li>Le résultat n’est <strong>pas contraignant</strong>.</li><li>Parlez du résultat avec votre <strong>entreprise formatrice</strong>.</li><li>Vous devez travailler <strong>au moins la moitié</strong> du temps normal.</li>",
+    "notes": "<li>Ce calcul est seulement une <strong>aide</strong> et une <strong>orientation</strong>.</li><li>Le résultat n’est <strong>pas contraignant</strong>.</li><li><strong>Toutes les réductions</strong> doivent être concertées avec l’<strong>entreprise formatrice</strong> et la <strong>chambre compétente</strong>.</li><li>Indépendamment d’une réduction de la durée de formation, en cas de <strong>bons résultats</strong>, il est possible de <strong>passer l’examen final plus tôt</strong>.</li>",
+    "notes_easy": "<li>Ce calcul est seulement une <strong>aide</strong>.</li><li>Le résultat n’est <strong>pas contraignant</strong>.</li><li><strong>Toutes les réductions</strong> doivent être concertées avec l’<strong>entreprise formatrice</strong> et la <strong>chambre compétente</strong>.</li><li>Même sans réduction de la durée, avec de <strong>bons résultats</strong>, vous pouvez <strong>passer l’examen final plus tôt</strong>.</li>",
     "helpfulLinksTitle": "Informations complémentaires",
     "helpfulLinksTitle_easy": "Plus d'infos",
     "helpfulLinks": {

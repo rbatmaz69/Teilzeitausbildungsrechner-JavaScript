@@ -226,8 +226,8 @@
     "helper_easy": "Hier stehen Ihre Angaben und das Ergebnis.",
     "notesTitle": "Wichtige Hinweise",
     "notesTitle_easy": "Wichtige Hinweise",
-    "notes": "<li>Die Berechnung ist nur eine <strong>Hilfe</strong> und reine <strong>Orientierung</strong>.</li><li>Das Ergebnis ist <strong>nicht verbindlich</strong>.</li><li>Sprechen Sie das Ergebnis mit Ihrem <strong>Ausbildungsbetrieb</strong> ab.</li><li>Eine Teilzeitausbildung ist nur dann möglich, wenn Sie <strong>mindestens die Hälfte</strong> der normalen Ausbildungszeit arbeiten.</li>",
-    "notes_easy": "<li>Die Berechnung ist nur eine <strong>Hilfe</strong>.</li><li>Das Ergebnis ist <strong>nicht verbindlich</strong>.</li><li>Bitte mit dem <strong>Ausbildungsbetrieb</strong> besprechen.</li><li>Teilzeit geht nur, wenn Sie <strong>mindestens die Hälfte</strong> der normalen Zeit arbeiten.</li>",
+    "notes": "<li>Die Berechnung ist nur eine <strong>Hilfe</strong> und reine <strong>Orientierung</strong>.</li><li>Das Ergebnis ist <strong>nicht verbindlich</strong>.</li><li><strong>Alle Verkürzungen</strong> müssen mit dem <strong>Ausbildungsunternehmen</strong> und der <strong>zuständigen Kammer</strong> abgestimmt werden.</li><li>Unabhängig von einer Verkürzung der Ausbildungszeit besteht während der Ausbildung bei <strong>guten Leistungen</strong> die Möglichkeit, die <strong>Abschlussprüfung vorzuziehen</strong>.</li>",
+    "notes_easy": "<li>Die Berechnung ist nur eine <strong>Hilfe</strong>.</li><li>Das Ergebnis ist <strong>nicht verbindlich</strong>.</li><li><strong>Alle Verkürzungen</strong> müssen mit dem <strong>Ausbildungsunternehmen</strong> und der <strong>zuständigen Kammer</strong> abgestimmt werden.</li><li>Auch ohne Verkürzung können Sie bei <strong>guten Leistungen</strong> die <strong>Abschlussprüfung vorziehen</strong>.</li>",
     "helpfulLinksTitle": "Weiterführende Informationen",
     "helpfulLinksTitle_easy": "Weitere Infos",
     "helpfulLinks": {
