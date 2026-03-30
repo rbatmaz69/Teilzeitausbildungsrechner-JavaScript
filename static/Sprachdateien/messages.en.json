@@ -235,7 +235,7 @@
     "helpfulLinks": {
       "arbeitsagentur": {
         "title": "Federal Employment Agency",
-        "title_easy": "Employment Agency",
+        "title_easy": "Federal Employment Agency",
         "desc": "General information about training and career counseling.",
         "desc_easy": "Info about training and counseling."
       },
@@ -250,6 +250,12 @@
         "title_easy": "Part-Time Training Network",
         "desc": "Specialized advice and support for part-time training.",
         "desc_easy": "Advice for part-time training."
+      },
+      "flyer": {
+        "title": "Flyer: Part-time training - how it works (PDF)",
+        "title_easy": "Flyer: Part-time training - how it works (PDF)",
+        "desc": "Requirements, models, and support options at a glance.",
+        "desc_easy": "Overview: requirements, models, and support for part-time training."
       }
     },
     "legalTitle": "Legal Basis",

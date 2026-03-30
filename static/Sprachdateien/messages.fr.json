@@ -231,7 +231,7 @@
     "helpfulLinks": {
       "arbeitsagentur": {
         "title": "Agence fédérale pour l'emploi",
-        "title_easy": "Agence pour l'emploi",
+        "title_easy": "Agence fédérale pour l'emploi",
         "desc": "Informations générales sur la formation et le conseil professionnel.",
         "desc_easy": "Infos sur la formation et le conseil."
       },
@@ -246,6 +246,12 @@
         "title_easy": "Réseau formation temps partiel",
         "desc": "Conseils spécialisés et soutien pour la formation à temps partiel.",
         "desc_easy": "Conseils pour formation à temps partiel."
+      },
+      "flyer": {
+        "title": "Flyer : Formation à temps partiel - comment faire (PDF)",
+        "title_easy": "Flyer : Formation à temps partiel - comment faire (PDF)",
+        "desc": "Conditions, modèles et aides disponibles en un coup d'oeil.",
+        "desc_easy": "Conditions, modèles et aides pour la formation à temps partiel."
       }
     },
     "legalTitle": "Base légale",

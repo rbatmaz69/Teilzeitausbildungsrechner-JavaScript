@@ -235,7 +235,7 @@
     "helpfulLinks": {
       "arbeitsagentur": {
         "title": "Bundesagentur für Arbeit",
-        "title_easy": "Arbeitsagentur",
+        "title_easy": "Bundesagentur für Arbeit",
         "desc": "Allgemeine Informationen zu Ausbildung und Berufsberatung.",
         "desc_easy": "Infos zu Ausbildung und Beratung."
       },
@@ -250,6 +250,12 @@
         "title_easy": "Netzwerk Teilzeitausbildung",
         "desc": "Spezialisierte Beratung und Unterstützung zur Teilzeitausbildung.",
         "desc_easy": "Beratung zur Teilzeitausbildung."
+      },
+      "flyer": {
+        "title": "Flyer: Teilzeitausbildung - so geht's (PDF)",
+        "title_easy": "Flyer: Teilzeitausbildung - so geht's (PDF)",
+        "desc": "Voraussetzungen, Modelle und Unterstützungsmöglichkeiten auf einen Blick.",
+        "desc_easy": "Voraussetzungen, Modelle und Hilfen zur Teilzeitausbildung."
       }
     },
     "legalTitle": "Gesetzliche Grundlagen",

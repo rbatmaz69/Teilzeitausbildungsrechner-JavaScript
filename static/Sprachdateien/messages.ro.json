@@ -231,7 +231,7 @@
     "helpfulLinks": {
       "arbeitsagentur": {
         "title": "Agenția Federală pentru Ocuparea Forței de Muncă",
-        "title_easy": "Agenția pentru Ocupare",
+        "title_easy": "Agenția Federală pentru Ocuparea Forței de Muncă",
         "desc": "Informații generale despre formare și consiliere profesională.",
         "desc_easy": "Informații despre formare și consiliere."
       },
@@ -246,6 +246,12 @@
         "title_easy": "Rețeaua de Formare",
         "desc": "Consiliere specializată și suport pentru formarea cu fracțiune de normă.",
         "desc_easy": "Consiliere pentru formarea cu fracțiune de normă."
+      },
+      "flyer": {
+        "title": "Flyer: Formarea cu fracțiune de normă - cum funcționează (PDF)",
+        "title_easy": "Flyer: Formarea cu fracțiune de normă - cum funcționează (PDF)",
+        "desc": "Cerințe, modele și opțiuni de sprijin dintr-o privire.",
+        "desc_easy": "Cerințe, modele și sprijin pentru formarea cu fracțiune de normă."
       }
     },
     "legalTitle": "Bază legală",

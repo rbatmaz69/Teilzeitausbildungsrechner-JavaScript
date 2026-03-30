@@ -231,7 +231,7 @@
     "helpfulLinks": {
       "arbeitsagentur": {
         "title": "Federal İstihdam Ajansı",
-        "title_easy": "İstihdam Ajansı",
+        "title_easy": "Federal İstihdam Ajansı",
         "desc": "Eğitim ve kariyer danışmanlığı hakkında genel bilgiler.",
         "desc_easy": "Eğitim ve danışmanlık hakkında bilgi."
       },
@@ -246,6 +246,12 @@
         "title_easy": "Yarı Zamanlı Eğitim Ağı",
         "desc": "Yarı zamanlı eğitim için özel danışmanlık ve destek.",
         "desc_easy": "Yarı zamanlı eğitim için danışmanlık."
+      },
+      "flyer": {
+        "title": "Broşür: Yarı zamanlı eğitim - nasıl olur (PDF)",
+        "title_easy": "Broşür: Yarı zamanlı eğitim - nasıl olur (PDF)",
+        "desc": "Koşullar, modeller ve destek seçenekleri bir bakışta.",
+        "desc_easy": "Koşullar, modeller ve destek için yarı zamanlı eğitim."
       }
     },
     "legalTitle": "Yasal Dayanak",

@@ -231,7 +231,7 @@
     "helpfulLinks": {
       "arbeitsagentur": {
         "title": "Federalna Agencja Pracy",
-        "title_easy": "Agencja Pracy",
+        "title_easy": "Federalna Agencja Pracy",
         "desc": "Ogólne informacje o szkoleniu i doradztwie zawodowym.",
         "desc_easy": "Informacje o szkoleniu i doradztwie."
       },
@@ -246,6 +246,12 @@
         "title_easy": "Sieć Szkolenia w Niepełnym Wymiarze",
         "desc": "Specjalistyczne doradztwo i wsparcie dla szkolenia w niepełnym wymiarze godzin.",
         "desc_easy": "Doradztwo dla szkolenia w niepełnym wymiarze."
+      },
+      "flyer": {
+        "title": "Ulotka: Szkolenie w niepełnym wymiarze - jak to działa (PDF)",
+        "title_easy": "Ulotka: Szkolenie w niepełnym wymiarze - jak to działa (PDF)",
+        "desc": "Wymagania, modele i możliwości wsparcia w skrócie.",
+        "desc_easy": "Wymagania, modele i wsparcie w szkoleniu w niepełnym wymiarze."
       }
     },
     "legalTitle": "Podstawa prawna",
