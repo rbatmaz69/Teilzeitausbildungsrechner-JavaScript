@@ -456,27 +456,21 @@
       "suffix": " łatwo",
       "suffix_easy": " łatwo"
     },
-    "description": "Kalkulator pomaga sprawdzić, czy możesz odbyć kształcenie w formie częściowego etatu oraz czy istnieją możliwości skrócenia czasu trwania kształcenia.",
-    "description_easy": "Kalkulator pokazuje, czy możesz odbyć kształcenie w niepełnym wymiarze godzin. Sprawdza również, czy możliwe jest skrócenie czasu trwania kształcenia.",
+    "description": "Kalkulator pomaga sprawdzić, czy kształcenie zawodowe w niepełnym wymiarze jest dla Ciebie możliwe oraz czy czas trwania kształcenia można skrócić.<br><br>Dualne kształcenie zawodowe w niepełnym wymiarze pozwala uzyskać w pełni uznawany zawód przy mniejszej liczbie godzin pracy w zakładzie. Ponieważ w trybie niepełnym realizuje się mniej godzin praktycznych tygodniowo, całkowity czas trwania kształcenia się wydłuża. Kalkulator pokazuje, o ile miesięcy się wydłuża.",
+    "description_easy": "Kalkulator pomaga sprawdzić, czy kształcenie zawodowe w niepełnym wymiarze jest dla Ciebie możliwe i czy czas nauki można skrócić.<br><br>W dualnym kształceniu w niepełnym wymiarze pracujesz mniej godzin w firmie, ale nadal możesz zdobyć uznawany zawód. Ponieważ masz mniej godzin praktyki w tygodniu, nauka trwa dłużej. Kalkulator pokazuje, o ile miesięcy czas się wydłuża.",
     "benefitsTitle": "Zalety kalkulatora",
     "benefitsTitle_easy": "Zalety",
     "card1": {
-      "title": "Elastyczne godziny",
-      "title_easy": "Elastyczne godziny",
-      "subtitle": "Indywidualne planowanie",
-      "subtitle_easy": "Ty wybierasz czas"
+      "title": "Elastyczne godziny pracy",
+      "title_easy": "Elastyczne godziny pracy"
     },
     "card2": {
-      "title": "Dokładne planowanie",
-      "title_easy": "Dobre planowanie",
-      "subtitle": "Precyzyjne obliczenia",
-      "subtitle_easy": "Dokładne obliczenia"
+      "title": "Realistyczny czas trwania",
+      "title_easy": "Realistyczny czas trwania"
     },
     "card3": {
-      "title": "Szybsze ukończenie",
-      "title_easy": "Dobre zakończenie",
-      "subtitle": "Jasna ścieżka",
-      "subtitle_easy": "Jasna droga"
+      "title": "Pomyślne ukończenie",
+      "title_easy": "Pomyślne ukończenie"
     },
     "button": "Do kalkulatora",
     "button_easy": "Do kalkulatora"

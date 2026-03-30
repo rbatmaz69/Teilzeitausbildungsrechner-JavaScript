@@ -460,27 +460,21 @@
       "suffix": " easily",
       "suffix_easy": " easily"
     },
-      "description": "The calculator helps you check whether you can complete your vocational training part-time and whether options exist to shorten the training period.",
-      "description_easy": "The calculator shows whether you can do your vocational training part-time. It also checks whether shortening the training period may be possible.",
+      "description": "The calculator helps you check whether part-time vocational training is possible for you and whether the training duration can be shortened.<br><br>Dual part-time vocational training allows you to achieve a fully recognized vocational qualification with fewer working hours at the company. Since fewer practical hours are completed per week in part-time training, the overall duration of training increases. With the calculator, you can see by how many months it increases.",
+      "description_easy": "The calculator helps you check whether part-time vocational training is possible for you and whether the training duration can be shortened.<br><br>In dual part-time training, you work fewer hours at the company and can still get a fully recognized qualification. Because you complete fewer practical hours per week, the training takes longer overall. The calculator shows by how many months the duration increases.",
     "benefitsTitle": "Benefits of the calculator",
     "benefitsTitle_easy": "Benefits",
     "card1": {
-      "title": "Flexible hours",
-      "title_easy": "Flexible hours",
-      "subtitle": "Individual time planning",
-      "subtitle_easy": "You choose your time"
+      "title": "Flexible working hours",
+      "title_easy": "Flexible working hours"
     },
     "card2": {
-      "title": "Accurate planning",
-      "title_easy": "Good planning",
-      "subtitle": "Precise calculation",
-      "subtitle_easy": "Precise calculation"
+      "title": "Realistic duration",
+      "title_easy": "Realistic duration"
     },
     "card3": {
       "title": "Successful completion",
-      "title_easy": "Successful finish",
-      "subtitle": "Structured path",
-      "subtitle_easy": "Clear path"
+      "title_easy": "Successful completion"
     },
     "button": "To calculator",
     "button_easy": "To calculator"

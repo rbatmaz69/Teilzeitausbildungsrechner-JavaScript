@@ -460,27 +460,21 @@
       "suffix": " ganz einfach",
       "suffix_easy": " ganz einfach"
     },
-    "description": "Der Rechner hilft Ihnen dabei zu prüfen, ob Sie Ihre Ausbildung in Teilzeit absolvieren können und ob sich Möglichkeiten zur Verkürzung der Ausbildungsdauer ergeben.",
-    "description_easy": "Der Rechner zeigt Ihnen, ob Sie Ihre Ausbildung in Teilzeit machen können. Er prüft auch, ob eine Verkürzung der Ausbildungsdauer möglich ist.",
+    "description": "Der Rechner hilft Ihnen zu prüfen, ob eine Teilzeitausbildung für Sie möglich ist und ob sich die Ausbildungsdauer verkürzen lässt.<br><br>Eine duale Teilzeitausbildung ermöglicht es Ihnen, mit weniger Arbeitszeit im Betrieb einen voll anerkannten Berufsabschluss zu erreichen. Da in Teilzeit pro Woche weniger Praxisstunden anfallen, verlängert sich die Gesamtdauer der Ausbildung. Mit dem Rechner sehen Sie, um wie viele Monate sich diese verlängert.",
+    "description_easy": "Der Rechner hilft Ihnen zu prüfen, ob eine Teilzeitausbildung für Sie möglich ist und ob sich die Ausbildungsdauer verkürzen kann.<br><br>Bei einer dualen Teilzeitausbildung arbeiten Sie im Betrieb weniger und können trotzdem einen voll anerkannten Berufsabschluss machen. Weil Sie pro Woche weniger Praxisstunden arbeiten, dauert die Ausbildung insgesamt länger. Der Rechner zeigt Ihnen, um wie viele Monate sich die Ausbildung verlängert.",
     "benefitsTitle": "Vorteile des Rechners",
     "benefitsTitle_easy": "Vorteile",
     "card1": {
-      "title": "Flexible Zeiten",
-      "title_easy": "Flexible Zeiten",
-      "subtitle": "Individuelle Stundenplanung",
-      "subtitle_easy": "Stunden passend planen"
+      "title": "Flexible Arbeitszeiten",
+      "title_easy": "Flexible Arbeitszeiten"
     },
     "card2": {
-      "title": "Genaue Planung",
-      "title_easy": "Genaue Planung",
-      "subtitle": "Präzise Berechnung",
-      "subtitle_easy": "Genau rechnen"
+      "title": "Realistische Dauer",
+      "title_easy": "Realistische Dauer"
     },
     "card3": {
       "title": "Erfolgreicher Abschluss",
-      "title_easy": "Erfolgreicher Abschluss",
-      "subtitle": "Strukturierter Weg",
-      "subtitle_easy": "Gut geplant zum Abschluss"
+      "title_easy": "Erfolgreicher Abschluss"
     },
     "button": "Zum Rechner",
     "button_easy": "Zum Rechner"
