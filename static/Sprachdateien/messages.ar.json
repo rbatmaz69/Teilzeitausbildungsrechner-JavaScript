@@ -227,15 +227,23 @@
     "notesTitle": "معلومات مهمة",
     "notesTitle_easy": "مهم",
     "notes": "<li>هذا الحساب هو فقط <strong>مساعدة</strong> و<strong>توجيه</strong>.</li><li>النتيجة <strong>غير ملزمة</strong>.</li><li>يجب تنسيق <strong>جميع حالات التقصير</strong> مع <strong>جهة التدريب</strong> و<strong>الغرفة المختصة</strong>.</li><li>بغضّ النظر عن تقصير مدة التدريب، ومع <strong>الأداء الجيد</strong>، توجد إمكانية <strong>تقديم الامتحان النهائي مبكرًا</strong>.</li>",
-    "notes_easy": "<li>هذا الحساب هو فقط <strong>مساعدة</strong>.</li><li>النتيجة <strong>غير ملزمة</strong>.</li><li>يجب تنسيق <strong>جميع حالات التقصير</strong> مع <strong>جهة التدريب</strong> و<strong>الغرفة المختصة</strong>.</li><li>حتى بدون تقصير المدة، ومع <strong>الأداء الجيد</strong>، يمكنك <strong>تقديم الامتحان النهائي مبكرًا</strong>.</li>",
+    "notes_easy": "<li>هذا الحساب هو فقط <strong>مساعدة</strong>.</li><li>النتيجة <strong>غير ملزمة</strong>.</li><li>يجب تنسيق <strong>جميع حالات التقصير</strong> مع <strong>جهة التدريب</strong> و<strong>الغرفة المختصة</strong>.</li><li>مع <strong>الأداء الجيد</strong> يمكنك <strong>تقديم الامتحان النهائي مبكرًا</strong>.</li>",
     "helpfulLinksTitle": "معلومات إضافية",
     "helpfulLinksTitle_easy": "مزيد من المعلومات",
+    "helpfulLinksNotice": "<li>للحصول على <strong>استشارة شخصية</strong> بشأن التدريب بدوام جزئي، يُرجى التواصل مع <strong>وكالة التوظيف الفيدرالية</strong>.</li>",
+    "helpfulLinksNotice_easy": "<li>للحصول على <strong>استشارة شخصية</strong> تواصل مع <strong>وكالة التوظيف الفيدرالية</strong>.</li>",
     "helpfulLinks": {
       "arbeitsagentur": {
         "title": "وكالة التوظيف الفيدرالية",
         "title_easy": "وكالة التوظيف",
         "desc": "معلومات عامة عن التدريب والإرشاد المهني.",
         "desc_easy": "معلومات عن التدريب والإرشاد."
+      },
+      "rdbw": {
+        "title": "المديرية الإقليمية بادن-فورتمبيرغ",
+        "title_easy": "المديرية الإقليمية BW",
+        "desc": "جهات الاتصال في بادن-فورتمبيرغ.",
+        "desc_easy": "جهات اتصال المديرية الإقليمية BW."
       },
       "netzwerk": {
         "title": "شبكة التدريب بدوام جزئي",

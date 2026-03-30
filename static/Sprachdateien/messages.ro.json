@@ -223,15 +223,23 @@
     "notesTitle": "Informații importante",
     "notesTitle_easy": "Important",
     "notes": "<li>Acest calcul este doar un <strong>ajutor</strong> și o <strong>orientare</strong>.</li><li>Rezultatul <strong>nu este obligatoriu</strong>.</li><li><strong>Toate reducerile</strong> trebuie coordonate cu <strong>firma de formare</strong> și cu <strong>camera competentă</strong>.</li><li>Indiferent de o reducere a duratei formării, în cazul unor <strong>rezultate bune</strong> există posibilitatea de a <strong>susține mai devreme examenul final</strong>.</li>",
-    "notes_easy": "<li>Acest calcul este doar un <strong>ajutor</strong>.</li><li>Rezultatul <strong>nu este obligatoriu</strong>.</li><li><strong>Toate reducerile</strong> trebuie coordonate cu <strong>firma de formare</strong> și cu <strong>camera competentă</strong>.</li><li>Chiar și fără reducerea duratei, cu <strong>rezultate bune</strong>, poți <strong>susține mai devreme examenul final</strong>.</li>",
+    "notes_easy": "<li>Acest calcul este doar un <strong>ajutor</strong>.</li><li>Rezultatul <strong>nu este obligatoriu</strong>.</li><li><strong>Toate reducerile</strong> trebuie coordonate cu <strong>firma de formare</strong> și cu <strong>camera competentă</strong>.</li><li>Cu <strong>rezultate bune</strong>, poți <strong>susține mai devreme examenul final</strong>.</li>",
     "helpfulLinksTitle": "Informații suplimentare",
     "helpfulLinksTitle_easy": "Mai multe informații",
+    "helpfulLinksNotice": "<li>Pentru <strong>consiliere personală</strong> privind formarea cu fracțiune de normă, vă rugăm să contactați <strong>Agenția Federală pentru Ocuparea Forței de Muncă</strong>.</li>",
+    "helpfulLinksNotice_easy": "<li>Pentru <strong>consiliere personală</strong>, contactați <strong>Agenția Federală pentru Ocuparea Forței de Muncă</strong>.</li>",
     "helpfulLinks": {
       "arbeitsagentur": {
         "title": "Agenția Federală pentru Ocuparea Forței de Muncă",
         "title_easy": "Agenția pentru Ocupare",
         "desc": "Informații generale despre formare și consiliere profesională.",
         "desc_easy": "Informații despre formare și consiliere."
+      },
+      "rdbw": {
+        "title": "Direcția Regională Baden-Württemberg",
+        "title_easy": "Direcția Regională BW",
+        "desc": "Persoane de contact în Baden-Württemberg.",
+        "desc_easy": "Contacte ale direcției regionale BW."
       },
       "netzwerk": {
         "title": "Rețeaua de Formare cu Fracțiune de Normă",

@@ -227,15 +227,23 @@
     "notesTitle": "Wichtige Hinweise",
     "notesTitle_easy": "Wichtige Hinweise",
     "notes": "<li>Die Berechnung ist nur eine <strong>Hilfe</strong> und reine <strong>Orientierung</strong>.</li><li>Das Ergebnis ist <strong>nicht verbindlich</strong>.</li><li><strong>Alle Verkürzungen</strong> müssen mit dem <strong>Ausbildungsunternehmen</strong> und der <strong>zuständigen Kammer</strong> abgestimmt werden.</li><li>Unabhängig von einer Verkürzung der Ausbildungszeit besteht während der Ausbildung bei <strong>guten Leistungen</strong> die Möglichkeit, die <strong>Abschlussprüfung vorzuziehen</strong>.</li>",
-    "notes_easy": "<li>Die Berechnung ist nur eine <strong>Hilfe</strong>.</li><li>Das Ergebnis ist <strong>nicht verbindlich</strong>.</li><li><strong>Alle Verkürzungen</strong> müssen mit dem <strong>Ausbildungsunternehmen</strong> und der <strong>zuständigen Kammer</strong> abgestimmt werden.</li><li>Auch ohne Verkürzung können Sie bei <strong>guten Leistungen</strong> die <strong>Abschlussprüfung vorziehen</strong>.</li>",
+    "notes_easy": "<li>Die Berechnung ist nur eine <strong>Hilfe</strong>.</li><li>Das Ergebnis ist <strong>nicht verbindlich</strong>.</li><li><strong>Alle Verkürzungen</strong> müssen mit dem <strong>Ausbildungsunternehmen</strong> und der <strong>Kammer</strong> besprochen werden.</li><li>Bei <strong>guten Leistungen</strong> können Sie die <strong>Abschlussprüfung früher</strong> machen.</li>",
     "helpfulLinksTitle": "Weiterführende Informationen",
     "helpfulLinksTitle_easy": "Weitere Infos",
+    "helpfulLinksNotice": "<li>Für eine <strong>persönliche Beratung</strong> zur Teilzeitausbildung wenden Sie sich bitte an die <strong>Bundesagentur für Arbeit</strong>.</li>",
+    "helpfulLinksNotice_easy": "<li>Für <strong>persönliche Beratung</strong> zur Teilzeitausbildung hilft die <strong>Bundesagentur für Arbeit</strong>.</li>",
     "helpfulLinks": {
       "arbeitsagentur": {
         "title": "Bundesagentur für Arbeit",
         "title_easy": "Arbeitsagentur",
         "desc": "Allgemeine Informationen zu Ausbildung und Berufsberatung.",
         "desc_easy": "Infos zu Ausbildung und Beratung."
+      },
+      "rdbw": {
+        "title": "Regionaldirektion Baden-Württemberg",
+        "title_easy": "Regionaldirektion Baden-Württemberg",
+        "desc": "Ansprechpartnerinnen und Ansprechpartner in Baden-Württemberg.",
+        "desc_easy": "Kontakte der Regionaldirektion Baden-Württemberg."
       },
       "netzwerk": {
         "title": "Netzwerk Teilzeitausbildung",

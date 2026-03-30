@@ -227,15 +227,23 @@
     "notesTitle": "Important information",
     "notesTitle_easy": "Important",
     "notes": "<li>This calculation is only a <strong>help</strong> and an <strong>orientation</strong>.</li><li>The result is <strong>not binding</strong>.</li><li><strong>All reductions</strong> must be coordinated with the <strong>training company</strong> and the <strong>competent chamber</strong>.</li><li>Regardless of any reduction in training duration, trainees with <strong>good performance</strong> may <strong>take the final examination early</strong>.</li>",
-    "notes_easy": "<li>This calculation is only a <strong>help</strong>.</li><li>The result is <strong>not binding</strong>.</li><li><strong>All reductions</strong> must be coordinated with the <strong>training company</strong> and the <strong>competent chamber</strong>.</li><li>Even without reducing the training duration, with <strong>good performance</strong> you can <strong>take the final examination early</strong>.</li>",
+    "notes_easy": "<li>This calculation is only a <strong>help</strong>.</li><li>The result is <strong>not binding</strong>.</li><li><strong>All reductions</strong> must be coordinated with the <strong>training company</strong> and the <strong>competent chamber</strong>.</li><li>With <strong>good performance</strong>, you can <strong>take the final examination earlier</strong>.</li>",
     "helpfulLinksTitle": "Further Information",
     "helpfulLinksTitle_easy": "More Info",
+    "helpfulLinksNotice": "<li>For <strong>personal advice</strong> on part-time training, please contact the <strong>Federal Employment Agency</strong>.</li>",
+    "helpfulLinksNotice_easy": "<li>For <strong>personal advice</strong> on part-time training, contact the <strong>Federal Employment Agency</strong>.</li>",
     "helpfulLinks": {
       "arbeitsagentur": {
         "title": "Federal Employment Agency",
         "title_easy": "Employment Agency",
         "desc": "General information about training and career counseling.",
         "desc_easy": "Info about training and counseling."
+      },
+      "rdbw": {
+        "title": "Regional Directorate Baden-Wuerttemberg",
+        "title_easy": "Regional Directorate BW",
+        "desc": "Relevant contacts in Baden-Wuerttemberg.",
+        "desc_easy": "Contacts of the Regional Directorate BW."
       },
       "netzwerk": {
         "title": "Part-Time Training Network",
