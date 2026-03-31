@@ -1,9 +1,25 @@
 import { createServer } from "node:net";
 import { spawn } from "node:child_process";
+import { networkInterfaces } from "node:os";
 
 const HOST = "0.0.0.0";
 const START_PORT = 8000;
 const MAX_ATTEMPTS = 50;
+
+function getLanIpv4Addresses() {
+  const interfaces = networkInterfaces();
+  const lanAddresses = [];
+
+  for (const details of Object.values(interfaces)) {
+    for (const entry of details ?? []) {
+      if (entry.family === "IPv4" && !entry.internal) {
+        lanAddresses.push(entry.address);
+      }
+    }
+  }
+
+  return [...new Set(lanAddresses)];
+}
 
 function isPortFree(port) {
   return new Promise((resolve) => {
@@ -46,9 +62,31 @@ async function main() {
 
   console.log(`Starting local server on http://localhost:${port}`);
 
+  const lanAddresses = getLanIpv4Addresses();
+
+  for (const address of lanAddresses) {
+    console.log(`Mobile/LAN URL: http://${address}:${port}`);
+  }
+
+  if (lanAddresses.length === 0) {
+    console.log(
+      "No LAN IPv4 address found. Ensure your computer is connected to Wi-Fi or Ethernet."
+    );
+  }
+
   const child = spawn(
     "npx",
-    ["--yes", "http-server", ".", "-p", String(port), "-c-1", "-s"],
+    [
+      "--yes",
+      "http-server",
+      ".",
+      "-a",
+      HOST,
+      "-p",
+      String(port),
+      "-c-1",
+      "-s"
+    ],
     {
       stdio: "inherit",
       shell: process.platform === "win32"

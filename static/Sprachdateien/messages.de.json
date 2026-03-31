@@ -226,22 +226,36 @@
     "helper_easy": "Hier stehen Ihre Angaben und das Ergebnis.",
     "notesTitle": "Wichtige Hinweise",
     "notesTitle_easy": "Wichtige Hinweise",
-    "notes": "<li>Die Berechnung ist nur eine <strong>Hilfe</strong> und reine <strong>Orientierung</strong>.</li><li>Das Ergebnis ist <strong>nicht verbindlich</strong>.</li><li>Sprechen Sie das Ergebnis mit Ihrem <strong>Ausbildungsbetrieb</strong> ab.</li><li>Eine Teilzeitausbildung ist nur dann möglich, wenn Sie <strong>mindestens die Hälfte</strong> der normalen Ausbildungszeit arbeiten.</li>",
-    "notes_easy": "<li>Die Berechnung ist nur eine <strong>Hilfe</strong>.</li><li>Das Ergebnis ist <strong>nicht verbindlich</strong>.</li><li>Bitte mit dem <strong>Ausbildungsbetrieb</strong> besprechen.</li><li>Teilzeit geht nur, wenn Sie <strong>mindestens die Hälfte</strong> der normalen Zeit arbeiten.</li>",
+    "notes": "<li>Die Berechnung ist nur eine <strong>Hilfe</strong> und reine <strong>Orientierung</strong>.</li><li>Das Ergebnis ist <strong>nicht verbindlich</strong>.</li><li><strong>Alle Verkürzungen</strong> müssen mit dem <strong>Ausbildungsunternehmen</strong> und der <strong>zuständigen Kammer</strong> abgestimmt werden.</li><li>Unabhängig von einer Verkürzung der Ausbildungszeit besteht während der Ausbildung bei <strong>guten Leistungen</strong> die Möglichkeit, die <strong>Abschlussprüfung vorzuziehen</strong>.</li>",
+    "notes_easy": "<li>Die Berechnung ist nur eine <strong>Hilfe</strong>.</li><li>Das Ergebnis ist <strong>nicht verbindlich</strong>.</li><li><strong>Alle Verkürzungen</strong> müssen mit dem <strong>Ausbildungsunternehmen</strong> und der <strong>Kammer</strong> besprochen werden.</li><li>Bei <strong>guten Leistungen</strong> können Sie die <strong>Abschlussprüfung früher</strong> machen.</li>",
     "helpfulLinksTitle": "Weiterführende Informationen",
     "helpfulLinksTitle_easy": "Weitere Infos",
+    "helpfulLinksNotice": "<li>Für eine <strong>persönliche Beratung</strong> zur Teilzeitausbildung wenden Sie sich bitte an die <strong>Bundesagentur für Arbeit</strong>.</li>",
+    "helpfulLinksNotice_easy": "<li>Für <strong>persönliche Beratung</strong> zur Teilzeitausbildung hilft die <strong>Bundesagentur für Arbeit</strong>.</li>",
     "helpfulLinks": {
       "arbeitsagentur": {
         "title": "Bundesagentur für Arbeit",
-        "title_easy": "Arbeitsagentur",
+        "title_easy": "Bundesagentur für Arbeit",
         "desc": "Allgemeine Informationen zu Ausbildung und Berufsberatung.",
         "desc_easy": "Infos zu Ausbildung und Beratung."
+      },
+      "rdbw": {
+        "title": "Regionaldirektion Baden-Württemberg",
+        "title_easy": "Regionaldirektion Baden-Württemberg",
+        "desc": "Ansprechpartnerinnen und Ansprechpartner in Baden-Württemberg.",
+        "desc_easy": "Kontakte der Regionaldirektion Baden-Württemberg."
       },
       "netzwerk": {
         "title": "Netzwerk Teilzeitausbildung",
         "title_easy": "Netzwerk Teilzeitausbildung",
         "desc": "Spezialisierte Beratung und Unterstützung zur Teilzeitausbildung.",
         "desc_easy": "Beratung zur Teilzeitausbildung."
+      },
+      "flyer": {
+        "title": "Flyer: Teilzeitausbildung - so geht's (PDF)",
+        "title_easy": "Flyer: Teilzeitausbildung - so geht's (PDF)",
+        "desc": "Voraussetzungen, Modelle und Unterstützungsmöglichkeiten auf einen Blick.",
+        "desc_easy": "Voraussetzungen, Modelle und Hilfen zur Teilzeitausbildung."
       }
     },
     "legalTitle": "Gesetzliche Grundlagen",
@@ -446,27 +460,21 @@
       "suffix": " ganz einfach",
       "suffix_easy": " ganz einfach"
     },
-    "description": "Der Rechner hilft Ihnen dabei zu prüfen, ob Sie Ihre Ausbildung in Teilzeit absolvieren können und ob sich Möglichkeiten zur Verkürzung der Ausbildungsdauer ergeben.",
-    "description_easy": "Der Rechner zeigt Ihnen, ob Sie Ihre Ausbildung in Teilzeit machen können. Er prüft auch, ob eine Verkürzung der Ausbildungsdauer möglich ist.",
+    "description": "Der Rechner hilft Ihnen zu prüfen, ob eine Teilzeitausbildung für Sie möglich ist und ob sich die Ausbildungsdauer verkürzen lässt.<br><br>Eine duale Teilzeitausbildung ermöglicht es Ihnen, mit weniger Arbeitszeit im Betrieb einen voll anerkannten Berufsabschluss zu erreichen. Da in Teilzeit pro Woche weniger Praxisstunden anfallen, verlängert sich die Gesamtdauer der Ausbildung. Mit dem Rechner sehen Sie, um wie viele Monate sich diese verlängert.",
+    "description_easy": "Der Rechner hilft Ihnen zu prüfen, ob eine Teilzeitausbildung für Sie möglich ist und ob sich die Ausbildungsdauer verkürzen kann.<br><br>Bei einer dualen Teilzeitausbildung arbeiten Sie im Betrieb weniger und können trotzdem einen voll anerkannten Berufsabschluss machen. Weil Sie pro Woche weniger Praxisstunden arbeiten, dauert die Ausbildung insgesamt länger. Der Rechner zeigt Ihnen, um wie viele Monate sich die Ausbildung verlängert.",
     "benefitsTitle": "Vorteile des Rechners",
     "benefitsTitle_easy": "Vorteile",
     "card1": {
-      "title": "Flexible Zeiten",
-      "title_easy": "Flexible Zeiten",
-      "subtitle": "Individuelle Stundenplanung",
-      "subtitle_easy": "Stunden passend planen"
+      "title": "Flexible Arbeitszeiten",
+      "title_easy": "Flexible Arbeitszeiten"
     },
     "card2": {
-      "title": "Genaue Planung",
-      "title_easy": "Genaue Planung",
-      "subtitle": "Präzise Berechnung",
-      "subtitle_easy": "Genau rechnen"
+      "title": "Realistische Dauer",
+      "title_easy": "Realistische Dauer"
     },
     "card3": {
       "title": "Erfolgreicher Abschluss",
-      "title_easy": "Erfolgreicher Abschluss",
-      "subtitle": "Strukturierter Weg",
-      "subtitle_easy": "Gut geplant zum Abschluss"
+      "title_easy": "Erfolgreicher Abschluss"
     },
     "button": "Zum Rechner",
     "button_easy": "Zum Rechner"

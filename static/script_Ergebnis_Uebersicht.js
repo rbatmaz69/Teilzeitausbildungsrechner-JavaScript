@@ -271,7 +271,7 @@ function collectVerkuerzungsgruende() {
   const alterInput = document.getElementById("alter");
   if (alterInput) {
     const alterInt = parseInt(alterInput.value);
-    if (!isNaN(alterInt) && alterInt > 21) {
+    if (!isNaN(alterInt) && alterInt >= 21) {
       result.alter_ueber_21 = true;
     }
   }

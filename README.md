@@ -136,3 +136,5 @@ Die GitHub-Workflow-Datei `.github/workflows/ci-cd.yml` fuehrt aus:
 
 - Die Berechnung ist eine Orientierungshilfe.
 - Rechtlich verbindliche Entscheidungen erfolgen durch Ausbildungsbetrieb und zustaendige Kammer.
+- Der Flyer-Link `Teilzeitausbildung - so geht's (PDF)` wird im Bereich der weiterfuehrenden Informationen angezeigt.
+- Bitte den Flyer-Link regelmaessig pruefen und bei einer neuen PDF-Version in `index.html` aktualisieren.
