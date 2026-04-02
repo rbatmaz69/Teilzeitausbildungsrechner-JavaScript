@@ -2055,14 +2055,25 @@ html[dir="rtl"] .result-step-red .arrow-line {
 /* Header mit Sprachumschalter (Mobile) */
 .startseite-header {
   display: flex;
+  align-items: center;
+  gap: 0.6rem;
   justify-content: flex-end;
   margin-bottom: 0.2rem; /* sehr dicht, damit Titel nah am Dropdown sitzt */
+}
+
+.startseite-logo-mobile {
+  width: clamp(110px, 38vw, 170px);
+  height: auto;
+  max-width: 100%;
+  display: block;
+  flex-shrink: 1;
 }
 
 /* Language Switcher - Mobile */
 .language-switcher {
   position: relative;
   display: inline-block;
+  flex-shrink: 0;
 }
 
 #lang-switcher {
@@ -2528,10 +2539,20 @@ html[dir="rtl"] .result-step-red .arrow-line {
   .startseite-desktop-left {
     position: relative;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1rem;
     min-height: 0;
     overflow: visible;
+  }
+
+  .startseite-logo-desktop {
+    width: clamp(210px, 24vw, 320px);
+    height: auto;
+    max-width: 100%;
+    display: block;
+    object-fit: contain;
   }
 
   .calendar-visualization {
@@ -2544,6 +2565,7 @@ html[dir="rtl"] .result-step-red .arrow-line {
     align-items: center;
     justify-content: center;
     overflow: visible;
+    align-self: center;
   }
 
   .calendar-device {
