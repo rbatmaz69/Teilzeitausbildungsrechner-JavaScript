@@ -181,20 +181,20 @@
       "label_easy": "İş deneyimi"
     },
     "other": {
-      "question": "Eğitim sırasında kaç yaşındasınız?",
-      "question_easy": "Kaç yaşındasınız?",
+      "question": "Eğitim başlangıcında en az 21 yaşında mısınız?",
+      "question_easy": "Eğitim başında en az 21 yaşında mısınız?",
       "placeholder": "örn. 25",
       "placeholder_easy": "örn. 25"
     },
     "alter21": {
-      "label": "21 yaşından büyük",
-      "label_easy": "21 yaşından büyük",
+      "label": "En az 21 yaşında",
+      "label_easy": "En az 21 yaşında",
       "yes": "Evet",
       "yes_easy": "Evet",
       "no": "Hayır",
       "no_easy": "Hayır",
-      "sr": "21 yaşından büyükse, önceki deneyimler dikkate alınabilir.",
-      "sr_easy": "21 yaşından büyükse, deneyim sayılır."
+      "sr": "Eğitim başlangıcında en az 21 yaşındaysanız, önceki deneyimler dikkate alınabilir.",
+      "sr_easy": "En az 21 yaşındaysanız evet."
     },
     "infoBox": {
       "button": "Bu nedir?",

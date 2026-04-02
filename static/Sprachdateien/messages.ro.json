@@ -181,20 +181,20 @@
       "label_easy": "Experiență"
     },
     "other": {
-      "question": "Câți ani ai în momentul formării?",
-      "question_easy": "Câți ani ai?",
+      "question": "Ai cel puțin 21 de ani la începutul formării?",
+      "question_easy": "Ai cel puțin 21 de ani la început?",
       "placeholder": "ex. 25",
       "placeholder_easy": "ex. 25"
     },
     "alter21": {
-      "label": "Peste 21 de ani",
-      "label_easy": "Peste 21",
+      "label": "Cel puțin 21 de ani",
+      "label_easy": "Cel puțin 21 de ani",
       "yes": "Da",
       "yes_easy": "Da",
       "no": "Nu",
       "no_easy": "Nu",
-      "sr": "Dacă ai peste 21 de ani, experiența anterioară poate fi recunoscută.",
-      "sr_easy": "Dacă ai peste 21, experiența contează."
+      "sr": "Dacă ai cel puțin 21 de ani la începutul formării, experiența anterioară poate fi recunoscută.",
+      "sr_easy": "Da, dacă ai cel puțin 21 de ani."
     },
     "infoBox": {
       "button": "Ce este asta?",
