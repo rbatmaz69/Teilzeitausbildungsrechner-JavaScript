@@ -2574,6 +2574,9 @@ html[dir="rtl"] .result-step-red .arrow-line {
     position: relative;
     width: 100%;
     max-width: clamp(260px, 30vw, 440px);
+    --accent-size: clamp(56px, 5vw, 80px);
+    --accent-svg-size: clamp(24px, 2.2vw, 36px);
+    --accent-corner-offset: clamp(-22px, -1.4vw, -14px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2594,10 +2597,10 @@ html[dir="rtl"] .result-step-red .arrow-line {
   /* Accent Icons - Größer */
   .accent-icon {
     position: absolute;
-    width: 80px;
-    height: 80px;
+    width: var(--accent-size);
+    height: var(--accent-size);
     border-radius: 50%;
-    border: 3px solid #f66; /* Hellerer Rotton für Icons */
+    border: clamp(2px, 0.22vw, 3px) solid #f66; /* Hellerer Rotton für Icons */
     background: #fff;
     display: flex;
     align-items: center;
@@ -2607,19 +2610,19 @@ html[dir="rtl"] .result-step-red .arrow-line {
   }
 
   .accent-icon svg {
-    width: 36px;
-    height: 36px;
+    width: var(--accent-svg-size);
+    height: var(--accent-svg-size);
     color: #f66; /* Hellerer Rotton für Icons */
   }
 
   .accent-icon-clock {
-    top: -20px;
-    right: -20px;
+    top: var(--accent-corner-offset);
+    right: var(--accent-corner-offset);
   }
 
   .accent-icon-graduation {
-    bottom: 30px;
-    left: -25px;
+    bottom: var(--accent-corner-offset);
+    left: var(--accent-corner-offset);
   }
 
   /* Right Side: Content */
@@ -3018,6 +3021,12 @@ html[dir="rtl"] .result-step-red .arrow-line {
 
     .startseite-container .startseite-description-desktop {
       margin-bottom: 1rem;
+    }
+
+    .startseite-container .startseite-visualization {
+      --accent-size: clamp(52px, 4.5vw, 70px);
+      --accent-svg-size: clamp(22px, 2vw, 32px);
+      --accent-corner-offset: clamp(-18px, -1.1vw, -12px);
     }
 
     /* Visual auf kleineren Bildschirmhöhen nicht beschneiden. */
