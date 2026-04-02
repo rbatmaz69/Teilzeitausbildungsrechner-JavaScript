@@ -185,20 +185,20 @@
       "label_easy": "Vorerfahrung"
     },
     "other": {
-      "question": "Wie alt sind Sie zum Zeitpunkt der Ausbildung?",
-      "question_easy": "Wie alt sind Sie zu Beginn der Ausbildung?",
+      "question": "Sind Sie zum Zeitpunkt der Ausbildung mindestens 21 Jahre alt?",
+      "question_easy": "Sind Sie bei Beginn der Ausbildung mindestens 21 Jahre alt?",
       "placeholder": "z.B. 25",
       "placeholder_easy": "z.B. 25"
     },
     "alter21": {
-      "label": "Über 21 Jahre alt",
-      "label_easy": "Über 21 Jahre alt",
+      "label": "Mindestens 21 Jahre alt",
+      "label_easy": "Mindestens 21 Jahre alt",
       "yes": "Ja",
       "yes_easy": "Ja",
       "no": "Nein",
       "no_easy": "Nein",
-      "sr": "Wenn Sie über 21 Jahre alt sind, können Vorerfahrungen angerechnet werden.",
-      "sr_easy": "Über 21: Vorerfahrung kann zählen."
+      "sr": "Wenn Sie zum Zeitpunkt der Ausbildung mindestens 21 Jahre alt sind, können Vorerfahrungen angerechnet werden.",
+      "sr_easy": "Ja, wenn Sie mindestens 21 Jahre alt sind."
     },
     "infoBox": {
       "button": "Was ist das?",

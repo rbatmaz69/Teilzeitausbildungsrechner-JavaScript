@@ -267,13 +267,10 @@ function collectVerkuerzungsgruende() {
     }
   }
 
-  // 3) Alter über 21
-  const alterInput = document.getElementById("alter");
-  if (alterInput) {
-    const alterInt = parseInt(alterInput.value);
-    if (!isNaN(alterInt) && alterInt >= 21) {
-      result.alter_ueber_21 = true;
-    }
+  // 3) Alter 21+ (Ja/Nein)
+  const alter21Ja = document.getElementById("alter21-ja");
+  if (alter21Ja && alter21Ja.checked) {
+    result.alter_ueber_21 = true;
   }
 
   // 4) Neue berufliche Fragen (Ja/Nein und Dauer für Q2)
@@ -351,6 +348,7 @@ function validiereAlleEingaben() {
   const jaNeineGruppen = [
     { ja: "abitur-ja", nein: "abitur-nein", label: "Schulabschluss" },
     { ja: "realschule-ja", nein: "realschule-nein", label: "Realschule" },
+    { ja: "alter21-ja", nein: "alter21-nein", label: "Mindestens 21 Jahre" },
     { ja: "kinderbetreuung-ja", nein: "kinderbetreuung-nein", label: "Kinderbetreuung" },
     { ja: "pflege-ja", nein: "pflege-nein", label: "Pflege von Angehörigen" },
     { ja: "vk_beruf_q1_ja", nein: "vk_beruf_q1_nein", label: "Abgeschlossene Ausbildung" },
@@ -411,22 +409,7 @@ function validiereAlleEingaben() {
     }
   }
 
-  // 3. Alter separat nach Teilzeit prüfen
-  const alterElement = document.getElementById("alter");
-  if (alterElement) {
-    const alterWert = alterElement.value?.trim();
-    const alterZahl = parseNumber(alterWert);
-    if (!alterWert || alterWert === "" || alterZahl === 0 || isNaN(alterZahl)) {
-      alterElement.classList.add("error");
-      const errorAlter = document.getElementById("errorAlter");
-      if (errorAlter) {
-        errorAlter.textContent = uebersetzung("validation.required", "Dieses Feld ist erforderlich");
-      }
-      if (!ersterFehler) ersterFehler = alterElement;
-    }
-  }
-
-  // 4. Prüfe Ja/Nein Gruppen
+  // 3. Prüfe Ja/Nein Gruppen
   for (const gruppe of jaNeineGruppen) {
     const jaElement = document.getElementById(gruppe.ja);
     const neinElement = document.getElementById(gruppe.nein);
@@ -463,7 +446,7 @@ function validiereAlleEingaben() {
     }
   }
 
-  // 5. Wenn Q2 "Ja" ist, prüfe ob Dauer eingegeben wurde
+  // 4. Wenn Q2 "Ja" ist, prüfe ob Dauer eingegeben wurde
   const berufQ2Ja = document.getElementById("vk_beruf_q2_ja");
   const berufQ2Duration = document.getElementById("vk_beruf_q2_dauer_months");
   if (berufQ2Ja && berufQ2Ja.checked && berufQ2Duration) {
@@ -479,7 +462,7 @@ function validiereAlleEingaben() {
     }
   }
 
-  // 6. Wenn Fehler vorhanden, zum ersten Fehler scrollen (gleiche Logik wie "Zum Rechner" Button)
+  // 5. Wenn Fehler vorhanden, zum ersten Fehler scrollen (gleiche Logik wie "Zum Rechner" Button)
   if (ersterFehler) {
     setTimeout(() => {
       const elementTop = ersterFehler.getBoundingClientRect().top + window.pageYOffset;
@@ -1293,14 +1276,6 @@ function setzeDatenZurueck() {
     checkbox.checked = false;
   });
   
-  // Alter-Feld zurücksetzen
-  const alterInput = document.getElementById('alter');
-  if (alterInput) alterInput.value = "";
-  
-  // Fehler-Nachrichten für Alter zurücksetzen
-  const errorAlter = document.getElementById('errorAlter');
-  if (errorAlter) errorAlter.textContent = "";
-  
   // Dauer-Inputs für berufliche Fragen zurücksetzen
   const berufQ2Dauer = document.getElementById('vk_beruf_q2_dauer_months');
   if (berufQ2Dauer) berufQ2Dauer.value = "";
@@ -1570,7 +1545,7 @@ function initialisiere() {
   initialisiereDesktopButtonLayout();
   
   // Clear validation errors when the user interacts with inputs or yes/no tiles
-  const clearableInputs = ["dauer", "stunden", "alter", "vk_beruf_q2_dauer_months"];
+  const clearableInputs = ["dauer", "stunden", "vk_beruf_q2_dauer_months"];
   clearableInputs.forEach(id => {
     const el = document.getElementById(id) || document.querySelector(`input[data-vk-field="${id}"]`);
     if (!el) return;
@@ -1586,6 +1561,7 @@ function initialisiere() {
   const yesNoPairs = [
     ["abitur-ja","abitur-nein"],
     ["realschule-ja","realschule-nein"],
+    ["alter21-ja","alter21-nein"],
     ["kinderbetreuung-ja","kinderbetreuung-nein"],
     ["pflege-ja","pflege-nein"],
     ["vk_beruf_q1_ja","vk_beruf_q1_nein"],

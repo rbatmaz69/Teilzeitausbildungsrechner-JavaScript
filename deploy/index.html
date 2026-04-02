@@ -497,23 +497,44 @@
           </section>
 
           <!-- ============================== -->
-          <!-- 2. Alter über 21 Jahre         -->
+          <!-- 2. Mindestens 21 Jahre alt?    -->
           <!-- ============================== -->
           <section class="card rechner-card" aria-labelledby="vk-alter-heading">
             <h2 id="vk-alter-heading" class="vk-category-title" data-i18n="vk.other.question">
-              Wie alt sind Sie zum Zeitpunkt der Ausbildung?
+              Sind Sie zum Zeitpunkt der Ausbildung mindestens 21 Jahre alt?
             </h2>
 
             <div class="vk-category-body vk-stack">
-              <div class="input-with-unit">
-                <input type="number" id="alter" dir="ltr" step="1" min="0" max="99" placeholder="z.B. 25" data-i18n-attr="placeholder:vk.other.placeholder">
-                <span class="unit" data-i18n="units.years.full">Jahre</span>
+              <div class="vk-yes-no-group" role="group" aria-labelledby="vk-alter-heading" aria-describedby="desc-alter21" style="display: flex; flex-direction: row; gap: 0.5rem;">
+                <label class="tile">
+                  <input
+                    type="checkbox"
+                    id="alter21-ja"
+                    aria-describedby="desc-alter21"
+                    data-vk-field="alter_ueber_21"
+                  >
+                  <div class="tile-body" style="flex:1">
+                    <div class="tile-header">
+                      <span data-i18n="vk.alter21.yes">Ja</span>
+                    </div>
+                  </div>
+                </label>
+                <label class="tile">
+                  <input
+                    type="checkbox"
+                    id="alter21-nein"
+                    aria-describedby="desc-alter21"
+                  >
+                  <div class="tile-body" style="flex:1">
+                    <div class="tile-header">
+                      <span data-i18n="vk.alter21.no">Nein</span>
+                    </div>
+                  </div>
+                </label>
               </div>
 
-              <span class="error-message" id="errorAlter"></span>
-
               <span id="desc-alter21" class="sr-only" data-i18n="vk.alter21.sr">
-                Wenn Sie über 21 Jahre alt sind, können Vorerfahrungen angerechnet werden.
+                Wenn Sie zum Zeitpunkt der Ausbildung mindestens 21 Jahre alt sind, können Vorerfahrungen angerechnet werden.
               </span>
             </div>
           </section>

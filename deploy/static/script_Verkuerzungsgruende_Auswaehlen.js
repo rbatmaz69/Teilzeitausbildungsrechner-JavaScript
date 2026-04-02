@@ -5,7 +5,8 @@
  * die Anzeige der Vorkenntnis-Monate mit der aktuellen Sprache.
  */
 document.addEventListener('DOMContentLoaded', () => {
-  const alter = document.getElementById('alter');
+  const alter21Ja = document.getElementById('alter21-ja');
+  const alter21Nein = document.getElementById('alter21-nein');
   const vkForm = document.getElementById('vk-form');
   const kinderbetreuungJa = document.getElementById('kinderbetreuung-ja');
   const kinderbetreuungNein = document.getElementById('kinderbetreuung-nein');
@@ -36,15 +37,14 @@ document.addEventListener('DOMContentLoaded', () => {
       if (gespeichert) {
         const werte = JSON.parse(gespeichert);
 
-        // Lade Alter
-        if (werte.alter !== undefined && werte.alter !== null && werte.alter !== '') {
-          if (alter) alter.value = werte.alter;
-        }
-
         // Lade Schulabschluss
         if (werte.schoolSelect !== undefined && werte.schoolSelect !== null) {
           if (vkSchoolSelect) vkSchoolSelect.value = werte.schoolSelect;
         }
+
+        // Lade Checkboxen (Alter)
+        if (werte.alter21Ja && alter21Ja) alter21Ja.checked = true;
+        if (werte.alter21Nein && alter21Nein) alter21Nein.checked = true;
 
         // Lade Checkboxen (Kinderbetreuung)
         if (werte.kinderbetreuungJa && kinderbetreuungJa) kinderbetreuungJa.checked = true;
@@ -85,7 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const speichereVerkuerzungsgruende = () => {
     try {
       const werte = {
-        alter: alter ? alter.value : '',
+        alter21Ja: alter21Ja ? alter21Ja.checked : false,
+        alter21Nein: alter21Nein ? alter21Nein.checked : false,
         schoolSelect: vkSchoolSelect ? vkSchoolSelect.value : 'none',
         kinderbetreuungJa: kinderbetreuungJa ? kinderbetreuungJa.checked : false,
         kinderbetreuungNein: kinderbetreuungNein ? kinderbetreuungNein.checked : false,
@@ -148,15 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Alter-Eingabe validieren
-  const errorAlter = document.getElementById('errorAlter');
   /* global uebersetzung */
-  let alterErrorTimeout = null;
-  
-  alter.addEventListener('keydown', (ev) => {
-    const forbidden = ['e', 'E', '+', '-', '.', ','];
-    if (forbidden.includes(ev.key)) ev.preventDefault();
-  });
 
   // Prevent form submission via Enter inside inputs (keeps values intact)
   if (vkForm) {
@@ -164,36 +157,6 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
     });
   }
-  
-  alter.addEventListener('input', () => {
-    let v = alter.value.replace(/[^0-9]/g, '');
-    alter.value = v;
-    
-    // Max-Validierung sofort: Wenn > 99, auf 99 setzen und Fehler anzeigen
-    const alterInt = parseInt(v);
-    if (!isNaN(alterInt) && alterInt > 99) {
-      alter.value = 99;
-      alter.classList.add('error');
-      if (errorAlter) errorAlter.textContent = uebersetzung("errors.alterMax", "Der Wert darf maximal 99 betragen");
-      
-      // Fehler nach 4 Sekunden entfernen
-      clearTimeout(alterErrorTimeout);
-      alterErrorTimeout = setTimeout(() => {
-        alter.classList.remove('error');
-        if (errorAlter) errorAlter.textContent = '';
-      }, 4000);
-    }
-  });
-  
-  alter.addEventListener('blur', () => {
-    const alterInt = parseInt(alter.value);
-
-    if (isNaN(alterInt) || alterInt < 0) {
-      alter.value = null;
-    } else if (alterInt > 99) {
-      alter.value = 99;
-    }
-  });
 
   // Schulabschluss ändern
   if (vkSchoolSelect) {
@@ -248,6 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupYesNo(berufQ2Ja, berufQ2Nein);
   setupYesNo(berufQ3Ja, berufQ3Nein);
   setupYesNo(berufQ4Ja, berufQ4Nein);
+  setupYesNo(alter21Ja, alter21Nein);
 
   // Show/Hide duration input for Q2
   if (berufQ2Ja && berufQ2DurationContainer && berufQ2Duration) {
