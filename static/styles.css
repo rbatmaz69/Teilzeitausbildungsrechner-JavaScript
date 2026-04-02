@@ -2078,6 +2078,14 @@ html[dir="rtl"] .result-step-red .arrow-line {
   line-height: 0;
   text-decoration: none;
   border-radius: 8px;
+  transition: transform 0.18s ease, filter 0.18s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .startseite-logo-link:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.06);
+  }
 }
 
 .startseite-logo-link:focus-visible {
