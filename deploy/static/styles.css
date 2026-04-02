@@ -2055,14 +2055,46 @@ html[dir="rtl"] .result-step-red .arrow-line {
 /* Header mit Sprachumschalter (Mobile) */
 .startseite-header {
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
   margin-bottom: 0.2rem; /* sehr dicht, damit Titel nah am Dropdown sitzt */
+}
+
+.startseite-logo-mobile {
+  width: clamp(130px, 44vw, 200px);
+  height: auto;
+  max-width: 100%;
+  display: block;
+  flex-shrink: 1;
+}
+
+.startseite-logo-link {
+  display: inline-block;
+  line-height: 0;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: transform 0.18s ease, filter 0.18s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .startseite-logo-link:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.06);
+  }
+}
+
+.startseite-logo-link:focus-visible {
+  outline: 3px solid #a5b4fc;
+  outline-offset: 2px;
 }
 
 /* Language Switcher - Mobile */
 .language-switcher {
   position: relative;
   display: inline-block;
+  flex-shrink: 0;
+  margin-inline-start: auto;
 }
 
 #lang-switcher {
@@ -2528,10 +2560,20 @@ html[dir="rtl"] .result-step-red .arrow-line {
   .startseite-desktop-left {
     position: relative;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1rem;
     min-height: 0;
     overflow: visible;
+  }
+
+  .startseite-logo-desktop {
+    width: clamp(210px, 24vw, 320px);
+    height: auto;
+    max-width: 100%;
+    display: block;
+    object-fit: contain;
   }
 
   .calendar-visualization {
@@ -2544,6 +2586,7 @@ html[dir="rtl"] .result-step-red .arrow-line {
     align-items: center;
     justify-content: center;
     overflow: visible;
+    align-self: center;
   }
 
   .calendar-device {
