@@ -2574,9 +2574,11 @@ html[dir="rtl"] .result-step-red .arrow-line {
     position: relative;
     width: 100%;
     max-width: clamp(260px, 30vw, 440px);
+
     --accent-size: clamp(56px, 5vw, 80px);
     --accent-svg-size: clamp(24px, 2.2vw, 36px);
     --accent-corner-offset: clamp(-22px, -1.4vw, -14px);
+
     display: flex;
     align-items: center;
     justify-content: center;
