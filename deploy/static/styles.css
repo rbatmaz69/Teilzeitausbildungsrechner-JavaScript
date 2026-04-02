@@ -2057,7 +2057,7 @@ html[dir="rtl"] .result-step-red .arrow-line {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  justify-content: flex-end;
+  width: 100%;
   margin-bottom: 0.2rem; /* sehr dicht, damit Titel nah am Dropdown sitzt */
 }
 
@@ -2074,6 +2074,7 @@ html[dir="rtl"] .result-step-red .arrow-line {
   position: relative;
   display: inline-block;
   flex-shrink: 0;
+  margin-inline-start: auto;
 }
 
 #lang-switcher {
