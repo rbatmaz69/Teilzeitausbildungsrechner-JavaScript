@@ -192,13 +192,13 @@
     },
     "alter21": {
       "label": "At least 21 years old",
-      "label_easy": "At least 21",
+      "label_easy": "At least 21 years old",
       "yes": "Yes",
       "yes_easy": "Yes",
       "no": "No",
       "no_easy": "No",
-      "sr": "Choose yes if you are at least 21 years old when training starts.",
-      "sr_easy": "Yes if you are at least 21."
+      "sr": "If you are at least 21 years old at the start of training, previous experience can be credited.",
+      "sr_easy": "Yes, if you are at least 21 years old."
     },
     "infoBox": {
       "button": "What is this?",
