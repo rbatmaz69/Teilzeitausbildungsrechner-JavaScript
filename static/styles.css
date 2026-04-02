@@ -2073,6 +2073,18 @@ html[dir="rtl"] .result-step-red .arrow-line {
   flex-shrink: 1;
 }
 
+.startseite-logo-link {
+  display: inline-block;
+  line-height: 0;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.startseite-logo-link:focus-visible {
+  outline: 3px solid #a5b4fc;
+  outline-offset: 2px;
+}
+
 /* Language Switcher - Mobile */
 .language-switcher {
   position: relative;
