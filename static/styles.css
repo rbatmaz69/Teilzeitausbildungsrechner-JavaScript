@@ -2066,7 +2066,7 @@ html[dir="rtl"] .result-step-red .arrow-line {
 }
 
 .startseite-logo-mobile {
-  width: clamp(110px, 38vw, 170px);
+  width: clamp(130px, 44vw, 200px);
   height: auto;
   max-width: 100%;
   display: block;
