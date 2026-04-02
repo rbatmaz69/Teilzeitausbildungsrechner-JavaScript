@@ -210,10 +210,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (werte.teilzeitProzent) teilzeitProzentEingabe.value = werte.teilzeitProzent;
         if (werte.teilzeitStunden) teilzeitStundenEingabe.value = werte.teilzeitStunden;
         
-        // Lade Alter und berufliche Q2-Dauer (werden in script_Verkuerzungsgruende_Auswaehlen.js geladen)
-        if (werte.alter !== undefined && werte.alter !== null) {
-          localStorage.setItem('vk_alter', werte.alter);
-        }
+        // Lade berufliche Q2-Dauer
         if (werte.berufQ2Dauer !== undefined && werte.berufQ2Dauer !== null) {
           localStorage.setItem('vk_beruf_q2_dauer', werte.berufQ2Dauer);
         }
@@ -232,7 +229,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Speichere Werte bei jeder Änderung
   const speichereWerte = () => {
     try {
-      const alterField = document.getElementById('alter');
       const berufQ2DauerField = document.getElementById('vk_beruf_q2_dauer_months');
       
       const werte = {
@@ -240,7 +236,6 @@ document.addEventListener("DOMContentLoaded", () => {
         stunden: wochenstundenEingabe.value,
         teilzeitProzent: teilzeitProzentEingabe.value,
         teilzeitStunden: teilzeitStundenEingabe.value,
-        alter: alterField ? alterField.value : '',
         berufQ2Dauer: berufQ2DauerField ? berufQ2DauerField.value : ''
       };
       localStorage.setItem(STORAGE_KEY, JSON.stringify(werte));
@@ -1453,7 +1448,6 @@ document.addEventListener("DOMContentLoaded", () => {
     { element: wochenstundenEingabe, step: 1, min: 0, max: 100 },
     { element: teilzeitStundenEingabe, step: 1, min: 0, max: 100 },
     { element: teilzeitProzentEingabe, step: 1, min: 0, max: 100 },
-    { element: document.getElementById('alter'), step: 1, min: 0, max: 99 },
     { element: document.getElementById('vk_beruf_q2_dauer_months'), step: 1, min: 0, max: 50 }
   ];
 
