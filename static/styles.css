@@ -47,9 +47,6 @@
   --warning-bg: #fef3c7;
   --tooltip-bg: #111;
   --tooltip-text: #fff;
-  --calendar-device: #2d2d2d;
-  --calendar-screen: #fff;
-  --calendar-header-bg: #f5f5f5;
   --input-bg: #f2f2f2;
   --error-bg: #f66;
   --error-dark: #f88;
@@ -93,9 +90,6 @@
   --warning-bg: #3a2f1a;
   --tooltip-bg: #e5e5e5;
   --tooltip-text: #0f0f0f;
-  --calendar-device: #2d2d2d;
-  --calendar-screen: #1a1a1a;
-  --calendar-header-bg: #252525;
   --input-bg: #252525;
   --error-bg: #e00000;
   --error-dark: #f66;
@@ -2561,7 +2555,7 @@ html[dir="rtl"] .result-step-red .arrow-line {
     }
   }
 
-  /* Left Side: Calendar Visualization */
+  /* Left Side: Visual */
   .startseite-desktop-left {
     position: relative;
     display: flex;
@@ -2581,12 +2575,10 @@ html[dir="rtl"] .result-step-red .arrow-line {
     object-fit: contain;
   }
 
-  .calendar-visualization {
+  .startseite-visualization {
     position: relative;
     width: 100%;
-
-    /* Scale with viewport width so the calendar visibly shrinks when resizing. */
-    max-width: clamp(360px, 42vw, 600px);
+    max-width: clamp(260px, 30vw, 440px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2594,89 +2586,14 @@ html[dir="rtl"] .result-step-red .arrow-line {
     align-self: center;
   }
 
-  .calendar-device {
-    background: var(--calendar-device);
-    border-radius: 32px;
-    padding: 20px;
-    box-shadow: 0 12px 32px rgb(0 0 0 / 25%);
-    position: relative;
+  .startseite-visual-image {
     width: 100%;
-    max-width: clamp(330px, 38vw, 550px);
-  }
-
-  .calendar-screen {
-    background: var(--calendar-screen);
-    border-radius: 20px;
-    overflow: hidden;
-    min-height: clamp(480px, 70vh, 700px);
     height: auto;
-  }
-
-  .calendar-month {
-    padding: 1.5rem;
-  }
-
-  .calendar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.25rem;
-    font-weight: 600;
-  }
-
-  .calendar-month-name {
-    font-size: 1.5rem;
-    color: var(--text);
-  }
-
-  .calendar-year {
-    font-size: 1.2rem;
-    color: var(--muted);
-  }
-
-  .calendar-weekdays {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 0.5rem;
-    margin-bottom: 0.75rem;
-    font-size: 1rem;
-    color: var(--muted);
-    font-weight: 500;
-  }
-
-  .calendar-weekdays span {
-    text-align: center;
-    padding: 0.5rem;
-  }
-
-  .calendar-days {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 0.5rem;
-  }
-
-  .calendar-day {
-    aspect-ratio: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.1rem;
-    color: var(--text);
-    background: #f5f5f5;
-    border-radius: 8px;
-    cursor: default;
-    font-weight: 500;
-  }
-
-  .calendar-day.other-month {
-    color: #bbb;
-    background: transparent;
-  }
-
-  .calendar-divider {
-    height: 1px;
-    background: var(--border);
-    margin: 0.5rem 0;
+    display: block;
+    border-radius: 24px;
+    object-fit: contain;
+    box-shadow: 0 12px 32px rgb(0 0 0 / 20%);
+    max-height: none;
   }
 
   /* Accent Icons - Größer */
@@ -3038,7 +2955,7 @@ html[dir="rtl"] .result-step-red .arrow-line {
   }
 
   /* Narrow desktop (e.g., Full-HD laptops, Windows 150% scaling, or not-maximized windows):
-     make BOTH columns feel compact when width is reduced (calendar already shrinks naturally). */
+     make BOTH columns feel compact when width is reduced (visual shrinks naturally). */
   @media (width <= 1366px) {
     .startseite-container .startseite-desktop {
       gap: clamp(1.25rem, 3vw, 3.5rem);
@@ -3111,9 +3028,9 @@ html[dir="rtl"] .result-step-red .arrow-line {
       margin-bottom: 1rem;
     }
 
-    /* Kalender: Erscheinungsbild beibehalten, Höhe auf kleinen Bildschirmen nur leicht entspannen. */
-    .startseite-container .calendar-screen {
-      min-height: clamp(440px, 62vh, 640px);
+    /* Visual auf kleineren Bildschirmhöhen nicht beschneiden. */
+    .startseite-container .startseite-visual-image {
+      max-height: none;
     }
 
     .startseite-container .info-card-desktop {
@@ -4692,21 +4609,6 @@ body.modal-open {
   border-color: #4d6a8a;
 }
 
-/* Kalender im Dark Mode - graue Bereiche werden dunkel */
-:root[data-theme="dark"] .calendar-day {
-  background: #2a2a2a;
-  color: var(--text);
-}
-
-:root[data-theme="dark"] .calendar-day.other-month {
-  color: #666;
-  background: transparent;
-}
-
-:root[data-theme="dark"] .calendar-weekdays {
-  color: var(--muted);
-}
-
 :root[data-theme="dark"] .accent-icon {
   background: var(--panel);
   border-color: var(--primary);
@@ -4763,7 +4665,7 @@ html[dir="rtl"] .startseite-header {
   justify-content: flex-start;
 }
 
-/* Startseite: Layout darf in RTL nicht gespiegelt werden (Kalender links, Beschreibung rechts)
+/* Startseite: Layout darf in RTL nicht gespiegelt werden (Visual links, Beschreibung rechts)
   jedoch die RTL-Textsemantik innerhalb der Inhalts-Spalte beibehalten. */
 @media (width >= 1024px) {
   html[dir="rtl"] .startseite-desktop {

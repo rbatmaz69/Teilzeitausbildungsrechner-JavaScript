@@ -393,7 +393,7 @@
     }
   });
 
-  // Speech (Web Speech API) — collect visible text, exclude calendar images, read once
+  // Speech (Web Speech API) — collect visible text and read once
   let synth = window.speechSynthesis;
   let utterance = null;
   let isSpeaking = false;
@@ -440,7 +440,7 @@
 
     const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT, null);
     const parts = [];
-    const EXCLUDE_ANCESTOR_SELECTORS = ['.calendar-visualization', '.calendar-device', '.calendar-screen', '.calendar-days'];
+    const EXCLUDE_ANCESTOR_SELECTORS = ['.startseite-visualization'];
 
     while(walker.nextNode()){
       const node = walker.currentNode;
