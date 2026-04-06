@@ -1397,6 +1397,9 @@ function setzeDatenZurueck() {
   LETZTE_EINGABEN = null;
   LETZTE_BERECHNUNG = null;
 
+  // Interne Eingabe-States anderer Module ebenfalls zurücksetzen
+  window.dispatchEvent(new CustomEvent("teilzeitrechner:reset"));
+
   // Nach Bestätigung sanft zum Eingabebereich scrollen (gleiche Logik wie "Zum Rechner" Button)
   const eingabenSection = document.querySelector('section.card');
   if (eingabenSection) {
