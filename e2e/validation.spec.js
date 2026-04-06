@@ -26,11 +26,9 @@ async function gotoCalculator(page) {
   await expect(page.locator('body')).toContainText('Ausbildungsdauer', { timeout: 5000 });
   await page.waitForSelector('#dauer', { state: 'visible', timeout: 5000 });
   await page.locator('#dauer').scrollIntoViewIfNeeded();
-  // Neue UI: Pflicht-Alter-Feld und Ja/Nein Fragen für Verkürzungsgründe
-  if (await page.$('#alter') !== null) {
-      await page.fill('#alter', '20');
-      await page.locator('#alter').blur();
-      const neinSelectors = ['kinderbetreuung-nein','pflege-nein','vk_beruf_q1_nein','vk_beruf_q2_nein','vk_beruf_q3_nein','vk_beruf_q4_nein'];
+  // Neue UI: Pflicht-Fragen als Ja/Nein-Kacheln
+  if (await page.$('#alter21-nein') !== null) {
+      const neinSelectors = ['alter21-nein','kinderbetreuung-nein','pflege-nein','vk_beruf_q1_nein','vk_beruf_q2_nein','vk_beruf_q3_nein','vk_beruf_q4_nein'];
       for (const id of neinSelectors) {
         await page.evaluate((elId) => {
           const el = document.getElementById(elId);
@@ -197,10 +195,9 @@ test.describe('Validation: English Language Tests', () => {
     await expect(page.locator('body')).toContainText('part-time training', { timeout: 5000 });
     await page.waitForSelector('#dauer', { state: 'visible', timeout: 5000 });
     await page.locator('#dauer').scrollIntoViewIfNeeded();
-    // Neue UI: Pflicht-Alter-Feld und Ja/Nein Fragen für Verkürzungsgründe
-    if (await page.$('#alter') !== null) {
-      await page.fill('#alter', '20');
-      const neinSelectors = ['#kinderbetreuung-nein','#pflege-nein','#vk_beruf_q1_nein','#vk_beruf_q2_nein','#vk_beruf_q3_nein','#vk_beruf_q4_nein'];
+    // Neue UI: Pflicht-Fragen als Ja/Nein-Kacheln
+    if (await page.$('#alter21-nein') !== null) {
+      const neinSelectors = ['#alter21-nein','#kinderbetreuung-nein','#pflege-nein','#vk_beruf_q1_nein','#vk_beruf_q2_nein','#vk_beruf_q3_nein','#vk_beruf_q4_nein'];
       for (const sel of neinSelectors) {
         const locator = page.locator(sel);
         if ((await locator.count()) === 0) continue;

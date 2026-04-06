@@ -185,20 +185,20 @@
       "label_easy": "Work experience"
     },
     "other": {
-      "question": "How old are you at the time of training?",
-      "question_easy": "How old are you?",
+      "question": "Will you be at least 21 years old at the start of training?",
+      "question_easy": "Are you at least 21 when training starts?",
       "placeholder": "e.g. 25",
       "placeholder_easy": "e.g. 25"
     },
     "alter21": {
-      "label": "Over 21 years old",
-      "label_easy": "Older than 21",
+      "label": "At least 21 years old",
+      "label_easy": "At least 21 years old",
       "yes": "Yes",
       "yes_easy": "Yes",
       "no": "No",
       "no_easy": "No",
-      "sr": "If you are over 21, previous experience can be credited.",
-      "sr_easy": "If you are older than 21, experience counts."
+      "sr": "If you are at least 21 years old at the start of training, previous experience can be credited.",
+      "sr_easy": "Yes, if you are at least 21 years old."
     },
     "infoBox": {
       "button": "What is this?",

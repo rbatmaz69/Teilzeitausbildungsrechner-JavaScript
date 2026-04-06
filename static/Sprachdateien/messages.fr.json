@@ -181,20 +181,20 @@
       "label_easy": "Expérience"
     },
     "other": {
-      "question": "Quel âge avez-vous au moment de la formation ?",
-      "question_easy": "Quel âge avez-vous ?",
+      "question": "Avez-vous au moins 21 ans au début de la formation ?",
+      "question_easy": "Avez-vous au moins 21 ans au début ?",
       "placeholder": "ex. 25",
       "placeholder_easy": "ex. 25"
     },
     "alter21": {
-      "label": "Plus de 21 ans",
-      "label_easy": "Plus de 21 ans",
+      "label": "Au moins 21 ans",
+      "label_easy": "Au moins 21 ans",
       "yes": "Oui",
       "yes_easy": "Oui",
       "no": "Non",
       "no_easy": "Non",
-      "sr": "Si vous avez plus de 21 ans, une expérience antérieure peut être prise en compte.",
-      "sr_easy": "Si vous avez plus de 21 ans, l’expérience compte."
+      "sr": "Si vous avez au moins 21 ans au début de la formation, une expérience antérieure peut être prise en compte.",
+      "sr_easy": "Oui, si vous avez au moins 21 ans."
     },
     "infoBox": {
       "button": "Qu’est-ce que c’est ?",

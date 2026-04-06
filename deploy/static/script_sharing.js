@@ -359,7 +359,6 @@ function generiereShareLink() {
   const stunden = document.getElementById("stunden")?.value || "";
   const teilzeitProzent = document.getElementById("teilzeitProzent")?.value || "";
   const teilzeitStunden = document.getElementById("teilzeitStunden")?.value || "";
-  const alter = document.getElementById("alter")?.value || "";
   const sprache = aktuelleSprache();
 
   // Sammle Verkürzungsgründe (Checkboxen)
@@ -379,6 +378,7 @@ function generiereShareLink() {
 
   // Sammle Ja/Nein-Antworten (alle Checkboxen, auch "Nein")
   const yesNoQuestions = [
+    { ja: 'alter21-ja', nein: 'alter21-nein', field: 'alter_ueber_21' },
     { ja: 'kinderbetreuung-ja', nein: 'kinderbetreuung-nein', field: 'familien_kinderbetreuung' },
     { ja: 'pflege-ja', nein: 'pflege-nein', field: 'familien_pflegeverantwortung' },
     { ja: 'vk_beruf_q1_ja', nein: 'vk_beruf_q1_nein', field: 'beruf_q1' },
@@ -422,7 +422,6 @@ function generiereShareLink() {
     stunden,
     teilzeitProzent,
     teilzeitStunden,
-    alter,
     sprache,
     vk: JSON.stringify(verkuerzungsgruende)
   };
@@ -523,9 +522,14 @@ function loadSharedData() {
     }
 
     const alter = params.get("alter");
-    if (alter && document.getElementById("alter")) {
-      document.getElementById("alter").value = alter;
-      document.getElementById("alter").dispatchEvent(new Event("input", { bubbles: true }));
+    if (alter) {
+      const alterZahl = Number(alter);
+      const targetId = !Number.isNaN(alterZahl) && alterZahl >= 21 ? 'alter21-ja' : 'alter21-nein';
+      const target = document.getElementById(targetId);
+      if (target) {
+        target.checked = true;
+        target.dispatchEvent(new Event("change", { bubbles: true }));
+      }
     }
 
     // Sprache setzen
@@ -552,6 +556,7 @@ function loadSharedData() {
 
         // Setze Ja/Nein-Antworten
         const yesNoQuestions = [
+          { ja: 'alter21-ja', nein: 'alter21-nein', field: 'alter_ueber_21' },
           { ja: 'kinderbetreuung-ja', nein: 'kinderbetreuung-nein', field: 'familien_kinderbetreuung' },
           { ja: 'pflege-ja', nein: 'pflege-nein', field: 'familien_pflegeverantwortung' },
           { ja: 'vk_beruf_q1_ja', nein: 'vk_beruf_q1_nein', field: 'beruf_q1' },

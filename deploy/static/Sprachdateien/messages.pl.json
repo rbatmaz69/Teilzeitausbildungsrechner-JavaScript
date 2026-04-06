@@ -181,20 +181,20 @@
       "label_easy": "Doświadczenie"
     },
     "other": {
-      "question": "Ile masz lat w czasie kształcenia?",
-      "question_easy": "Ile masz lat?",
+      "question": "Czy w momencie rozpoczęcia kształcenia masz co najmniej 21 lat?",
+      "question_easy": "Czy na początku kształcenia masz co najmniej 21 lat?",
       "placeholder": "np. 25",
       "placeholder_easy": "np. 25"
     },
     "alter21": {
-      "label": "Powyżej 21 lat",
-      "label_easy": "Powyżej 21 lat",
+      "label": "Co najmniej 21 lat",
+      "label_easy": "Co najmniej 21 lat",
       "yes": "Tak",
       "yes_easy": "Tak",
       "no": "Nie",
       "no_easy": "Nie",
-      "sr": "Jeśli masz ponad 21 lat, wcześniejsze doświadczenie może zostać uwzględnione.",
-      "sr_easy": "Jeśli masz ponad 21 lat, doświadczenie się liczy."
+      "sr": "Jeśli w momencie rozpoczęcia kształcenia masz co najmniej 21 lat, wcześniejsze doświadczenie może zostać uwzględnione.",
+      "sr_easy": "Tak, jeśli masz co najmniej 21 lat."
     },
     "infoBox": {
       "button": "Co to jest?",

@@ -24,12 +24,10 @@ async function gotoCalculator(page) {
   await expect(page.locator('body')).toContainText('Ausbildungsdauer', { timeout: 5000 });
   await page.waitForSelector('#dauer', { state: 'visible', timeout: 5000 });
   await page.locator('#dauer').scrollIntoViewIfNeeded();
-  // Neue UI: Es gibt ein Pflicht-Alter-Feld und mehrere Ja/Nein Fragen für Verkürzungsgründe
-  // Fülle standardmäßig Alter (nicht über 21) und beantworte alle Fragen mit 'Nein', Tests können danach gezielt auf 'Ja' setzen
-  if (await page.$('#alter') !== null) {
-    await page.fill('#alter', '20');
-    await page.locator('#alter').blur();
-    const neinSelectors = ['kinderbetreuung-nein','pflege-nein','vk_beruf_q1_nein','vk_beruf_q2_nein','vk_beruf_q3_nein','vk_beruf_q4_nein'];
+  // Neue UI: Pflicht-Fragen als Ja/Nein-Kacheln
+  // Fülle standardmäßig alle Ja/Nein-Fragen mit 'Nein', Tests können danach gezielt auf 'Ja' setzen
+  if (await page.$('#alter21-nein') !== null) {
+    const neinSelectors = ['alter21-nein','kinderbetreuung-nein','pflege-nein','vk_beruf_q1_nein','vk_beruf_q2_nein','vk_beruf_q3_nein','vk_beruf_q4_nein'];
     for (const id of neinSelectors) {
       await page.evaluate((elId) => {
         const el = document.getElementById(elId);
@@ -144,9 +142,15 @@ test.describe('Edge Cases: Grenzwerte', () => {
       const el = document.getElementById('vk_beruf_q3_ja');
       if (el) { el.checked = true; el.dispatchEvent(new Event('change', { bubbles: true })); el.dispatchEvent(new Event('input', { bubbles: true })); }
     });
-    // 4. Alter über 21 -> neues UI: setze `#alter` > 21
-    await page.fill('#alter', '25');
-    await page.locator('#alter').blur();
+    // 4. Alter über 21 -> neues UI: setze "Ja"
+    await page.evaluate(() => {
+      const el = document.getElementById('alter21-ja');
+      if (el) {
+        el.checked = true;
+        el.dispatchEvent(new Event('change', { bubbles: true }));
+        el.dispatchEvent(new Event('input', { bubbles: true }));
+      }
+    });
     
     // Berechnen
     await clickButton(page, '#berechnenBtn');
@@ -213,9 +217,14 @@ test.describe('Business Rules: Verkürzungen', () => {
     await page.fill('#teilzeitProzent', '100');
     
     // Nur Alter über 21 aktivieren
-    // 4. Alter über 21 -> neues UI: setze `#alter` > 21
-    await page.fill('#alter', '25');
-    await page.locator('#alter').blur();
+    await page.evaluate(() => {
+      const el = document.getElementById('alter21-ja');
+      if (el) {
+        el.checked = true;
+        el.dispatchEvent(new Event('change', { bubbles: true }));
+        el.dispatchEvent(new Event('input', { bubbles: true }));
+      }
+    });
     
     // Berechnen
     await clickButton(page, '#berechnenBtn');
@@ -272,9 +281,15 @@ test.describe('Business Rules: Verkürzungen', () => {
       const el = document.getElementById('vk_beruf_q3_ja');
       if (el) { el.checked = true; el.dispatchEvent(new Event('change', { bubbles: true })); el.dispatchEvent(new Event('input', { bubbles: true })); }
     });
-    // Neues UI: setze Alter >21 statt Checkbox
-    await page.fill('#alter', '25');
-    await page.locator('#alter').blur();
+    // Alter 21+ aktivieren
+    await page.evaluate(() => {
+      const el = document.getElementById('alter21-ja');
+      if (el) {
+        el.checked = true;
+        el.dispatchEvent(new Event('change', { bubbles: true }));
+        el.dispatchEvent(new Event('input', { bubbles: true }));
+      }
+    });
     
     // Berechnen
     await clickButton(page, '#berechnenBtn');
@@ -390,12 +405,11 @@ test.describe('Error Scenarios: English Language Tests', () => {
     await expect(page.locator('body')).toContainText('part-time training', { timeout: 5000 });
     await page.waitForSelector('#dauer', { state: 'visible', timeout: 5000 });
     await page.locator('#dauer').scrollIntoViewIfNeeded();
-    // Neue UI: Pflicht-Alter-Feld und Ja/Nein Fragen für Verkürzungsgründe
-    if (await page.$('#alter') !== null) {
-      await page.fill('#alter', '20');
+    // Neue UI: Pflicht-Fragen als Ja/Nein-Kacheln
+    if (await page.$('#alter21-nein') !== null) {
       // Alle 'nein'-Antworten programmatisch setzen, um flüchtige Klick-Probleme zu vermeiden
       await page.evaluate(() => {
-        const ids = ['kinderbetreuung-nein','pflege-nein','vk_beruf_q1_nein','vk_beruf_q2_nein','vk_beruf_q3_nein','vk_beruf_q4_nein'];
+        const ids = ['alter21-nein','kinderbetreuung-nein','pflege-nein','vk_beruf_q1_nein','vk_beruf_q2_nein','vk_beruf_q3_nein','vk_beruf_q4_nein'];
         ids.forEach(id => {
           try {
             const el = document.getElementById(id);
@@ -454,17 +468,15 @@ test.describe('Q2: Nicht abgeschlossene Ausbildung (Dauer)', () => {
     await page.waitForTimeout(200);
     await page.fill('#dauer', '36');
     await page.fill('#stunden', '40');
-    // Basiszustand: Andere Ja/Nein-Gruppen programmatisch auf 'nein' setzen
+    // Basiszustand: Ja/Nein-Gruppen programmatisch auf 'nein' setzen
     await page.evaluate(() => {
-      const neinIds = ['kinderbetreuung-nein','pflege-nein','vk_beruf_q1_nein','vk_beruf_q3_nein','vk_beruf_q4_nein'];
+      const neinIds = ['alter21-nein','kinderbetreuung-nein','pflege-nein','vk_beruf_q1_nein','vk_beruf_q3_nein','vk_beruf_q4_nein'];
       neinIds.forEach(id => {
         try {
           const el = document.getElementById(id);
           if (el && !el.checked) { el.checked = true; el.dispatchEvent(new Event('change', { bubbles: true })); el.dispatchEvent(new Event('input', { bubbles: true })); }
         } catch (e) { }
       });
-      // set a safe default age <21 so age-based shortening not applied
-      try { const a = document.getElementById('alter'); if (a) { a.value = '20'; a.dispatchEvent(new Event('input', { bubbles: true })); } } catch (e) {}
     });
     // Sicherstellen, dass Vollzeit (100%) gesetzt ist, damit Verkürzungsberechnungen in Tests deterministisch sind
     await page.fill('#teilzeitProzent', '100');

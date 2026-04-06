@@ -29,11 +29,9 @@ async function gotoCalculator(page) {
   await page.waitForSelector('#dauer', { state: 'visible', timeout: 10000 });
   await page.locator('#dauer').scrollIntoViewIfNeeded();
   await expect(page.locator('body')).toContainText(lang === 'de' ? 'Ausbildungsdauer' : 'Training duration', { timeout: 10000 });
-  // Neue UI: Pflicht-Alter-Feld und Ja/Nein Fragen für Verkürzungen
-  if (await page.$('#alter') !== null) {
-    await page.fill('#alter', '20');
-    await page.locator('#alter').blur();
-    const neinSelectors = ['kinderbetreuung-nein','pflege-nein','vk_beruf_q1_nein','vk_beruf_q2_nein','vk_beruf_q3_nein','vk_beruf_q4_nein'];
+  // Neue UI: Pflicht-Fragen als Ja/Nein-Kacheln
+  if (await page.$('#alter21-nein') !== null) {
+    const neinSelectors = ['alter21-nein','kinderbetreuung-nein','pflege-nein','vk_beruf_q1_nein','vk_beruf_q2_nein','vk_beruf_q3_nein','vk_beruf_q4_nein'];
     for (const id of neinSelectors) {
       // Sicherstellen, dass die Checkbox gesetzt ist, auch wenn sie nicht sichtbar ist (per JS togglen)
       await page.evaluate((elId) => {
@@ -226,11 +224,9 @@ test.describe('Happy Path: English Language Tests', () => {
     await expect(page.locator('body')).toContainText('part-time training', { timeout: 5000 });
     await page.waitForSelector('#dauer', { state: 'visible', timeout: 5000 });
     await page.locator('#dauer').scrollIntoViewIfNeeded();
-    // Neue UI: Pflicht-Alter-Feld und Ja/Nein Fragen für Verkürzungen
-    if (await page.$('#alter') !== null) {
-      await page.fill('#alter', '20');
-      await page.locator('#alter').blur();
-      const neinSelectors = ['kinderbetreuung-nein','pflege-nein','vk_beruf_q1_nein','vk_beruf_q2_nein','vk_beruf_q3_nein','vk_beruf_q4_nein'];
+    // Neue UI: Pflicht-Fragen als Ja/Nein-Kacheln
+    if (await page.$('#alter21-nein') !== null) {
+      const neinSelectors = ['alter21-nein','kinderbetreuung-nein','pflege-nein','vk_beruf_q1_nein','vk_beruf_q2_nein','vk_beruf_q3_nein','vk_beruf_q4_nein'];
       for (const id of neinSelectors) {
         await page.evaluate((elId) => {
           const el = document.getElementById(elId);
@@ -438,11 +434,9 @@ test.describe('Mobile Tests: Happy Path', () => {
     
     // Warte auf deutschen Text (robuster für Mobile)
     await expect(page.locator('body')).toContainText('Ausbildungsdauer', { timeout: 10000 });
-    // Neue UI: Pflicht-Alter-Feld und Ja/Nein Fragen für Verkürzungen
-    if (await page.$('#alter') !== null) {
-      await page.fill('#alter', '20');
-      await page.locator('#alter').blur();
-      const neinIds = ['kinderbetreuung-nein','pflege-nein','vk_beruf_q1_nein','vk_beruf_q2_nein','vk_beruf_q3_nein','vk_beruf_q4_nein'];
+    // Neue UI: Pflicht-Fragen als Ja/Nein-Kacheln
+    if (await page.$('#alter21-nein') !== null) {
+      const neinIds = ['alter21-nein','kinderbetreuung-nein','pflege-nein','vk_beruf_q1_nein','vk_beruf_q2_nein','vk_beruf_q3_nein','vk_beruf_q4_nein'];
       for (const id of neinIds) {
         await page.evaluate((elId) => {
           const el = document.getElementById(elId);
@@ -642,9 +636,15 @@ test.describe('Mobile Tests: Happy Path', () => {
     await page.fill('#stunden', '35');
     await clickButtonMobile(page, '[data-value="75"][data-type="percent"]');
     await page.selectOption('#vk-school-select', 'abitur');
-    // Neues UI: setze Alter >21 statt Checkbox
-    await page.fill('#alter', '25');
-    await page.locator('#alter').blur();
+    // Alter 21+ auf Ja setzen
+    await page.evaluate(() => {
+      const ja = document.getElementById('alter21-ja');
+      if (ja) {
+        ja.checked = true;
+        ja.dispatchEvent(new Event('change', { bubbles: true }));
+        ja.dispatchEvent(new Event('input', { bubbles: true }));
+      }
+    });
     
     // Berechnen
     await clickButtonMobile(page, '#berechnenBtn');
@@ -662,7 +662,8 @@ test.describe('Mobile Tests: Happy Path', () => {
     const prozentValMobile = await page.inputValue('#teilzeitProzent');
     expect(['', '75']).toContain(prozentValMobile);
     await expect(page.locator('#vk-school-select')).toHaveValue('none');
-    await expect(page.locator('#alter')).toHaveValue('');
+    await expect(page.locator('#alter21-ja')).not.toBeChecked();
+    await expect(page.locator('#alter21-nein')).not.toBeChecked();
     
     // Prüfe dass Ergebnis versteckt wurde
     await expect(page.locator('#ergebnis-container')).toBeHidden();
