@@ -1045,6 +1045,27 @@ document.addEventListener("DOMContentLoaded", () => {
     aktiverButtonWert = null;
   }
 
+  /** Stoppt alle laufenden Fehler-Timer und verhindert spätes UI-Flickern nach Reset. */
+  function stoppeAlleFehlerTimer() {
+    [timerIdProzent, timerIdStunden, timerIdDauer, timerIdRegularStunden].forEach((timerRef) => {
+      if (timerRef.hauptTimer) {
+        clearTimeout(timerRef.hauptTimer);
+        timerRef.hauptTimer = null;
+      }
+      if (timerRef.fadeTimer) {
+        clearTimeout(timerRef.fadeTimer);
+        timerRef.fadeTimer = null;
+      }
+    });
+  }
+
+  // Globaler Reset-Hook: internen Preset-State nach Formular-Reset bereinigen.
+  window.addEventListener("teilzeitrechner:reset", () => {
+    stoppeAlleFehlerTimer();
+    loescheAktiveSchaltflaechen();
+    synchronisiereButtonMarkierung();
+  });
+
   /**
    * Aktualisiert Fehlermeldungen bei Sprachwechsel.
    * Prüft ob Fehlermeldungen aktuell angezeigt werden und aktualisiert sie mit Übersetzungen.

@@ -325,6 +325,39 @@ test.describe('Happy Path: Reset-Button', () => {
     // Prüfe dass Ergebnis hidden-Attribut hat
     await expect(page.locator('#ergebnis-container')).toHaveAttribute('hidden', '');
   });
+
+  test('Reset entfernt Preset-Match-State aus manueller Stunden-Eingabe', async ({ page }) => {
+    await gotoCalculator(page);
+
+    // Confirm-Dialog beim Reset automatisch bestätigen
+    await page.evaluate(() => {
+      window.confirm = () => true;
+    });
+
+    // Erster Durchlauf: manueller Stundenwert entspricht einem Preset (30 bei 40)
+    await page.fill('#dauer', '36');
+    await page.fill('#stunden', '40');
+    await page.fill('#teilzeitStunden', '30');
+    await page.locator('#teilzeitStunden').blur();
+    await expect(page.locator('#teilzeitProzent')).toHaveValue('75');
+
+    // Ergebnis berechnen und sichtbar machen
+    await clickButton(page, '#berechnenBtn');
+    await page.waitForSelector('#ergebnis-container:not([hidden])', { state: 'visible', timeout: 5000 });
+
+    // Reset auslösen
+    await clickButton(page, '#btn-reset');
+
+    // Zweiter Durchlauf: nur Pflichtfelder ausfüllen
+    await page.fill('#dauer', '24');
+    await page.fill('#stunden', '30');
+    await page.locator('#stunden').blur();
+    await page.waitForTimeout(120);
+
+    // Regression: Teilzeitfelder müssen leer bleiben
+    await expect(page.locator('#teilzeitProzent')).toHaveValue('');
+    await expect(page.locator('#teilzeitStunden')).toHaveValue('');
+  });
 });
 
 test.describe('Happy Path: Sharing & PDF', () => {
