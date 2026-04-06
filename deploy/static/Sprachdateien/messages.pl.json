@@ -222,22 +222,36 @@
     "helper_easy": "Tutaj jest Twój wynik.",
     "notesTitle": "Ważne informacje",
     "notesTitle_easy": "Ważne",
-    "notes": "<li>To obliczenie jest tylko <strong>pomocą</strong> i <strong>orientacją</strong>.</li><li>Wynik <strong>nie jest wiążący</strong>.</li><li>Omów wynik ze swoją <strong>firmą szkolącą</strong>.</li><li>Kształcenie w niepełnym wymiarze jest możliwe tylko wtedy, gdy pracujesz <strong>co najmniej połowę</strong> normalnych godzin kształcenia.</li>",
-    "notes_easy": "<li>To obliczenie jest tylko <strong>pomocą</strong>.</li><li>Wynik <strong>nie jest wiążący</strong>.</li><li>Porozmawiaj o wyniku z <strong>firmą</strong>.</li><li>Musisz pracować <strong>co najmniej połowę</strong> normalnych godzin.</li>",
+    "notes": "<li>Wynik <strong>nie jest prawnie wiążący</strong>.</li><li>To obliczenie jest tylko <strong>pomocą</strong> i <strong>orientacją</strong>.</li><li><strong>Wszystkie skrócenia</strong> muszą zostać uzgodnione z <strong>zakładem szkolącym</strong> i <strong>właściwą izbą</strong>.</li><li>Niezależnie od skrócenia czasu kształcenia, przy <strong>dobrych wynikach</strong> istnieje możliwość, zgodnie z <strong>§ 45 ust. 1 BBiG</strong>, <strong>wcześniejszego przystąpienia do egzaminu końcowego</strong>.</li>",
+    "notes_easy": "<li>Wynik <strong>nie jest prawnie wiążący</strong>.</li><li>To obliczenie jest tylko <strong>pomocą</strong>.</li><li><strong>Wszystkie skrócenia</strong> muszą zostać uzgodnione z <strong>zakładem szkolącym</strong> i <strong>właściwą izbą</strong>.</li><li>Niezależnie od skrócenia czasu kształcenia, przy <strong>dobrych wynikach</strong> istnieje możliwość, zgodnie z <strong>§ 45 ust. 1 BBiG</strong>, <strong>wcześniejszego przystąpienia do egzaminu końcowego</strong>.</li>",
     "helpfulLinksTitle": "Dalsze informacje",
     "helpfulLinksTitle_easy": "Więcej informacji",
+    "helpfulLinksNotice": "<li>W sprawie <strong>osobistego doradztwa</strong> dotyczącego kształcenia w niepełnym wymiarze prosimy o kontakt z <strong>Federalną Agencją Pracy</strong>.</li>",
+    "helpfulLinksNotice_easy": "<li>W sprawie <strong>osobistego doradztwa</strong> skontaktuj się z <strong>Federalną Agencją Pracy</strong>.</li>",
     "helpfulLinks": {
       "arbeitsagentur": {
         "title": "Federalna Agencja Pracy",
-        "title_easy": "Agencja Pracy",
+        "title_easy": "Federalna Agencja Pracy",
         "desc": "Ogólne informacje o szkoleniu i doradztwie zawodowym.",
         "desc_easy": "Informacje o szkoleniu i doradztwie."
+      },
+      "rdbw": {
+        "title": "Dyrekcja Regionalna Badenii-Wirtembergii",
+        "title_easy": "Dyrekcja Regionalna BW",
+        "desc": "Osoby kontaktowe w Badenii-Wirtembergii.",
+        "desc_easy": "Kontakty dyrekcji regionalnej BW."
       },
       "netzwerk": {
         "title": "Sieć Szkolenia w Niepełnym Wymiarze Godzin",
         "title_easy": "Sieć Szkolenia w Niepełnym Wymiarze",
         "desc": "Specjalistyczne doradztwo i wsparcie dla szkolenia w niepełnym wymiarze godzin.",
         "desc_easy": "Doradztwo dla szkolenia w niepełnym wymiarze."
+      },
+      "flyer": {
+        "title": "Ulotka: Szkolenie w niepełnym wymiarze - jak to działa (PDF)",
+        "title_easy": "Ulotka: Szkolenie w niepełnym wymiarze - jak to działa (PDF)",
+        "desc": "Wymagania, modele i możliwości wsparcia w skrócie.",
+        "desc_easy": "Wymagania, modele i wsparcie w szkoleniu w niepełnym wymiarze."
       }
     },
     "legalTitle": "Podstawa prawna",
@@ -442,27 +456,21 @@
       "suffix": " łatwo",
       "suffix_easy": " łatwo"
     },
-    "description": "Kalkulator pomaga sprawdzić, czy możesz odbyć kształcenie w formie częściowego etatu oraz czy istnieją możliwości skrócenia czasu trwania kształcenia.",
-    "description_easy": "Kalkulator pokazuje, czy możesz odbyć kształcenie w niepełnym wymiarze godzin. Sprawdza również, czy możliwe jest skrócenie czasu trwania kształcenia.",
+    "description": "Kalkulator pomaga sprawdzić, czy kształcenie zawodowe w niepełnym wymiarze jest dla Ciebie możliwe oraz czy czas trwania kształcenia można skrócić.<br><br>Dualne kształcenie zawodowe w niepełnym wymiarze pozwala uzyskać w pełni uznawany zawód przy mniejszej liczbie godzin pracy w zakładzie. Ponieważ w trybie niepełnym realizuje się mniej godzin praktycznych tygodniowo, całkowity czas trwania kształcenia się wydłuża. Kalkulator pokazuje, o ile miesięcy się wydłuża.",
+    "description_easy": "Kalkulator pomaga sprawdzić, czy kształcenie zawodowe w niepełnym wymiarze jest dla Ciebie możliwe i czy czas nauki można skrócić.<br><br>W dualnym kształceniu w niepełnym wymiarze pracujesz mniej godzin w firmie, ale nadal możesz zdobyć uznawany zawód. Ponieważ masz mniej godzin praktyki w tygodniu, nauka trwa dłużej. Kalkulator pokazuje, o ile miesięcy czas się wydłuża.",
     "benefitsTitle": "Zalety kalkulatora",
     "benefitsTitle_easy": "Zalety",
     "card1": {
-      "title": "Elastyczne godziny",
-      "title_easy": "Elastyczne godziny",
-      "subtitle": "Indywidualne planowanie",
-      "subtitle_easy": "Ty wybierasz czas"
+      "title": "Elastyczne godziny pracy",
+      "title_easy": "Elastyczne godziny pracy"
     },
     "card2": {
-      "title": "Dokładne planowanie",
-      "title_easy": "Dobre planowanie",
-      "subtitle": "Precyzyjne obliczenia",
-      "subtitle_easy": "Dokładne obliczenia"
+      "title": "Realistyczny czas trwania",
+      "title_easy": "Realistyczny czas trwania"
     },
     "card3": {
-      "title": "Szybsze ukończenie",
-      "title_easy": "Dobre zakończenie",
-      "subtitle": "Jasna ścieżka",
-      "subtitle_easy": "Jasna droga"
+      "title": "Pomyślne ukończenie",
+      "title_easy": "Pomyślne ukończenie"
     },
     "button": "Do kalkulatora",
     "button_easy": "Do kalkulatora"

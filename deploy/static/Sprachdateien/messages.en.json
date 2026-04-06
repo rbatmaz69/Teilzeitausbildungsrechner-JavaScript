@@ -226,22 +226,36 @@
     "helper_easy": "Here is your result.",
     "notesTitle": "Important information",
     "notesTitle_easy": "Important",
-    "notes": "<li>This calculation is only a <strong>help</strong> and an <strong>orientation</strong>.</li><li>The result is <strong>not binding</strong>.</li><li>Discuss the result with your <strong>training company</strong>.</li><li>Part-time training is only possible if you work <strong>at least half</strong> of the normal training hours.</li>",
-    "notes_easy": "<li>This calculation is only a <strong>help</strong>.</li><li>The result is <strong>not binding</strong>.</li><li>Talk about the result with your <strong>training company</strong>.</li><li>You must work <strong>at least half</strong> of normal hours.</li>",
+    "notes": "<li>The result is <strong>not legally binding</strong>.</li><li>This calculation is only a <strong>help</strong> and an <strong>orientation</strong>.</li><li><strong>All reductions</strong> must be coordinated with the <strong>training company</strong> and the <strong>competent chamber</strong>.</li><li>Regardless of any reduction in training duration, trainees with <strong>good performance</strong> have the possibility, pursuant to <strong>Section 45 (1) BBiG</strong>, to <strong>bring forward the final examination</strong>.</li>",
+    "notes_easy": "<li>The result is <strong>not legally binding</strong>.</li><li>This calculation is only a <strong>help</strong>.</li><li><strong>All reductions</strong> must be coordinated with the <strong>training company</strong> and the <strong>competent chamber</strong>.</li><li>Regardless of any reduction in training duration, trainees with <strong>good performance</strong> have the possibility, pursuant to <strong>Section 45 (1) BBiG</strong>, to <strong>bring forward the final examination</strong>.</li>",
     "helpfulLinksTitle": "Further Information",
     "helpfulLinksTitle_easy": "More Info",
+    "helpfulLinksNotice": "<li>For <strong>personal advice</strong> on part-time training, please contact the <strong>Federal Employment Agency</strong>.</li>",
+    "helpfulLinksNotice_easy": "<li>For <strong>personal advice</strong> on part-time training, contact the <strong>Federal Employment Agency</strong>.</li>",
     "helpfulLinks": {
       "arbeitsagentur": {
         "title": "Federal Employment Agency",
-        "title_easy": "Employment Agency",
+        "title_easy": "Federal Employment Agency",
         "desc": "General information about training and career counseling.",
         "desc_easy": "Info about training and counseling."
+      },
+      "rdbw": {
+        "title": "Regional Directorate Baden-Wuerttemberg",
+        "title_easy": "Regional Directorate BW",
+        "desc": "Relevant contacts in Baden-Wuerttemberg.",
+        "desc_easy": "Contacts of the Regional Directorate BW."
       },
       "netzwerk": {
         "title": "Part-Time Training Network",
         "title_easy": "Part-Time Training Network",
         "desc": "Specialized advice and support for part-time training.",
         "desc_easy": "Advice for part-time training."
+      },
+      "flyer": {
+        "title": "Flyer: Part-time training - how it works (PDF)",
+        "title_easy": "Flyer: Part-time training - how it works (PDF)",
+        "desc": "Requirements, models, and support options at a glance.",
+        "desc_easy": "Overview: requirements, models, and support for part-time training."
       }
     },
     "legalTitle": "Legal Basis",
@@ -446,27 +460,21 @@
       "suffix": " easily",
       "suffix_easy": " easily"
     },
-      "description": "The calculator helps you check whether you can complete your vocational training part-time and whether options exist to shorten the training period.",
-      "description_easy": "The calculator shows whether you can do your vocational training part-time. It also checks whether shortening the training period may be possible.",
+      "description": "The calculator helps you check whether part-time vocational training is possible for you and whether the training duration can be shortened.<br><br>Dual part-time vocational training allows you to achieve a fully recognized vocational qualification with fewer working hours at the company. Since fewer practical hours are completed per week in part-time training, the overall duration of training increases. With the calculator, you can see by how many months it increases.",
+      "description_easy": "The calculator helps you check whether part-time vocational training is possible for you and whether the training duration can be shortened.<br><br>In dual part-time training, you work fewer hours at the company and can still get a fully recognized qualification. Because you complete fewer practical hours per week, the training takes longer overall. The calculator shows by how many months the duration increases.",
     "benefitsTitle": "Benefits of the calculator",
     "benefitsTitle_easy": "Benefits",
     "card1": {
-      "title": "Flexible hours",
-      "title_easy": "Flexible hours",
-      "subtitle": "Individual time planning",
-      "subtitle_easy": "You choose your time"
+      "title": "Flexible working hours",
+      "title_easy": "Flexible working hours"
     },
     "card2": {
-      "title": "Accurate planning",
-      "title_easy": "Good planning",
-      "subtitle": "Precise calculation",
-      "subtitle_easy": "Precise calculation"
+      "title": "Realistic duration",
+      "title_easy": "Realistic duration"
     },
     "card3": {
       "title": "Successful completion",
-      "title_easy": "Successful finish",
-      "subtitle": "Structured path",
-      "subtitle_easy": "Clear path"
+      "title_easy": "Successful completion"
     },
     "button": "To calculator",
     "button_easy": "To calculator"

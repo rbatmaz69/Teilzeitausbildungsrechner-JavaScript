@@ -322,9 +322,9 @@ header h1 {
 
 /* Inhalt der Gesetzliche Grundlagen Box */
 .legal-content {
-  margin-top: 1rem; /* Abstand unter dem Summary, passend zu "Ihre Berechnung" */
-  padding-top: 1rem; /* wie bei .inputs-collapsible > dl */
-  border-top: 2px solid var(--info-border); /* ausgewaschenes Blau (Theme-Variable) */
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 2px solid var(--info-border);
 }
 
 .legal-section {
@@ -392,10 +392,10 @@ header h1 {
 }
 
 .helpful-links-title {
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.1rem;
+  font-weight: 700;
   color: var(--text);
-  margin: 0 0 1rem;
+  margin: 0 0 .75rem;
 }
 
 .helpful-links-list {
@@ -1150,6 +1150,10 @@ select:-ms-input-placeholder {
   text-align: left;
   font-size: .95rem;
   line-height: 1.5;
+}
+
+.helpful-links-notes {
+  margin-bottom: 0.5rem;
 }
 
 
@@ -2272,6 +2276,7 @@ html[dir="rtl"] .result-step-red .arrow-line {
 .startseite-description {
   color: var(--muted);
   margin-bottom: 0;
+  margin-top: 0.75rem;
   line-height: 1.6;
   overflow-wrap: normal;
 }
@@ -2281,8 +2286,8 @@ html[dir="rtl"] .result-step-red .arrow-line {
   display: flex;
   flex-direction: column;
   gap: 0;
-  margin-top: 2.6rem; /* gleicher Abstand wie zum Button unten */
-  margin-bottom: 0.6rem; /* enger zum Startseiten-Text auf Mobile */
+  margin-top: 0.8rem;
+  margin-bottom: 0.1rem;
 
   /* kein eigener Kasten: transparent, keine Ränder oder Schatten */
   background: transparent !important;
@@ -2294,7 +2299,7 @@ html[dir="rtl"] .result-step-red .arrow-line {
 
 .info-item {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.5rem; /* ~50% enger */
   padding: 0.5rem; /* ~50% weniger Innenabstand */
 
@@ -2309,7 +2314,6 @@ html[dir="rtl"] .result-step-red .arrow-line {
 
   /* Sicherstellen, dass die Items nicht klickbar wirken */
   cursor: default;
-  user-select: none;
 }
 
 /* Letztes Element ohne unterer Border */
@@ -2357,8 +2361,9 @@ html[dir="rtl"] .result-step-red .arrow-line {
 .info-item-title {
   font-size: 1rem;
   font-weight: 700;
-  margin: 0 0 0.25rem;
+  margin: 0;
   color: var(--text);
+  cursor: text;
 }
 
 .info-item-subtitle {
@@ -2369,7 +2374,7 @@ html[dir="rtl"] .result-step-red .arrow-line {
 
 .btn-start-calculate {
   width: 100%;
-  margin-top: 2rem;
+  margin-top: 0.65rem;
   background-color: var(--primary);
   color: white;
   font-weight: bold;
@@ -2827,6 +2832,7 @@ html[dir="rtl"] .result-step-red .arrow-line {
   .startseite-description-desktop {
     color: var(--muted);
     margin-bottom: 2rem;
+    margin-top: 0.75rem;
     line-height: 1.6;
     overflow-wrap: normal;
   }
@@ -2866,7 +2872,6 @@ html[dir="rtl"] .result-step-red .arrow-line {
     box-shadow: none;
     transition: none;
     cursor: default;
-    user-select: none;
   }
 
   .info-card-desktop:hover {
@@ -2899,8 +2904,11 @@ html[dir="rtl"] .result-step-red .arrow-line {
   .info-card-title-desktop {
     font-size: 1.3rem;
     font-weight: 700;
-    margin: 0 0 var(--space-2) 0;
+    max-width: 11ch;
+    margin: 0 auto;
+    line-height: 1.25;
     color: var(--text);
+    cursor: text;
   }
 
   .info-card-subtitle-desktop {

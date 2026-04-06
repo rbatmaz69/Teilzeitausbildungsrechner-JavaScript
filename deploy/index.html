@@ -134,8 +134,8 @@
         <h1 class="startseite-title">
           <span data-i18n="start.title.prefix">Planen Sie Ihre </span><span class="startseite-title-accent" data-i18n="start.title.accent">Teilzeitausbildung</span><span data-i18n="start.title.suffix"> ganz einfach</span>
         </h1>
-        <p class="startseite-description" data-i18n="start.description">
-          Der Rechner hilft Ihnen dabei zu prüfen, ob Sie Ihre Ausbildung in Teilzeit absolvieren können und ob sich Möglichkeiten zur Verkürzung der Ausbildungsdauer ergeben.
+        <p class="startseite-description" data-i18n="start.description" data-i18n-html="true">
+          Der Rechner hilft Ihnen zu prüfen, ob eine Teilzeitausbildung für Sie möglich ist und ob sich die Ausbildungsdauer verkürzen lässt.<br><br>Eine duale Teilzeitausbildung ermöglicht es Ihnen, mit weniger Arbeitszeit im Betrieb einen voll anerkannten Berufsabschluss zu erreichen. Da in Teilzeit pro Woche weniger Praxisstunden anfallen, verlängert sich die Gesamtdauer der Ausbildung. Mit dem Rechner sehen Sie, um wie viele Monate sich diese verlängert.
         </p>
 
         <!-- Zusammenhängendes Informationsfeld statt separater Karten -->
@@ -149,8 +149,7 @@
               </svg>
             </div>
             <div class="info-item-content">
-              <h3 class="info-item-title" data-i18n="start.card1.title">Flexible Zeiten</h3>
-              <p class="info-item-subtitle" data-i18n="start.card1.subtitle">Individuelle Stundenplanung</p>
+              <h3 class="info-item-title" data-i18n="start.card1.title">Flexible Arbeitszeiten</h3>
             </div>
           </div>
 
@@ -164,8 +163,7 @@
               </svg>
             </div>
             <div class="info-item-content">
-              <h3 class="info-item-title" data-i18n="start.card2.title">Genaue Planung</h3>
-              <p class="info-item-subtitle" data-i18n="start.card2.subtitle">Präzise Berechnung</p>
+              <h3 class="info-item-title" data-i18n="start.card2.title">Realistische Dauer</h3>
             </div>
           </div>
 
@@ -178,7 +176,6 @@
             </div>
             <div class="info-item-content">
               <h3 class="info-item-title" data-i18n="start.card3.title">Erfolgreicher Abschluss</h3>
-              <p class="info-item-subtitle" data-i18n="start.card3.subtitle">Strukturierter Weg</p>
             </div>
           </div>
         </div>
@@ -288,8 +285,8 @@
           <h1 class="startseite-title">
             <span data-i18n="start.title.prefix">Planen Sie Ihre </span><span class="startseite-title-accent" data-i18n="start.title.accent">Teilzeitausbildung</span><span data-i18n="start.title.suffix"> ganz einfach</span>
           </h1>
-          <p class="startseite-description-desktop" data-i18n="start.description">
-            Der Rechner hilft Ihnen dabei zu prüfen, ob Sie Ihre Ausbildung in Teilzeit absolvieren können und ob sich Möglichkeiten zur Verkürzung der Ausbildungsdauer ergeben.
+          <p class="startseite-description-desktop" data-i18n="start.description" data-i18n-html="true">
+            Der Rechner hilft Ihnen zu prüfen, ob eine Teilzeitausbildung für Sie möglich ist und ob sich die Ausbildungsdauer verkürzen lässt.<br><br>Eine duale Teilzeitausbildung ermöglicht es Ihnen, mit weniger Arbeitszeit im Betrieb einen voll anerkannten Berufsabschluss zu erreichen. Da in Teilzeit pro Woche weniger Praxisstunden anfallen, verlängert sich die Gesamtdauer der Ausbildung. Mit dem Rechner sehen Sie, um wie viele Monate sich diese verlängert.
           </p>
 
           <h2 id="start-benefits-title-desktop" class="sr-only" data-i18n="start.benefitsTitle">Vorteile des Rechners</h2>
@@ -302,8 +299,7 @@
                 </svg>
               </div>
               <div class="info-card-content-desktop">
-                <h3 class="info-card-title-desktop" data-i18n="start.card1.title">Flexible Zeiten</h3>
-                <p class="info-card-subtitle-desktop" data-i18n="start.card1.subtitle">Individuelle Stundenplanung</p>
+                <h3 class="info-card-title-desktop" data-i18n="start.card1.title">Flexible Arbeitszeiten</h3>
               </div>
             </div>
 
@@ -317,8 +313,7 @@
                 </svg>
               </div>
               <div class="info-card-content-desktop">
-                <h3 class="info-card-title-desktop" data-i18n="start.card2.title">Genaue Planung</h3>
-                <p class="info-card-subtitle-desktop" data-i18n="start.card2.subtitle">Präzise Berechnung</p>
+                <h3 class="info-card-title-desktop" data-i18n="start.card2.title">Realistische Dauer</h3>
               </div>
             </div>
 
@@ -331,7 +326,6 @@
               </div>
               <div class="info-card-content-desktop">
                 <h3 class="info-card-title-desktop" data-i18n="start.card3.title">Erfolgreicher Abschluss</h3>
-                <p class="info-card-subtitle-desktop" data-i18n="start.card3.subtitle">Strukturierter Weg</p>
               </div>
             </div>
           </div>
@@ -852,13 +846,16 @@
         <ul class="notes" data-i18n="res.notes" data-i18n-html="true">
           <li>Die Berechnung ist nur eine <strong>Hilfe</strong> und reine <strong>Orientierung</strong>.</li>
           <li>Das Ergebnis ist <strong>nicht verbindlich</strong>.</li>
-          <li>Sprechen Sie das Ergebnis mit ihrem <strong>Ausbildungsbetrieb</strong> ab.</li>
-          <li>Eine Teilzeitausbildung ist nur dann möglich, wenn Sie <strong>mindestens die Hälfte</strong> der normalen Ausbildungszeit arbeiten.</li>
+          <li><strong>Alle Verkürzungen</strong> müssen mit dem <strong>Ausbildungsunternehmen</strong> und der <strong>zuständigen Kammer</strong> abgestimmt werden.</li>
+          <li>Unabhängig von einer Verkürzung der Ausbildungszeit besteht während der Ausbildung bei <strong>guten Leistungen</strong> die Möglichkeit, die <strong>Abschlussprüfung vorzuziehen</strong>.</li>
         </ul>
 
         <!-- Hilfreiche weiterführende Links -->
         <div class="helpful-links-section">
           <h3 class="helpful-links-title" data-i18n="res.helpfulLinksTitle">Weiterführende Informationen</h3>
+          <ul class="notes helpful-links-notes" data-i18n="res.helpfulLinksNotice" data-i18n-html="true">
+            <li>Für eine <strong>persönliche Beratung</strong> zur Teilzeitausbildung wenden Sie sich bitte an die <strong>Bundesagentur für Arbeit</strong>.</li>
+          </ul>
           <ul class="helpful-links-list">
             <li class="helpful-link-item">
               <a href="https://www.arbeitsagentur.de/bildung/ausbildung" target="_blank" rel="noopener noreferrer" class="helpful-link">
@@ -874,10 +871,36 @@
               </a>
             </li>
             <li class="helpful-link-item">
+              <a href="https://www.arbeitsagentur.de/vor-ort/rd-bw/startseite" target="_blank" rel="noopener noreferrer" class="helpful-link">
+                <div class="helpful-link-content">
+                  <span class="helpful-link-title" data-i18n="res.helpfulLinks.rdbw.title">Regionaldirektion Baden-Württemberg</span>
+                  <span class="helpful-link-desc" data-i18n="res.helpfulLinks.rdbw.desc">Ansprechpartnerinnen und Ansprechpartner in Baden-Württemberg.</span>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="helpful-link-icon">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </li>
+            <li class="helpful-link-item">
               <a href="https://netzwerk-teilzeitausbildung-bw.de/tza-bw/" target="_blank" rel="noopener noreferrer" class="helpful-link">
                 <div class="helpful-link-content">
                   <span class="helpful-link-title" data-i18n="res.helpfulLinks.netzwerk.title">Netzwerk Teilzeitausbildung</span>
                   <span class="helpful-link-desc" data-i18n="res.helpfulLinks.netzwerk.desc">Spezialisierte Beratung und Unterstützung zur Teilzeitausbildung.</span>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="helpful-link-icon">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </li>
+            <li class="helpful-link-item">
+              <a href="https://netzwerk-teilzeitausbildung-bw.de/tza-bw/Informationen-zur-TZA/Sogehts-TZ-28_01_2025_WEB.pdf" target="_blank" rel="noopener noreferrer" class="helpful-link">
+                <div class="helpful-link-content">
+                  <span class="helpful-link-title" data-i18n="res.helpfulLinks.flyer.title">Flyer: Teilzeitausbildung - so geht's (PDF)</span>
+                  <span class="helpful-link-desc" data-i18n="res.helpfulLinks.flyer.desc">Voraussetzungen, Modelle und Unterstützungsmöglichkeiten auf einen Blick.</span>
                 </div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="helpful-link-icon">
                   <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>

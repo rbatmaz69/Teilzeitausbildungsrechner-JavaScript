@@ -222,22 +222,36 @@
     "helper_easy": "Voici votre résultat.",
     "notesTitle": "Informations importantes",
     "notesTitle_easy": "Important",
-    "notes": "<li>Ce calcul est seulement une <strong>aide</strong> et une <strong>orientation</strong>.</li><li>Le résultat n’est <strong>pas contraignant</strong>.</li><li>Discutez du résultat avec votre <strong>entreprise formatrice</strong>.</li><li>La formation à temps partiel n’est possible que si vous travaillez <strong>au moins la moitié</strong> des heures habituelles de formation.</li>",
-    "notes_easy": "<li>Ce calcul est seulement une <strong>aide</strong>.</li><li>Le résultat n’est <strong>pas contraignant</strong>.</li><li>Parlez du résultat avec votre <strong>entreprise formatrice</strong>.</li><li>Vous devez travailler <strong>au moins la moitié</strong> du temps normal.</li>",
+    "notes": "<li>Le résultat n’est <strong>pas juridiquement contraignant</strong>.</li><li>Ce calcul est seulement une <strong>aide</strong> et une <strong>orientation</strong>.</li><li><strong>Toutes les réductions</strong> doivent être concertées avec l’<strong>entreprise formatrice</strong> et la <strong>chambre compétente</strong>.</li><li>Indépendamment d’une réduction de la durée de formation, en cas de <strong>bons résultats</strong>, il est possible, conformément au <strong>§ 45 alinéa 1 BBiG</strong>, de <strong>passer l’examen final plus tôt</strong>.</li>",
+    "notes_easy": "<li>Le résultat n’est <strong>pas juridiquement contraignant</strong>.</li><li>Ce calcul est seulement une <strong>aide</strong>.</li><li><strong>Toutes les réductions</strong> doivent être concertées avec l’<strong>entreprise formatrice</strong> et la <strong>chambre compétente</strong>.</li><li>Indépendamment d’une réduction de la durée de formation, en cas de <strong>bons résultats</strong>, il est possible, conformément au <strong>§ 45 alinéa 1 BBiG</strong>, de <strong>passer l’examen final plus tôt</strong>.</li>",
     "helpfulLinksTitle": "Informations complémentaires",
     "helpfulLinksTitle_easy": "Plus d'infos",
+    "helpfulLinksNotice": "<li>Pour un <strong>conseil personnalisé</strong> sur la formation à temps partiel, veuillez vous adresser à l’<strong>Agence fédérale pour l’emploi</strong>.</li>",
+    "helpfulLinksNotice_easy": "<li>Pour un <strong>conseil personnalisé</strong>, contactez l’<strong>Agence fédérale pour l’emploi</strong>.</li>",
     "helpfulLinks": {
       "arbeitsagentur": {
         "title": "Agence fédérale pour l'emploi",
-        "title_easy": "Agence pour l'emploi",
+        "title_easy": "Agence fédérale pour l'emploi",
         "desc": "Informations générales sur la formation et le conseil professionnel.",
         "desc_easy": "Infos sur la formation et le conseil."
+      },
+      "rdbw": {
+        "title": "Direction régionale du Bade-Wurtemberg",
+        "title_easy": "Direction régionale BW",
+        "desc": "Interlocutrices et interlocuteurs dans le Bade-Wurtemberg.",
+        "desc_easy": "Contacts de la direction régionale BW."
       },
       "netzwerk": {
         "title": "Réseau de formation à temps partiel",
         "title_easy": "Réseau formation temps partiel",
         "desc": "Conseils spécialisés et soutien pour la formation à temps partiel.",
         "desc_easy": "Conseils pour formation à temps partiel."
+      },
+      "flyer": {
+        "title": "Flyer : Formation à temps partiel - comment faire (PDF)",
+        "title_easy": "Flyer : Formation à temps partiel - comment faire (PDF)",
+        "desc": "Conditions, modèles et aides disponibles en un coup d'oeil.",
+        "desc_easy": "Conditions, modèles et aides pour la formation à temps partiel."
       }
     },
     "legalTitle": "Base légale",
@@ -442,27 +456,21 @@
       "suffix": " facilement",
       "suffix_easy": " facilement"
     },
-      "description": "Le calculateur vous aide à vérifier si vous pouvez suivre votre formation à temps partiel et s'il existe des possibilités de raccourcir la durée de la formation.",
-      "description_easy": "Le calculateur vous montre si vous pouvez faire votre formation à temps partiel. Il vérifie également si une réduction de la durée de la formation est possible.",
+      "description": "Le calculateur vous aide à vérifier si une formation à temps partiel est possible pour vous et si la durée de la formation peut être raccourcie.<br><br>Une formation professionnelle duale à temps partiel vous permet d'obtenir un diplôme professionnel pleinement reconnu avec moins d'heures de travail en entreprise. Comme moins d'heures pratiques sont effectuées chaque semaine en temps partiel, la durée totale de la formation augmente. Avec le calculateur, vous pouvez voir de combien de mois elle augmente.",
+      "description_easy": "Le calculateur vous aide à vérifier si une formation à temps partiel est possible pour vous et si la durée de la formation peut être raccourcie.<br><br>En formation duale à temps partiel, vous travaillez moins d'heures en entreprise et vous pouvez quand même obtenir un diplôme reconnu. Comme vous faites moins d'heures pratiques par semaine, la formation dure plus longtemps. Le calculateur montre de combien de mois la durée augmente.",
     "benefitsTitle": "Avantages du calculateur",
     "benefitsTitle_easy": "Avantages",
     "card1": {
-      "title": "Horaires flexibles",
-      "title_easy": "Horaires flexibles",
-      "subtitle": "Planification individuelle",
-      "subtitle_easy": "Vous choisissez votre temps"
+      "title": "Horaires de travail flexibles",
+      "title_easy": "Horaires de travail flexibles"
     },
     "card2": {
-      "title": "Planification fiable",
-      "title_easy": "Bonne planification",
-      "subtitle": "Calcul précis",
-      "subtitle_easy": "Calcul précis"
+      "title": "Durée réaliste",
+      "title_easy": "Durée réaliste"
     },
     "card3": {
-      "title": "Réussite",
-      "title_easy": "Fin réussie",
-      "subtitle": "Parcours structuré",
-      "subtitle_easy": "Chemin clair"
+      "title": "Réussite de la formation",
+      "title_easy": "Réussite de la formation"
     },
     "button": "Vers le calculateur",
     "button_easy": "Vers le calculateur"

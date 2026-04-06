@@ -521,6 +521,7 @@ function loadSharedData() {
       document.getElementById("teilzeitStunden").dispatchEvent(new Event("input", { bubbles: true }));
     }
 
+    // Legacy-Parameter unterstützen (alte Links mit numerischem Alter)
     const alter = params.get("alter");
     if (alter) {
       const alterZahl = Number(alter);

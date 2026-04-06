@@ -222,22 +222,36 @@
     "helper_easy": "Burada sonucunuz var.",
     "notesTitle": "Önemli notlar",
     "notesTitle_easy": "Önemli",
-    "notes": "<li>Hesaplama sadece <strong>yardımcı</strong> ve bir <strong>kılavuz</strong> niteliğindedir.</li><li>Sonuç <strong>bağlayıcı değildir</strong>.</li><li>Sonucu <strong>eğitim yerinizle</strong> görüşün.</li><li>Yarı zamanlı eğitim, normal çalışma süresinin <strong>en az yarısını</strong> çalıştığınızda mümkündür.</li>",
-    "notes_easy": "<li>Hesaplama sadece <strong>yardımcıdır</strong>.</li><li>Sonuç <strong>bağlayıcı değildir</strong>.</li><li>Sonucu <strong>eğitim yerinizle</strong> konuşun.</li><li><strong>En az yarı</strong> normal saat çalışmalısınız.</li>",
+    "notes": "<li>Sonuç <strong>hukuken bağlayıcı değildir</strong>.</li><li>Hesaplama sadece <strong>yardımcı</strong> ve bir <strong>kılavuz</strong> niteliğindedir.</li><li><strong>Tüm kısaltmalar</strong> <strong>eğitim şirketi</strong> ve <strong>yetkili oda</strong> ile koordine edilmelidir.</li><li>Eğitim süresinin kısaltılmasından bağımsız olarak, <strong>iyi performans</strong> durumunda, <strong>§ 45 Absatz 1 BBiG</strong> uyarınca <strong>bitirme sınavını öne çekme</strong> imkanı vardır.</li>",
+    "notes_easy": "<li>Sonuç <strong>hukuken bağlayıcı değildir</strong>.</li><li>Hesaplama sadece <strong>yardımcıdır</strong>.</li><li><strong>Tüm kısaltmalar</strong> <strong>eğitim şirketi</strong> ve <strong>yetkili oda</strong> ile koordine edilmelidir.</li><li>Eğitim süresinin kısaltılmasından bağımsız olarak, <strong>iyi performans</strong> durumunda, <strong>§ 45 Absatz 1 BBiG</strong> uyarınca <strong>bitirme sınavını öne çekme</strong> imkanı vardır.</li>",
     "helpfulLinksTitle": "Daha Fazla Bilgi",
     "helpfulLinksTitle_easy": "Daha Fazla Bilgi",
+    "helpfulLinksNotice": "<li>Yarı zamanlı eğitim için <strong>kişisel danışmanlık</strong> almak üzere lütfen <strong>Federal İş Ajansı</strong> ile iletişime geçin.</li>",
+    "helpfulLinksNotice_easy": "<li><strong>Kişisel danışmanlık</strong> için <strong>Federal İş Ajansı</strong> ile iletişime geçin.</li>",
     "helpfulLinks": {
       "arbeitsagentur": {
         "title": "Federal İstihdam Ajansı",
-        "title_easy": "İstihdam Ajansı",
+        "title_easy": "Federal İstihdam Ajansı",
         "desc": "Eğitim ve kariyer danışmanlığı hakkında genel bilgiler.",
         "desc_easy": "Eğitim ve danışmanlık hakkında bilgi."
+      },
+      "rdbw": {
+        "title": "Baden-Wuerttemberg Bölge Müdürlüğü",
+        "title_easy": "BW Bölge Müdürlüğü",
+        "desc": "Baden-Wuerttemberg'deki iletişim kişileri.",
+        "desc_easy": "BW bölge müdürlüğü iletişimleri."
       },
       "netzwerk": {
         "title": "Yarı Zamanlı Eğitim Ağı",
         "title_easy": "Yarı Zamanlı Eğitim Ağı",
         "desc": "Yarı zamanlı eğitim için özel danışmanlık ve destek.",
         "desc_easy": "Yarı zamanlı eğitim için danışmanlık."
+      },
+      "flyer": {
+        "title": "Broşür: Yarı zamanlı eğitim - nasıl olur (PDF)",
+        "title_easy": "Broşür: Yarı zamanlı eğitim - nasıl olur (PDF)",
+        "desc": "Koşullar, modeller ve destek seçenekleri bir bakışta.",
+        "desc_easy": "Koşullar, modeller ve destek için yarı zamanlı eğitim."
       }
     },
     "legalTitle": "Yasal Dayanak",
@@ -442,27 +456,21 @@
       "suffix": " kolayca",
       "suffix_easy": " kolay"
     },
-    "description": "Hesaplayıcı, eğitiminizi yarı zamanlı olarak tamamlayıp tamamlayamayacağınızı ve eğitim süresinin kısaltılmasına yönelik olası seçeneklerin olup olmadığını kontrol etmenize yardımcı olur.",
-    "description_easy": "Hesaplayıcı, eğitiminizi yarı zamanlı yapıp yapamayacağınızı gösterir. Ayrıca eğitim süresinin kısaltılmasının mümkün olup olmadığını kontrol eder.",
+    "description": "Hesaplayıcı, yarı zamanlı mesleki eğitimin sizin için mümkün olup olmadığını ve eğitim süresinin kısaltılıp kısaltılamayacağını kontrol etmenize yardımcı olur.<br><br>İkili yarı zamanlı mesleki eğitim, işletmede daha az çalışma saatiyle tam olarak tanınan bir mesleki yeterlilik elde etmenizi sağlar. Yarı zamanlı modelde haftada daha az pratik saat yapıldığı için eğitimin toplam süresi uzar. Hesaplayıcı ile bu sürenin kaç ay uzadığını görebilirsiniz.",
+    "description_easy": "Hesaplayıcı, yarı zamanlı mesleki eğitimin sizin için mümkün olup olmadığını ve eğitim süresinin kısalıp kısalamayacağını kontrol etmenize yardımcı olur.<br><br>İkili yarı zamanlı eğitimde işletmede daha az saat çalışırsınız ama yine de tanınan bir meslek diploması alabilirsiniz. Haftada daha az pratik saatiniz olduğu için eğitim daha uzun sürer. Hesaplayıcı, sürenin kaç ay uzadığını gösterir.",
     "benefitsTitle": "Hesaplayıcının avantajları",
     "benefitsTitle_easy": "Avantajlar",
     "card1": {
-      "title": "Esnek zamanlar",
-      "title_easy": "Esnek zamanlar",
-      "subtitle": "Bireysel saat planlaması",
-      "subtitle_easy": "Kendi zamanınızı seçin"
+      "title": "Esnek çalışma saatleri",
+      "title_easy": "Esnek çalışma saatleri"
     },
     "card2": {
-      "title": "Hassas planlama",
-      "title_easy": "İyi planlama",
-      "subtitle": "Kesin hesaplama",
-      "subtitle_easy": "Kesin hesaplama"
+      "title": "Gerçekçi süre",
+      "title_easy": "Gerçekçi süre"
     },
     "card3": {
-      "title": "Başarılı tamamlanma",
-      "title_easy": "Başarılı bitiş",
-      "subtitle": "Yapılandırılmış yol",
-      "subtitle_easy": "Açık yol"
+      "title": "Başarılı tamamlama",
+      "title_easy": "Başarılı tamamlama"
     },
     "button": "Hesaplayıcıya git",
     "button_easy": "Hesaplayıcıya git"
