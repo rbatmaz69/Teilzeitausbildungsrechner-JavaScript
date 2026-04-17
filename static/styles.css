@@ -2578,7 +2578,10 @@ html[dir="rtl"] .result-step-red .arrow-line {
   .startseite-visualization {
     position: relative;
     width: 100%;
-    max-width: clamp(260px, 30vw, 440px);
+    max-width: clamp(320px, 38vw, 560px);
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    border-radius: 24px;
 
     --accent-size: clamp(56px, 5vw, 80px);
     --accent-svg-size: clamp(24px, 2.2vw, 36px);
@@ -2593,10 +2596,11 @@ html[dir="rtl"] .result-step-red .arrow-line {
 
   .startseite-visual-image {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
     border-radius: 24px;
-    object-fit: contain;
+    object-fit: cover;
+    object-position: 50% 42%;
     box-shadow: 0 12px 32px rgb(0 0 0 / 20%);
     max-height: none;
   }
