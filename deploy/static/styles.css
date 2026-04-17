@@ -2580,7 +2580,7 @@ html[dir="rtl"] .result-step-red .arrow-line {
     width: 100%;
     max-width: clamp(285px, 32vw, 470px);
     aspect-ratio: 37 / 50;
-    overflow: hidden;
+    overflow: visible;
     border-radius: 24px;
 
     --accent-size: clamp(56px, 5vw, 80px);
@@ -2590,7 +2590,6 @@ html[dir="rtl"] .result-step-red .arrow-line {
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: visible;
     align-self: center;
   }
 
