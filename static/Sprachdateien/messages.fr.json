@@ -227,7 +227,7 @@
     "helpfulLinksTitle": "Informations complémentaires",
     "helpfulLinksTitle_easy": "Plus d'infos",
     "helpfulLinksNotice": "<li>Pour un conseil personnalisé sur la <strong>formation à temps partiel</strong>, veuillez vous adresser à l’<strong>Agence fédérale pour l’emploi</strong>.<br>Vous trouverez vos interlocutrices et interlocuteurs sur la page d’accueil de la <strong>Direction régionale Bade-Wurtemberg</strong>.</li>",
-    "helpfulLinksNotice_easy": "<li>Pour un conseil personnalisé sur la <strong>formation à temps partiel</strong>, veuillez vous adresser à l’<strong>Agence fédérale pour l’emploi</strong>.<br>Vous trouverez vos interlocutrices et interlocuteurs sur la page d’accueil de la <strong>Direction régionale Bade-Wurtemberg</strong>.</li>",
+    "helpfulLinksNotice_easy": "<li>Pour des conseils sur la <strong>formation à temps partiel</strong>, contactez l’<strong>Agence fédérale pour l’emploi</strong>.<br>Les contacts sont sur la page de la <strong>Direction régionale Bade-Wurtemberg</strong>.</li>",
     "helpfulLinks": {
       "arbeitsagentur": {
         "title": "Agence fédérale pour l'emploi",
@@ -456,8 +456,8 @@
       "suffix": " facilement",
       "suffix_easy": " facilement"
     },
-      "description": "Le calculateur vous aide à vérifier si une formation à temps partiel est possible pour vous et si la durée de la formation peut être raccourcie.<br><br>Une formation professionnelle duale à temps partiel vous permet d'obtenir un diplôme professionnel pleinement reconnu avec moins d'heures de travail en entreprise. Comme moins d'heures pratiques sont effectuées chaque semaine en temps partiel, la durée totale de la formation augmente. Avec le calculateur, vous pouvez voir de combien de mois elle augmente.",
-      "description_easy": "Le calculateur vous aide à vérifier si une formation à temps partiel est possible pour vous et si la durée de la formation peut être raccourcie.<br><br>En formation duale à temps partiel, vous travaillez moins d'heures en entreprise et vous pouvez quand même obtenir un diplôme reconnu. Comme vous faites moins d'heures pratiques par semaine, la formation dure plus longtemps. Le calculateur montre de combien de mois la durée augmente.",
+    "description": "Le calculateur vous aide à vérifier si une formation à temps partiel est possible pour vous et si la durée de la formation peut être raccourcie.<br><br>Une formation professionnelle duale à temps partiel vous permet d'obtenir un diplôme professionnel pleinement reconnu avec moins d'heures de travail en entreprise. Comme moins d'heures pratiques sont effectuées chaque semaine en temps partiel, la durée totale de la formation augmente. Avec le calculateur, vous pouvez voir de combien de mois elle augmente.",
+    "description_easy": "Le calculateur vous aide à vérifier si une formation à temps partiel est possible pour vous et si la durée de la formation peut être raccourcie.<br><br>En formation duale à temps partiel, vous travaillez moins d'heures en entreprise et vous pouvez quand même obtenir un diplôme reconnu. Comme vous faites moins d'heures pratiques par semaine, la formation dure plus longtemps. Le calculateur montre de combien de mois la durée augmente.",
     "benefitsTitle": "Avantages du calculateur",
     "benefitsTitle_easy": "Avantages",
     "card1": {
