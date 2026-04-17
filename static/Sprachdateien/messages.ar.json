@@ -68,10 +68,10 @@
       "button32h": "32 ساعة (4-أيام)",
       "button32h_easy": "32 ساعة (4-أيام)"
     },
-      "verkuerzungen": {
-        "labelShort": "أسباب التقصير",
-        "labelShort_easy": "أسباب التقصير"
-      },
+    "verkuerzungen": {
+      "labelShort": "أسباب التقصير",
+      "labelShort_easy": "أسباب التقصير"
+    },
     "afterShortening": "المدة بعد التقصير",
     "afterShortening_easy": "المدة بعد التقصير",
     "inPartTime": "المدة في الدوام الجزئي",
@@ -230,8 +230,8 @@
     "notes_easy": "<li>النتيجة <strong>غير ملزمة قانونيًا</strong>.</li><li>هذا الحساب هو فقط <strong>مساعدة</strong>.</li><li>يجب تنسيق <strong>جميع حالات التقصير</strong> مع <strong>جهة التدريب</strong> و<strong>الغرفة المختصة</strong>.</li><li>بغضّ النظر عن تقصير مدة التدريب، ومع <strong>الأداء الجيد</strong>، توجد إمكانية، وفقًا لـ <strong>§ 45 Absatz 1 BBiG</strong>، <strong>تقديم الامتحان النهائي مبكرًا</strong>.</li>",
     "helpfulLinksTitle": "معلومات إضافية",
     "helpfulLinksTitle_easy": "مزيد من المعلومات",
-    "helpfulLinksNotice": "<li>للحصول على <strong>استشارة شخصية</strong> بشأن التدريب بدوام جزئي، يُرجى التواصل مع <strong>وكالة التوظيف الفيدرالية</strong>.</li>",
-    "helpfulLinksNotice_easy": "<li>للحصول على <strong>استشارة شخصية</strong> تواصل مع <strong>وكالة التوظيف الفيدرالية</strong>.</li>",
+    "helpfulLinksNotice": "<li>للحصول على استشارة شخصية بشأن <strong>التدريب بدوام جزئي</strong>، يُرجى التواصل مع <strong>وكالة التوظيف الفيدرالية</strong>.<br>يمكنكم العثور على جهات الاتصال المناسبة لكم على الصفحة الرئيسية لـ <strong>المديرية الإقليمية بادن-فورتمبيرغ</strong>.</li>",
+    "helpfulLinksNotice_easy": "<li>للاستشارة بشأن <strong>التدريب بدوام جزئي</strong>، تواصلوا مع <strong>وكالة التوظيف الفيدرالية</strong>.<br>جهات الاتصال موجودة في صفحة <strong>المديرية الإقليمية بادن-فورتمبيرغ</strong>.</li>",
     "helpfulLinks": {
       "arbeitsagentur": {
         "title": "وكالة التوظيف الفيدرالية",

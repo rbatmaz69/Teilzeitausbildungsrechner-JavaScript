@@ -226,8 +226,8 @@
     "notes_easy": "<li>Wynik <strong>nie jest prawnie wiążący</strong>.</li><li>To obliczenie jest tylko <strong>pomocą</strong>.</li><li><strong>Wszystkie skrócenia</strong> muszą zostać uzgodnione z <strong>zakładem szkolącym</strong> i <strong>właściwą izbą</strong>.</li><li>Niezależnie od skrócenia czasu kształcenia, przy <strong>dobrych wynikach</strong> istnieje możliwość, zgodnie z <strong>§ 45 ust. 1 BBiG</strong>, <strong>wcześniejszego przystąpienia do egzaminu końcowego</strong>.</li>",
     "helpfulLinksTitle": "Dalsze informacje",
     "helpfulLinksTitle_easy": "Więcej informacji",
-    "helpfulLinksNotice": "<li>W sprawie <strong>osobistego doradztwa</strong> dotyczącego kształcenia w niepełnym wymiarze prosimy o kontakt z <strong>Federalną Agencją Pracy</strong>.</li>",
-    "helpfulLinksNotice_easy": "<li>W sprawie <strong>osobistego doradztwa</strong> skontaktuj się z <strong>Federalną Agencją Pracy</strong>.</li>",
+    "helpfulLinksNotice": "<li>Aby uzyskać osobiste doradztwo dotyczące <strong>kształcenia w niepełnym wymiarze czasu</strong>, prosimy o kontakt z <strong>Federalną Agencją Pracy</strong>.<br>Właściwe osoby kontaktowe znajdą Państwo na stronie głównej <strong>Dyrekcji Regionalnej Badenii-Wirtembergii</strong>.</li>",
+    "helpfulLinksNotice_easy": "<li>Po poradę dotyczącą <strong>kształcenia w niepełnym wymiarze czasu</strong> skontaktuj się z <strong>Federalną Agencją Pracy</strong>.<br>Kontakty znajdziesz na stronie <strong>Dyrekcji Regionalnej Badenii-Wirtembergii</strong>.</li>",
     "helpfulLinks": {
       "arbeitsagentur": {
         "title": "Federalna Agencja Pracy",
