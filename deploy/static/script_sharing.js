@@ -261,6 +261,30 @@ async function generierePDF() {
       pdfWrapper.appendChild(inputsClone);
     }
 
+    // Füge Logo am Ende der PDF-Zusammenfassung hinzu
+    const logoWrapper = document.createElement('div');
+    logoWrapper.style.cssText = 'margin-top: 28px; padding-top: 8px; text-align: center;';
+    const logoImage = document.createElement('img');
+    logoImage.src = './static/TZ_Logo_HKS_17_2024.jpg-removebg-preview.png';
+    logoImage.alt = '';
+    logoImage.style.cssText = 'display: inline-block; width: 220px; max-width: 100%; height: auto;';
+    logoWrapper.appendChild(logoImage);
+    pdfWrapper.appendChild(logoWrapper);
+
+    const logoLoaded = await Promise.race([
+      new Promise(resolve => {
+        logoImage.onload = () => resolve(true);
+        logoImage.onerror = () => {
+          logoWrapper.remove();
+          resolve(false);
+        };
+      }),
+      new Promise(resolve => setTimeout(() => resolve(false), 1500))
+    ]);
+    if (!logoLoaded && !logoImage.complete) {
+      logoWrapper.remove();
+    }
+
     // --- Pfeile im PDF bei arabisch umdrehen ---
     if (aktuelleSprache() === 'ar') {
       // Nur im PDF-Wrapper, nicht global!

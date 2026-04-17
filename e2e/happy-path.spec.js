@@ -405,11 +405,16 @@ test.describe('Happy Path: Sharing & PDF', () => {
     // Stub html2canvas und jsPDF vor dem ersten Page Load
     await page.addInitScript(() => {
       // Mock html2canvas als globale Funktion
-      window.html2canvas = async (element) => ({
+      window.html2canvas = async (element) => {
+        window.__pdfHasLogo = Boolean(
+          element?.querySelector('img[src*="TZ_Logo_HKS_17_2024.jpg-removebg-preview.png"]')
+        );
+        return {
         width: 1200,
         height: 1800,
         toDataURL: (type, quality) => 'data:image/png;base64,TEST'
-      });
+        };
+      };
       
       // Mock jsPDF
       function jsPDFMock() {
@@ -436,9 +441,11 @@ test.describe('Happy Path: Sharing & PDF', () => {
     
     const saveName = await page.evaluate(() => window.__pdfSaved);
     const addImageArgs = await page.evaluate(() => window.__pdfAddImageArgs);
+    const hasLogo = await page.evaluate(() => window.__pdfHasLogo);
     expect(saveName).toMatch(/Ergebnis_Teilzeitausbildung_/);
     expect(addImageArgs?.[4]).toBeGreaterThan(0); // width
     expect(addImageArgs?.[5]).toBeGreaterThan(0); // height
+    expect(hasLogo).toBe(true);
   });
 });
 
