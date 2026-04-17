@@ -230,8 +230,8 @@
     "notes_easy": "<li>The result is <strong>not legally binding</strong>.</li><li>This calculation is only a <strong>help</strong>.</li><li><strong>All reductions</strong> must be coordinated with the <strong>training company</strong> and the <strong>competent chamber</strong>.</li><li>Regardless of any reduction in training duration, trainees with <strong>good performance</strong> have the possibility, pursuant to <strong>Section 45 (1) BBiG</strong>, to <strong>bring forward the final examination</strong>.</li>",
     "helpfulLinksTitle": "Further Information",
     "helpfulLinksTitle_easy": "More Info",
-    "helpfulLinksNotice": "<li>For <strong>personal advice</strong> on part-time training, please contact the <strong>Federal Employment Agency</strong>.</li>",
-    "helpfulLinksNotice_easy": "<li>For <strong>personal advice</strong> on part-time training, contact the <strong>Federal Employment Agency</strong>.</li>",
+    "helpfulLinksNotice": "<li>For personal advice on <strong>part-time vocational training</strong>, please contact the <strong>Federal Employment Agency</strong>.<br>You can find the right contact persons on the homepage of the <strong>Regional Directorate Baden-Wuerttemberg</strong>.</li>",
+    "helpfulLinksNotice_easy": "<li>For personal advice on <strong>part-time vocational training</strong>, please contact the <strong>Federal Employment Agency</strong>.<br>You can find the right contact persons on the homepage of the <strong>Regional Directorate Baden-Wuerttemberg</strong>.</li>",
     "helpfulLinks": {
       "arbeitsagentur": {
         "title": "Federal Employment Agency",

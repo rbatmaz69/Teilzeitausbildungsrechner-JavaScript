@@ -226,8 +226,8 @@
     "notes_easy": "<li>Le résultat n’est <strong>pas juridiquement contraignant</strong>.</li><li>Ce calcul est seulement une <strong>aide</strong>.</li><li><strong>Toutes les réductions</strong> doivent être concertées avec l’<strong>entreprise formatrice</strong> et la <strong>chambre compétente</strong>.</li><li>Indépendamment d’une réduction de la durée de formation, en cas de <strong>bons résultats</strong>, il est possible, conformément au <strong>§ 45 alinéa 1 BBiG</strong>, de <strong>passer l’examen final plus tôt</strong>.</li>",
     "helpfulLinksTitle": "Informations complémentaires",
     "helpfulLinksTitle_easy": "Plus d'infos",
-    "helpfulLinksNotice": "<li>Pour un <strong>conseil personnalisé</strong> sur la formation à temps partiel, veuillez vous adresser à l’<strong>Agence fédérale pour l’emploi</strong>.</li>",
-    "helpfulLinksNotice_easy": "<li>Pour un <strong>conseil personnalisé</strong>, contactez l’<strong>Agence fédérale pour l’emploi</strong>.</li>",
+    "helpfulLinksNotice": "<li>Pour un conseil personnalisé sur la <strong>formation à temps partiel</strong>, veuillez vous adresser à l’<strong>Agence fédérale pour l’emploi</strong>.<br>Vous trouverez vos interlocutrices et interlocuteurs sur la page d’accueil de la <strong>Direction régionale Bade-Wurtemberg</strong>.</li>",
+    "helpfulLinksNotice_easy": "<li>Pour un conseil personnalisé sur la <strong>formation à temps partiel</strong>, veuillez vous adresser à l’<strong>Agence fédérale pour l’emploi</strong>.<br>Vous trouverez vos interlocutrices et interlocuteurs sur la page d’accueil de la <strong>Direction régionale Bade-Wurtemberg</strong>.</li>",
     "helpfulLinks": {
       "arbeitsagentur": {
         "title": "Agence fédérale pour l'emploi",
