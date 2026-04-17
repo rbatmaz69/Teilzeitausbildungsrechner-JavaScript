@@ -2578,8 +2578,8 @@ html[dir="rtl"] .result-step-red .arrow-line {
   .startseite-visualization {
     position: relative;
     width: 100%;
-    max-width: clamp(320px, 38vw, 560px);
-    aspect-ratio: 4 / 5;
+    max-width: clamp(285px, 32vw, 470px);
+    aspect-ratio: 37 / 50;
     overflow: hidden;
     border-radius: 24px;
 
