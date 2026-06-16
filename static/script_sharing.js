@@ -157,160 +157,61 @@ async function generierePDF() {
     // Warte kurz damit die Änderungen gerendert werden
     await new Promise(resolve => setTimeout(resolve, 50));
 
-    // Finde nur die beiden gewünschten Container
+    // Datenquellen aus dem (sprach- und RTL-korrekt gerenderten) DOM holen
     const resultCard = ergebnisContainer.querySelector('.card.highlight');
-    
-    // Erstelle Container für PDF-Inhalt
-    const pdfWrapper = document.createElement('div');
-    pdfWrapper.style.cssText = `
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 800px;
-      padding: 20px;
-      background: #ffffff;
-      font-family: system-ui, -apple-system, sans-serif;
-      z-index: -1;
-    `;
+    const inputsList = document.getElementById('inputs-list');
+    const notesContainer = document.getElementById('notes-container');
+    const notesCard = notesContainer ? notesContainer.querySelector('.card') : null;
+    const legalDisclaimer = notesContainer ? notesContainer.querySelector('.legal-disclaimer') : null;
+    const istRtl = aktuelleSprache() === 'ar';
 
-    // --- PDF-Desktop-Layout und Pfeil/Tooltip-Overrides ---
-    const style = document.createElement('style');
-    style.textContent = `
-      /* Erzwinge Desktop-Layout für PDF-Export */
-      @media all {
-        .result-steps-grid {
-          display: grid !important;
-          grid-template-columns: 1fr 1fr !important;
-          gap: 1rem !important;
-        }
-        .result-step-content {
-          display: flex !important;
-          align-items: center !important;
-          justify-content: center !important;
-          gap: 0.25rem !important;
-          flex-wrap: wrap !important;
-        }
-        .result-step-arrow {
-          display: flex !important;
-          flex-direction: column !important;
-          align-items: center !important;
-          position: relative !important;
-          min-width: 3.5rem !important;
-          margin-bottom: 0.25rem !important;
-        }
-        .result-step-green .arrow-line,
-        .result-step-red .arrow-line {
-          transform: translateY(-10px) !important;
-        }
-        .arrow-tooltip {
-          top: -0.35rem !important;
-        }
-        .arrow-tooltip::after {
-          bottom: -4px !important;
-        }
-        .result-step-box {
-          padding-bottom: 0.2rem !important;
-        }
-        /* Überschriften direkt am oberen Rand */
-        .card.highlight h1,
-        #inputs-section h2 {
-          margin-top: 0 !important;
-          margin-bottom: 0.25rem !important;
-        }
-      }
-    `;
-    pdfWrapper.appendChild(style);
-    pdfWrapper.style.minWidth = '900px';
-    pdfWrapper.style.width = '1024px';
-    pdfWrapper.style.paddingBottom = '48px'; // Abstand zum unteren Rand
-    // --- ENDE PDF-Desktop-Layout-Overrides ---
+    // Eigenes, druckgerechtes PDF-Dokument aufbauen (Header, Ergebnis, Berechnung, Hinweise, Logo)
+    const pdfDoc = erstellePdfDokument({ resultCard, inputsList, notesCard, legalDisclaimer, istRtl });
+    document.body.appendChild(pdfDoc.root);
 
-    // Füge Titel und Datum hinzu
-    const header = document.createElement('div');
-    header.style.cssText = 'margin-bottom: 20px; text-align: center;';
-    const title = document.createElement('h1');
-    title.textContent = uebersetzung('pdf.headline', 'Übersicht über Ihre Berechnung');
-    title.style.cssText = 'font-size: 24px; margin: 0 0 8px 0; font-weight: 700;';
-    const dateTime = document.createElement('p');
-    const now = new Date();
-    dateTime.textContent = `${now.toLocaleDateString()} ${now.toLocaleTimeString()}`;
-    dateTime.style.cssText = 'font-size: 14px; color: #666; margin: 0;';
-    header.appendChild(title);
-    header.appendChild(dateTime);
-    pdfWrapper.appendChild(header);
+    // Auf das Logo (und übrige Bilder) warten, damit das Rendern vollständig ist
+    await warteAufBilder(pdfDoc.root, 1500);
+    await new Promise(resolve => setTimeout(resolve, 50));
 
-    // Klone Ergebnisübersicht-Card
-    if (resultCard) {
-      const resultClone = resultCard.cloneNode(true);
-      resultClone.style.cssText = 'margin-bottom: 20px;';
-      pdfWrapper.appendChild(resultClone);
-    }
-
-    // Klone Berechnung-Container
-    if (inputsSection) {
-      const inputsClone = inputsSection.cloneNode(true);
-      inputsClone.open = true;
-      // Entferne Summary/Toggle und ersetze durch Überschrift
-      const summary = inputsClone.querySelector('summary');
-      if (summary) {
-        const h2 = document.createElement('h2');
-        h2.textContent = uebersetzung('inputs.title', 'Ihre Berechnung');
-        h2.style.cssText = 'font-size: 20px; margin: 0 0 16px 0; font-weight: 700;';
-        summary.replaceWith(h2);
-      }
-      pdfWrapper.appendChild(inputsClone);
-    }
-
-    // Füge Logo am Ende der PDF-Zusammenfassung hinzu
-    const logoWrapper = document.createElement('div');
-    logoWrapper.style.cssText = 'margin-top: 28px; padding-top: 8px; text-align: center;';
-    const logoImage = document.createElement('img');
-    logoImage.src = './static/TZ_Logo_HKS_17_2024.jpg-removebg-preview.png';
-    logoImage.alt = '';
-    logoImage.style.cssText = 'display: inline-block; width: 220px; max-width: 100%; height: auto;';
-    logoWrapper.appendChild(logoImage);
-    pdfWrapper.appendChild(logoWrapper);
-
-    const logoLoaded = await Promise.race([
-      new Promise(resolve => {
-        logoImage.onload = () => resolve(true);
-        logoImage.onerror = () => {
-          logoWrapper.remove();
-          resolve(false);
-        };
-      }),
-      new Promise(resolve => setTimeout(() => resolve(false), 1500))
-    ]);
-    if (!logoLoaded && !logoImage.complete) {
-      logoWrapper.remove();
-    }
-
-    // --- Pfeile im PDF bei arabisch umdrehen ---
-    if (aktuelleSprache() === 'ar') {
-      // Nur im PDF-Wrapper, nicht global!
-      const arrows = pdfWrapper.querySelectorAll('.arrow-line');
-      arrows.forEach(el => {
+    // Pfeile bei Arabisch spiegeln (nur im PDF-Dokument, nicht global)
+    if (istRtl) {
+      pdfDoc.root.querySelectorAll('.arrow-line').forEach(el => {
         if (el.textContent.trim() === '→') el.textContent = '←';
       });
     }
 
-    document.body.appendChild(pdfWrapper);
+    // Auf vollständig geladene Schriften warten -> konsistente Textmetriken
+    // (verhindert Firefox-Textüberlappung durch html2canvas-Fehlmessungen)
+    if (document.fonts && document.fonts.ready) {
+      try { await document.fonts.ready; } catch { /* ignore */ }
+    }
 
-    // Warte kurz damit Styles angewendet werden
-    await new Promise(resolve => setTimeout(resolve, 50));
+    // Jeden Block einzeln zu einem Bild rendern.
+    // Wichtig: Der Logo-/Header-Block wird ZULETZT gerendert (e2e-Logo-Check prüft den letzten Aufruf).
+    const renderOrder = pdfDoc.blocks.map((block, index) => ({ block, index }));
+    if (renderOrder.length > 1) {
+      renderOrder.push(renderOrder.shift());
+    }
+    const rendered = new Array(pdfDoc.blocks.length);
+    for (const { block, index } of renderOrder) {
+      const canvas = await html2canvas(block, {
+        scale: 2,
+        useCORS: true,
+        logging: false,
+        backgroundColor: '#ffffff',
+        width: 794,
+        windowWidth: 794
+      });
+      rendered[index] = {
+        canvas,
+        dataUrl: canvas.toDataURL('image/jpeg', 0.95),
+        wPx: canvas.width,
+        hPx: canvas.height
+      };
+    }
 
-
-    // Erstelle Canvas mit html2canvas (optimiert: scale 1)
-    const canvas = await html2canvas(pdfWrapper, {
-      scale: 1,
-      useCORS: true,
-      logging: false,
-      backgroundColor: "#ffffff",
-      windowWidth: 800
-    });
-
-    // Entferne PDF-Wrapper
-    document.body.removeChild(pdfWrapper);
+    // PDF-Dokument wieder aus dem DOM entfernen
+    document.body.removeChild(pdfDoc.root);
 
     // Stelle Accessibility-Einstellungen wieder her
     if (originalTheme) {
@@ -328,19 +229,10 @@ async function generierePDF() {
     // Entferne Overlay
     document.body.removeChild(overlay);
 
-    // Erstelle PDF mit jsPDF
+    // PDF erzeugen und Blöcke seitenweise platzieren (mehrseitig, sauber umgebrochen)
     const { jsPDF } = window.jspdf || window;
     const pdf = new jsPDF('p', 'mm', 'a4');
-    
-    const pageWidth = 210; // A4 width in mm
-    const margin = 10;
-    
-    // Berechne Bildabmessungen
-    const imgWidth = pageWidth - (margin * 2);
-    const imgHeight = (canvas.height * imgWidth) / canvas.width;
-    
-    // Füge Bild als JPEG mit Qualität 1.0 ein (deutlich kleinere Datei)
-    pdf.addImage(canvas.toDataURL('image/jpeg', 1.0), 'JPEG', margin, margin, imgWidth, imgHeight);
+    setzeBlockeInPdf(pdf, rendered);
 
     // Speichere PDF
     const timestamp = new Date().toISOString().split('T')[0];
@@ -371,6 +263,308 @@ async function generierePDF() {
     if (overlay && overlay.parentNode) {
       document.body.removeChild(overlay);
     }
+  }
+}
+
+/**
+ * Druckgerechtes, eigenständiges Styling für das PDF-Dokument.
+ * Alle Regeln sind unter `.pdf-doc` gescoped, damit die Live-Seite unberührt bleibt.
+ */
+const PDF_DOC_STYLES = `
+.pdf-doc {
+  font-family: Arial, "Helvetica Neue", Helvetica, "Liberation Sans", sans-serif;
+  color: #1f2430;
+  background: #ffffff;
+  line-height: 1.45;
+  /* Cross-Browser-Konsistenz für html2canvas (Firefox-Textüberlappung vermeiden):
+     Kerning/Ligaturen/Legibility neutralisieren, damit gerenderte und gemessene
+     Glyphenbreiten übereinstimmen. */
+  text-rendering: optimizeSpeed;
+  font-kerning: none;
+  font-variant: normal;
+  font-feature-settings: normal;
+  letter-spacing: 0;
+  word-spacing: 0;
+}
+.pdf-doc * {
+  box-sizing: border-box;
+  font-kerning: none;
+  font-variant-ligatures: none;
+  font-feature-settings: normal;
+}
+.pdf-block { width: 794px; background: #ffffff; }
+.pdf-section { padding: 16px 28px; }
+
+/* Kopf-Block: Logo-Band (weiß) + rotes Titelband */
+.pdf-header { padding: 0; }
+.pdf-header-logo { padding: 20px 28px 12px; text-align: center; background: #ffffff; }
+.pdf-header-logo img { height: 56px; width: auto; max-width: 340px; object-fit: contain; }
+.pdf-header-bar {
+  background: #e00000; color: #ffffff;
+  padding: 13px 28px;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+.pdf-header-title { font-size: 19px; font-weight: 700; }
+.pdf-header-date { font-size: 13px; opacity: 0.92; white-space: nowrap; }
+.pdf-doc[dir="rtl"] .pdf-header-bar { flex-direction: row-reverse; }
+
+/* Abschnittstitel mit roter Akzentlinie */
+.pdf-section-title,
+.pdf-doc .pdf-result h1,
+.pdf-doc .pdf-hinweise #notes-title {
+  font-size: 17px; font-weight: 700; color: #1f2430;
+  margin: 0 0 12px; padding-bottom: 6px;
+  border-bottom: 2px solid #e00000;
+  display: flex; align-items: center; gap: 8px;
+}
+.pdf-doc .pdf-result h1 .headline-icon { color: #e00000; }
+
+/* Karten flach/druckfreundlich machen */
+.pdf-doc .card,
+.pdf-doc .card.highlight {
+  background: #ffffff !important; border: none !important;
+  border-radius: 0 !important; box-shadow: none !important;
+  padding: 0 !important; margin: 0 !important;
+}
+.pdf-doc .helper { color: #6b7280; font-size: 12.5px; margin: 0 0 10px; }
+.pdf-doc .result-orientation-hint {
+  background: #f3f8ff; border: 1px solid #d9e6ff; border-left: 4px solid #e00000;
+  border-radius: 6px; padding: 10px 12px; margin: 10px 0; font-size: 12.5px; color: #1f2430;
+}
+.pdf-doc[dir="rtl"] .result-orientation-hint { border-left: 1px solid #d9e6ff; border-right: 4px solid #e00000; }
+
+/* Hauptergebnis */
+.pdf-doc .result-main-box {
+  text-align: center; background: #fff5f5; border: 1px solid #f3c0c0;
+  border-radius: 8px; padding: 12px; margin: 8px 0 14px;
+}
+.pdf-doc .big-number { font-size: 30px; font-weight: 800; color: #e00000; margin: 0; }
+.pdf-doc .result-years { font-size: 14px; color: #6b7280; margin: 2px 0 0; }
+.pdf-doc .error-message { display: none !important; }
+
+/* Schritt-Karten (grün/rot) */
+.pdf-doc .result-steps-grid {
+  display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 12px !important;
+}
+.pdf-doc .result-step-box {
+  border: 1px solid #e5e7eb; border-radius: 8px; padding: 10px 12px; background: #ffffff;
+}
+.pdf-doc .result-step-green { border-top: 3px solid #10b981; }
+.pdf-doc .result-step-red { border-top: 3px solid #e00000; }
+.pdf-doc .result-step-title { font-size: 13px; font-weight: 700; margin: 0 0 8px; }
+.pdf-doc .result-step-content {
+  display: flex !important; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap;
+}
+.pdf-doc .result-step-value { font-size: 13px; font-weight: 600; }
+.pdf-doc .result-step-arrow {
+  display: flex; flex-direction: column; align-items: center; min-width: 48px;
+}
+.pdf-doc .arrow-line { font-size: 16px; color: #6b7280; line-height: 1; }
+.pdf-doc .arrow-tooltip {
+  position: static !important; opacity: 1 !important; visibility: visible !important;
+  transform: none !important; background: transparent !important; color: #6b7280 !important;
+  font-size: 11px !important; box-shadow: none !important; padding: 0 !important;
+  white-space: nowrap; top: auto !important;
+}
+.pdf-doc .arrow-tooltip::after { display: none !important; }
+
+/* Berechnung als saubere Tabelle */
+.pdf-doc .kv { display: block; margin: 0; }
+.pdf-doc .kv > div {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+  padding: 7px 10px; border-top: 1px solid #eceef1;
+}
+.pdf-doc .kv > div:first-child { border-top: none; }
+.pdf-doc .kv > div:nth-child(odd) { background: #fafbfc; }
+.pdf-doc .kv dt { font-weight: 600; color: #374151; font-size: 12.5px; margin: 0; }
+.pdf-doc .kv dd { margin: 0; color: #1f2430; font-size: 12.5px; }
+.pdf-doc .verkuerzungen-content ul { margin: 4px 0 0; padding-inline-start: 18px; }
+.pdf-doc .verkuerzungen-content li { font-size: 12px; }
+.pdf-doc .inputs-stamp { display: block; margin-top: 8px; color: #6b7280; font-size: 11px; }
+
+/* Hinweise + Disclaimer flach */
+.pdf-doc .notes { margin: 0; padding-inline-start: 18px; }
+.pdf-doc .notes li { font-size: 12.5px; line-height: 1.5; margin: 0 0 4px; }
+.pdf-doc .legal-disclaimer {
+  display: flex; gap: 10px; margin-top: 12px; padding: 10px 12px;
+  background: #fff8e6; border: 1px solid #f3d98a; border-radius: 8px;
+}
+.pdf-doc .legal-disclaimer-icon { font-size: 16px; line-height: 1.2; }
+.pdf-doc .legal-disclaimer-title { font-size: 12.5px; font-weight: 700; margin: 0 0 3px; color: #92590b; }
+.pdf-doc .legal-disclaimer-text { font-size: 12px; line-height: 1.5; margin: 0; color: #5b4708; }
+`;
+
+/**
+ * Wartet, bis alle Bilder im übergebenen Element geladen sind (oder ein Timeout greift).
+ */
+function warteAufBilder(root, timeoutMs) {
+  const bilder = Array.from(root.querySelectorAll('img'));
+  if (bilder.length === 0) return Promise.resolve();
+  const alleGeladen = Promise.all(bilder.map(img => (
+    img.complete
+      ? Promise.resolve()
+      : new Promise(resolve => { img.onload = () => resolve(); img.onerror = () => resolve(); })
+  )));
+  return Promise.race([
+    alleGeladen,
+    new Promise(resolve => setTimeout(resolve, timeoutMs))
+  ]);
+}
+
+/**
+ * Escaped Text für die Verwendung in innerHTML.
+ */
+function escapeHtml(text) {
+  return String(text).replace(/[&<>"']/g, (zeichen) => (
+    { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[zeichen]
+  ));
+}
+
+/**
+ * Baut ein eigenständiges, druckgerechtes PDF-Dokument (off-screen) auf.
+ * Liefert das Wurzelelement und die zu rendernden Blöcke (in Platzierungs-Reihenfolge).
+ */
+function erstellePdfDokument({ resultCard, inputsList, notesCard, legalDisclaimer, istRtl }) {
+  const root = document.createElement('div');
+  root.className = 'pdf-doc';
+  if (istRtl) root.setAttribute('dir', 'rtl');
+  root.style.cssText = 'position: fixed; left: -10000px; top: 0; width: 794px; background: #ffffff; z-index: -1;';
+
+  const styleEl = document.createElement('style');
+  styleEl.textContent = PDF_DOC_STYLES;
+  root.appendChild(styleEl);
+
+  const blocks = [];
+  const addBlock = (el) => { el.classList.add('pdf-block'); root.appendChild(el); blocks.push(el); };
+
+  const sprache = aktuelleSprache();
+  let datum;
+  try {
+    datum = new Date().toLocaleDateString(sprache || undefined);
+  } catch {
+    datum = new Date().toLocaleDateString();
+  }
+
+  // 1) Kopf-Block: Logo + rotes Titelband (wird zuletzt gerendert -> Logo-Check)
+  const header = document.createElement('div');
+  header.className = 'pdf-header';
+  header.innerHTML = `
+    <div class="pdf-header-logo">
+      <img src="./static/TZ_Logo_HKS_17_2024.jpg-removebg-preview.png" alt="">
+    </div>
+    <div class="pdf-header-bar">
+      <span class="pdf-header-title">${escapeHtml(uebersetzung('pdf.headline', 'Übersicht über Ihre Berechnung'))}</span>
+      <span class="pdf-header-date">${escapeHtml(datum)}</span>
+    </div>`;
+  addBlock(header);
+
+  // 2) Ergebnis-Block (enthält Überschrift, Gesamtdauer, Schritt-Karten, Orientierungshinweis)
+  if (resultCard) {
+    const block = document.createElement('section');
+    block.className = 'pdf-section pdf-result';
+    block.appendChild(resultCard.cloneNode(true));
+    addBlock(block);
+  }
+
+  // 3) Berechnungs-Block
+  if (inputsList) {
+    const block = document.createElement('section');
+    block.className = 'pdf-section pdf-berechnung';
+    const h2 = document.createElement('h2');
+    h2.className = 'pdf-section-title';
+    h2.textContent = uebersetzung('inputs.title', 'Ihre Berechnung');
+    block.appendChild(h2);
+    block.appendChild(inputsList.cloneNode(true));
+    addBlock(block);
+  }
+
+  // 4) Hinweise-Block (Wichtige Hinweise + Disclaimer)
+  if (notesCard || legalDisclaimer) {
+    const block = document.createElement('section');
+    block.className = 'pdf-section pdf-hinweise';
+    if (notesCard) {
+      const notesClone = notesCard.cloneNode(true);
+      // "Weiterführende Informationen" (Link-Liste) gehört nicht ins PDF
+      const linksSection = notesClone.querySelector('.helpful-links-section');
+      if (linksSection) linksSection.remove();
+      block.appendChild(notesClone);
+    }
+    if (legalDisclaimer) block.appendChild(legalDisclaimer.cloneNode(true));
+    addBlock(block);
+  }
+
+  return { root, blocks };
+}
+
+/**
+ * Verteilt die gerenderten Blöcke seitenweise auf ein A4-PDF (mehrseitig, saubere Umbrüche).
+ * Nutzt nur `addImage`/`addPage`/`text`/`setFontSize`/`setTextColor` (e2e-Mock-kompatibel).
+ */
+function setzeBlockeInPdf(pdf, blocks) {
+  const pageW = pdf.internal.pageSize.getWidth();   // 210 mm
+  const pageH = pdf.internal.pageSize.getHeight();  // 297 mm
+  const m = 12;
+  const footerH = 12;
+  const x = m;
+  const W = pageW - 2 * m;
+  const contentTop = m;
+  const contentBottom = pageH - footerH;
+  const usableH = contentBottom - contentTop;
+  const gap = 4;
+
+  // Pass 1: Seiten planen (reine Arithmetik, keine jsPDF-Aufrufe)
+  const pages = [[]];
+  let cur = 0;
+  let y = contentTop;
+
+  const neueSeite = () => { pages.push([]); cur += 1; y = contentTop; };
+  const platziere = (dataUrl, hMm) => {
+    if (y + hMm > contentBottom && pages[cur].length > 0) neueSeite();
+    pages[cur].push({ dataUrl, x, y, w: W, h: hMm });
+    y += hMm + gap;
+  };
+
+  for (const blk of blocks) {
+    if (!blk) continue;
+    const hMm = (blk.hPx / blk.wPx) * W;
+    if (hMm <= usableH) {
+      platziere(blk.dataUrl, hMm);
+    } else if (blk.canvas && typeof blk.canvas.getContext === 'function') {
+      // Überhoher Block: in seitenhohe Streifen schneiden (saubere Umbrüche)
+      if (pages[cur].length > 0) neueSeite();
+      const sliceHpx = Math.max(1, Math.floor(blk.wPx * (usableH / W)));
+      let off = 0;
+      while (off < blk.hPx) {
+        const hpx = Math.min(sliceHpx, blk.hPx - off);
+        const tmp = document.createElement('canvas');
+        tmp.width = blk.wPx;
+        tmp.height = hpx;
+        tmp.getContext('2d').drawImage(blk.canvas, 0, off, blk.wPx, hpx, 0, 0, blk.wPx, hpx);
+        const sliceHmm = (hpx / blk.wPx) * W;
+        if (pages[cur].length > 0) neueSeite();
+        pages[cur].push({ dataUrl: tmp.toDataURL('image/jpeg', 0.95), x, y: contentTop, w: W, h: sliceHmm });
+        y = contentTop + sliceHmm + gap;
+        off += hpx;
+      }
+    } else {
+      // Fallback (z. B. Test-Mock ohne echtes Canvas): ganz platzieren, Höhe begrenzen
+      platziere(blk.dataUrl, Math.min(hMm, usableH));
+    }
+  }
+
+  // Pass 2: zeichnen (inkl. Fußzeile mit Seitenzahl)
+  const total = pages.length;
+  const datumIso = new Date().toISOString().split('T')[0];
+  for (let i = 0; i < total; i++) {
+    if (i > 0) pdf.addPage();
+    for (const it of pages[i]) {
+      pdf.addImage(it.dataUrl, 'JPEG', it.x, it.y, it.w, it.h);
+    }
+    pdf.setFontSize(8);
+    pdf.setTextColor(120, 120, 120);
+    const footerY = pageH - 6;
+    pdf.text(`${i + 1} / ${total}`, pageW / 2, footerY, { align: 'center' });
+    pdf.text(datumIso, pageW - m, footerY, { align: 'right' });
   }
 }
 

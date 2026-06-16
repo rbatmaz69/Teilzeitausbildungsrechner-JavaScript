@@ -224,6 +224,8 @@
     "headline_easy": "Ergebnisübersicht",
     "helper": "Hier sehen Sie Ihre Angaben und das Ergebnis.",
     "helper_easy": "Hier stehen Ihre Angaben und das Ergebnis.",
+    "orientationHint": "Jede Verkürzung bedarf der individuellen Abstimmung mit dem Ausbildungsunternehmen und der zuständigen Kammer. Lassen Sie sich hierzu gerne beraten.",
+    "orientationHint_easy": "Jede Verkürzung müssen Sie mit dem Ausbildungsunternehmen und der Kammer absprechen. Lassen Sie sich gerne beraten.",
     "notesTitle": "Wichtige Hinweise",
     "notesTitle_easy": "Wichtige Hinweise",
     "notes": "<li>Das Ergebnis ist <strong>nicht rechtsverbindlich</strong>.</li><li>Die Berechnung ist nur eine <strong>Hilfe</strong> und reine <strong>Orientierung</strong>.</li><li><strong>Alle Verkürzungen</strong> müssen mit dem <strong>Ausbildungsunternehmen</strong> und der <strong>zuständigen Kammer</strong> abgestimmt werden.</li><li>Unabhängig von einer Verkürzung der Ausbildungszeit besteht während der Ausbildung bei <strong>guten Leistungen</strong> die Möglichkeit, nach <strong>§ 45 Absatz 1 BBiG</strong> die <strong>Abschlussprüfung vorzuziehen</strong>.</li>",
