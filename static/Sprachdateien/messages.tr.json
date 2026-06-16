@@ -220,6 +220,8 @@
     "headline_easy": "Sonuç Özeti",
     "helper": "Burada girdileriniz ve sonuç gösterilir.",
     "helper_easy": "Burada sonucunuz var.",
+    "orientationHint": "Her kısaltma, eğitim işletmesi ve yetkili oda ile bireysel olarak görüşülmelidir. Bu konuda danışmanlık almaktan çekinmeyin.",
+    "orientationHint_easy": "Her kısaltmayı eğitim işletmesi ve oda ile görüşmelisiniz. Danışmanlık alabilirsiniz.",
     "notesTitle": "Önemli notlar",
     "notesTitle_easy": "Önemli",
     "notes": "<li>Sonuç <strong>hukuken bağlayıcı değildir</strong>.</li><li>Hesaplama sadece <strong>yardımcı</strong> ve bir <strong>kılavuz</strong> niteliğindedir.</li><li><strong>Tüm kısaltmalar</strong> <strong>eğitim şirketi</strong> ve <strong>yetkili oda</strong> ile koordine edilmelidir.</li><li>Eğitim süresinin kısaltılmasından bağımsız olarak, <strong>iyi performans</strong> durumunda, <strong>§ 45 Absatz 1 BBiG</strong> uyarınca <strong>bitirme sınavını öne çekme</strong> imkanı vardır.</li>",

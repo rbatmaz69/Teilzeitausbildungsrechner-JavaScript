@@ -224,6 +224,8 @@
     "headline_easy": "Results overview",
     "helper": "Here you can see your details and the result.",
     "helper_easy": "Here is your result.",
+    "orientationHint": "Every reduction requires individual agreement with the training company and the responsible chamber. Feel free to seek advice on this.",
+    "orientationHint_easy": "You must agree every reduction with the training company and the chamber. Feel free to get advice.",
     "notesTitle": "Important information",
     "notesTitle_easy": "Important",
     "notes": "<li>The result is <strong>not legally binding</strong>.</li><li>This calculation is only a <strong>help</strong> and an <strong>orientation</strong>.</li><li><strong>All reductions</strong> must be coordinated with the <strong>training company</strong> and the <strong>competent chamber</strong>.</li><li>Regardless of any reduction in training duration, trainees with <strong>good performance</strong> have the possibility, pursuant to <strong>Section 45 (1) BBiG</strong>, to <strong>bring forward the final examination</strong>.</li>",
